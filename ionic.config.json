@@ -1,0 +1,8 @@
+{
+  "name": "prulia_member",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
