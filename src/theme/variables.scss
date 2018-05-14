@@ -34,17 +34,29 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    #68737A,
+  secondary:  #ff6961,
+  main: 	  #9FE49C,
+  danger:     #ED1B2E,
+  light:      #ffffff,
+  dark:       #333333,
+  crimson:    #697279,
 );
-
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
+$toolbar-ios-background:#68737A;
+$toolbar-ios-title-text-color: #ffffff;
+$tabs-ios-tab-color-active: #ff6961;
+// $tabs-ios-background: #ffffff;
+
+// $spinner-ios-ios-color:	#ED1B2E;
+// $spinner-ios-bubbles-color:	#ED1B2E;
+// $spinner-ios-circles-color:	#ED1B2E;
+// $spinner-ios-crescent-color: #ED1B2E;
+// $spinner-ios-dots-color: #ED1B2E;
+$loading-ios-spinner-color: #ED1B2E;
 
 
 
@@ -52,7 +64,17 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$toolbar-md-background:#68737A;
+$toolbar-md-title-text-color: #ffffff;
+$tabs-md-tab-color-active: #ff6961;
+// $tabs-md-background: #ffffff;
 
+// $spinner-md-ios-color:	#ED1B2E;
+// $spinner-md-bubbles-color:	#ED1B2E;
+// $spinner-md-circles-color:	#ED1B2E;
+// $spinner-md-crescent-color:	#ED1B2E;
+// $spinner-md-dots-color:	#ED1B2E;
+$loading-md-spinner-color: #ED1B2E;
 
 
 

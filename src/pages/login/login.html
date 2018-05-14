@@ -1,0 +1,78 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content class="animated fadeIn login auth-page">
+	<div padding class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h5 ion-text class="title-secondary title">
+        PRULIA Membership App
+      </h5>
+    </div>
+    <br />
+    <!-- Login form -->
+    <form class="list-form" inset>
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="title-secondary"></ion-icon>
+          Prudential ID
+        </ion-label>
+        <ion-input type="text" required #username ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="title-secondary"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password" required #password></ion-input>
+      </ion-item>
+    </form>
+    <p><br /></p>
+
+    <!-- <p text-right ion-text color="dark" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p> -->
+
+    <div>
+      <button ion-button icon-start block color="secondary" tappable (click)="login()">
+        <ion-icon name="log-in"></ion-icon>
+        SIGN IN
+      </button>
+
+      <button ion-button icon-start block color="primary" outline tappable (click)="forgotPass()">
+        First &amp; Forgot Password?
+      </button>
+
+      <!-- <button ion-button icon-start block color="primary" clear tappable (click)="openRegistrationPage()">
+        New here? &nbsp; <strong> Sign up</strong>
+      </button> -->
+
+    </div>
+
+
+    <!-- Other links -->
+    <!-- <div text-center margin-top>
+      <span ion-text color="dark" tappable (click)="openRegistrationPage()">New here? <strong>Sign up</strong></span>
+    </div> -->
+
+  </div>
+	<!-- <form (ngSubmit)="loginUser()" class="loginsection">
+		<img src="assets/imgs/Prulia-word-logo.png" style="display: block; width: 90%; height: auto; margin-left: auto; margin-right: auto;">
+		<ion-list>
+			<ion-item>
+		    	<ion-input type="text" [(ngModel)]="login.username" name="name" placeholder="Username" ></ion-input>
+		  	</ion-item>
+		  	<ion-item>
+		    	<ion-input type="password" [(ngModel)]="login.password" name="password" placeholder="Password"></ion-input>
+		  	</ion-item>
+		</ion-list>
+		<div class="spacer" style="height: 2em;"></div>
+		<button ion-button block color="primary" type="submit">Log in</button> 
+	</form>
+	<button class="bottom" ion-button clear full color="primary" (click)="openRegistrationPage()" >Don't have an account? Sign up</button>  -->
+</ion-content>

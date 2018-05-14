@@ -1,0 +1,34 @@
+<!--
+  Generated template for the PartnerDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <!-- <ion-title>PartnerDetail</ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="content" *ngIf="bannerProvider.banners[bannerIter]">
+      <div class="the-header">
+        <div class="background">
+          <div class="image_background" [ngStyle]="{'background-image': 'url(' + bannerProvider.banners[bannerIter].image +')'}">
+          </div>
+          <img [src]="bannerProvider.banners[bannerIter].image"/>
+        </div>
+        <button ion-fab>
+          <ion-icon name="people"></ion-icon>
+        </button>
+      </div>
+      <div class="the-content" padding >
+          <h1 class="newsletter_title">
+		      {{bannerProvider.banners[bannerIter].banner_name}}
+	  		</h1>
+      </div>
+      <div padding [innerHtml]="bannerProvider.banners[bannerIter].content"></div>
+    </div>
+</ion-content>

@@ -1,0 +1,97 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content fullscreen no-bounce class="bg-modal header-image" [ngStyle]="{'background-image': 'url(' + this.memberProvider.member.profile_photo +')'}">
+    <div class="bler">
+
+    </div>
+    <div class="absolute">
+    <div class="main-content" text-wrap text-center>
+      <div class="align-mid">
+        <div class="circular" [ngStyle]="{'background-image': 'url(' + this.memberProvider.member.profile_photo +')'}"></div>
+        <h2>{{this.memberProvider.member.full_name}}</h2>
+        <p>{{this.memberProvider.member.prudential_id}}</p>
+        <!-- <p class="profile-description">{{member.prudential_id}}</p> -->
+        <!-- <hr> -->
+        <br />
+
+        <ion-list no-lines>
+          <accordion title="Personal Information" [expanded]="this.profileExpand" (click)="hideList('Profile')" >
+            <ion-list>
+              <ion-item>
+                <ion-icon name="card" item-start></ion-icon>
+                {{this.memberProvider.member.nric_number}}
+              </ion-item>
+              <ion-item>
+                <ion-icon [name]="this.memberProvider.member.gender == 'Male' ? 'male' : 'female'" item-start></ion-icon>
+                {{this.memberProvider.member.gender}}
+              </ion-item>
+              <ion-item>
+                <ion-icon name="call" item-start></ion-icon>
+                {{this.memberProvider.member.cell_number}}
+              </ion-item>
+            </ion-list>
+          </accordion>
+          <accordion title="Prudential Information" [expanded]="this.eventExpand" (click)="hideList('event')"><ion-list>
+              <ion-item>
+                <ion-icon name="briefcase" item-start></ion-icon>
+                {{this.memberProvider.member.branch}}
+              </ion-item>
+              <ion-item>
+                <ion-icon name="globe" item-start></ion-icon>
+                {{this.memberProvider.member.region}}
+              </ion-item>
+              <ion-item>
+                <ion-icon name="star" item-start></ion-icon>
+                {{this.memberProvider.member.position}}
+              </ion-item>
+            </ion-list></accordion>
+          <accordion title="Event Perferences">
+              <ion-item>
+                <ion-icon name="restaurant" item-start></ion-icon>
+                {{this.memberProvider.member.meal_option}}
+              </ion-item>
+              <ion-item>
+                <ion-icon name="shirt" item-start></ion-icon>
+                {{this.memberProvider.member.shirt_size}}
+              </ion-item>
+              <button ion-item full color="primary" (click)="goToEventPerferences()"> 
+                <ion-icon name="create" item-start></ion-icon>
+                <ion-label>Update Default Event Perferences</ion-label>
+              </button>
+          </accordion>
+          <ion-item transparent>
+            <ion-grid class="grid" no-padding>
+              <ion-row>
+                <ion-col col-6>
+                  <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>
+                </ion-col>
+                <ion-col col-6>
+                  <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+          <!-- <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>
+          <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion> -->
+            <!-- <button ion-item (click)="goToProfile()">
+              <ion-label>View Membership Profile</ion-label>
+            </button>
+            <button ion-item (click)="goToEventPerferences()"> 
+              <ion-label>Update Default Event Perferences</ion-label>
+            </button>
+            <button ion-item (click)="goToUpdatePassword()">
+              <ion-label>Update Password</ion-label>
+            </button>
+            <button ion-item (click)="logout()">
+              <ion-label>Sign Out</ion-label>
+            </button> -->
+        </ion-list>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

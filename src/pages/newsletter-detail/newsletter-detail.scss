@@ -1,0 +1,103 @@
+page-newsletter-detail {
+	.the-header {
+        position: relative;
+        height: 30vh;
+
+        .header-text {
+            position: absolute;
+            // z-index: 2;
+            top: 40px;
+            left: 15px;
+        }
+
+        .header-text h1 {
+            font-weight: bold;
+        }
+
+        // .header-text p {
+        //     padding-left: 2rem;
+        //     font-weight: bold;
+        //     color: white;
+        // }
+
+        .background {
+            height: 30vh;
+            position: relative;
+            .image_background{
+                width:100%;
+                background-size: cover;
+                background-position: center center;
+                position:absolute;
+                left:0;
+                right:0;
+                top:0;
+                bottom:0;
+                height:37vh;
+                // z-index: -1;
+                -webkit-filter: blur(10px);
+                -moz-filter: blur(10px);
+                -o-filter: blur(10px);
+                -ms-filter: blur(10px);
+                filter: blur(10px);
+            }
+            // clip-path: polygon(0 0, 100% 0, 100% 170px, 0 115%);
+            // img {
+            //     background-color: #ffffff;
+            //     margin: 0px;
+            //     width: auto;
+            //     height: auto;
+            //     max-height: 33vh;
+            //     display: block;
+            //     margin-left: auto;
+            //     margin-right: auto;
+            // }
+            img{
+                position: relative;
+                top: 50%;
+                transform: perspective(1px) translateY(-50%);
+                background-color: #FFFFFF;
+                vertical-align: baseline;
+                width: auto;
+                max-height: 35vh;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        button {
+            position: absolute;
+            bottom: -30px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            background: color($colors, light);
+            border: 6px solid color($colors, primary);
+            z-index: 2;
+            ion-icon {
+                font-size: 2.8rem;
+                color: color($colors, primary);
+            }
+            &.activated {
+                background: color($colors, primary);
+            }
+            &.activated ion-icon{
+                transition: .1s linear;
+                color: color($colors, primary);
+            }
+        }
+    }
+
+    .the-content {
+        padding-top: 40px !important;
+        background: linear-gradient(
+                      rgba(104,115,122, 0.8),
+                      rgba(104,115,122,  0.8)
+                    ), url("../assets/imgs/abstract-2829965_1920.jpg");
+        background-size: cover;
+        background-position: center center;
+        color:color($colors, light);
+        clip-path: polygon(0% 0%, 49% 0%, 100% 24px, 100% 100%, 0% 100%);
+    }
+
+}

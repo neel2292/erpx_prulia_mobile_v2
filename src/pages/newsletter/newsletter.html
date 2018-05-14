@@ -1,0 +1,34 @@
+<!--
+  Generated template for the NewsletterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Newsletter</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="newsletter-page">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list [virtualScroll] = "newsletterProvider.newsletters"  [hidden]="newsletterProvider.newsletters.length === 0">
+      <ion-item *virtualItem="let newsletter" (click)="eventTapped(newsletter)" ion-item>
+        <ion-thumbnail item-start>
+        <ion-img [src]="newsletter.news_image"></ion-img>
+      </ion-thumbnail>
+        <h2 text-wrap>{{newsletter.title}}</h2>
+        <p>{{newsletter.publish_date | date: 'MMM d, y'}}</p>
+      </ion-item>
+  </ion-list>
+
+  <ion-list-header [hidden]="newsletterProvider.newsletters.length > 0">
+      No Newsletter available
+  </ion-list-header>
+</ion-content>

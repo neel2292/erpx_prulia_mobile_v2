@@ -14,3 +14,29 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.text-primary {
+  color: color($colors, primary);
+}
+
+.text-secondary {
+  color: color($colors, secondary);
+}
+
+
+* {
+  font-family: Arial, sans-serif;
+}
+
+a {
+	color: #448AF8;
+}
+
+.alert-title{
+	color: #ED1B2E;
+}
+
+button{
+    box-shadow: none !important;
+    -webkit-box-shadow: none!important;
+}

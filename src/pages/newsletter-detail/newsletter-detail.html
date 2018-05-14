@@ -1,0 +1,49 @@
+<!--
+  Generated template for the NewsletterDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <!-- <ion-title *ngIf="newsletterProvider.newsletters[newsletterIter]" text-uppercase>{{newsletterProvider.newsletters[newsletterIter].title}}</ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<!-- <ion-content>
+	<div class="newsletter_image">
+		<img [src]="newsletterProvider.newsletters[newsletterIter].news_image"  />
+	</div>
+	<div class="newsletter_content" padding>
+		<h1 class="newsletter_title">
+	      {{newsletterProvider.newsletters[newsletterIter].title}}
+  		</h1>
+  		<p class="newsletter_date">{{newsletterProvider.newsletters[newsletterIter].publish_date | date: 'MMM d, y'}} </p>
+  </div>
+  <div padding [innerHtml]="newsletterProvider.newsletters[newsletterIter].content"></div>
+</ion-content> -->
+
+<ion-content>
+  <div class="content" *ngIf="newsletterProvider.newsletters[newsletterIter]">
+      <div class="the-header">
+        <div class="background">
+          <div class="image_background" [ngStyle]="{'background-image': 'url(' + newsletterProvider.newsletters[newsletterIter].news_image +')'}">
+          </div>
+          <img [src]="newsletterProvider.newsletters[newsletterIter].news_image"/>
+        </div>
+        <button ion-fab>
+          <ion-icon name="desktop"></ion-icon>
+        </button>
+      </div>
+      <div class="the-content" padding >
+          <h1 class="newsletter_title">
+		      {{newsletterProvider.newsletters[newsletterIter].title}}
+	  		</h1>
+	  		<p class="newsletter_date">{{newsletterProvider.newsletters[newsletterIter].publish_date | date: 'MMM d, y'}} </p>
+      </div>
+      <div padding [innerHtml]="newsletterProvider.newsletters[newsletterIter].content"></div>
+    </div>
+</ion-content>

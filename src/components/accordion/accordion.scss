@@ -1,0 +1,28 @@
+accordion {
+
+    .card-header{
+        background-color: map-get($colors, primary);
+        // background-color: linear-gradient(-90deg, red, yellow);
+        color: #fff;
+        padding: 0.5rem;
+    }
+    .card-content {
+        padding: 0px 16px; 
+        max-height: 0px;
+    }
+
+    ion-card{
+    	box-shadow: none !important;
+    	-webkit-box-shadow: none!important;
+    }
+
+    .hideAccordion{
+    	 max-height: 0px;
+      	  padding: 0px 16px;
+    }
+
+    .showAccordion{
+    	 max-height: 500px;
+      	  padding: 13px 16px;
+    }
+}

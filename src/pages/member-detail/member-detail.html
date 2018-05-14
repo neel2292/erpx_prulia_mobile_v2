@@ -1,0 +1,68 @@
+<!--
+  Generated template for the MemberDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Member's Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="label-demo">
+
+  <ion-list>
+  	<ion-list-header>
+		Personnal Information
+	</ion-list-header>
+    <ion-item no-lines>
+      <ion-label stacked color="primary">Name</ion-label>
+      <ion-input [(ngModel)]="memberProvider.member.full_name" name="name" readonly></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label stacked color="primary">NRIC Number</ion-label>
+      <ion-input [(ngModel)]="memberProvider.member.nric_number" name="nric_number" readonly></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label stacked color="primary">Gender</ion-label>
+      <ion-input [(ngModel)]="memberProvider.member.gender" name="gender" readonly></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label stacked color="primary">Contact</ion-label>
+      <ion-input [(ngModel)]="memberProvider.member.cell_number" name="cell_number" readonly></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+  	<ion-list-header>
+		Prudential Information
+	</ion-list-header>
+    <ion-item no-lines>
+      <ion-label stacked color="primary">Prudential ID</ion-label>
+      <ion-input [(ngModel)]="memberProvider.member.prudential_id" name="prudential_id" readonly></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label stacked color="primary">Branch</ion-label>
+      <ion-input [(ngModel)]="memberProvider.member.branch" name="branch" readonly></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label stacked color="primary">Region</ion-label>
+      <ion-input [(ngModel)]="memberProvider.member.region" name="region" readonly></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label stacked color="primary">Position</ion-label>
+      <ion-input [(ngModel)]="memberProvider.member.position" name="position" readonly></ion-input>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
