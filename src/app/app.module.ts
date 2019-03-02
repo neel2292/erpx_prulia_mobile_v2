@@ -109,5 +109,4 @@ import { Mask } from './mask'
     Base64
   ]
 })
-export class AppModule {
-}
+export class AppModule {}
