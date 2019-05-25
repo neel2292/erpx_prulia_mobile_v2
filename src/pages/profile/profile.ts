@@ -4,6 +4,7 @@ import { Events } from 'ionic-angular/util/events';
 
 import { MemberDetailPage } from "../member-detail/member-detail";
 import { EventPrefPage } from "../event-pref/event-pref";
+import { MemberInfoPage } from "../member-info/member-info";
 import { UpdatePasswordPage } from "../update-password/update-password";
 
 import { PruliaMemberProvider } from "../../providers/prulia-member/prulia-member";
@@ -26,13 +27,16 @@ export class ProfilePage {
 
 	profileExpand: boolean = false;
 	eventExpand: boolean = false;
-  
+
 	constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider
 		, public auth: AuthServiceProvider, public appEvent: Events) {
 	}
 
 	goToProfile(){
 		this.navCtrl.push(MemberDetailPage, { value: this.memberProvider.member });
+	}
+	goToMemberInfo(){
+		this.navCtrl.push(MemberInfoPage, { value: this.memberProvider.member, mode: "Profile" });
 	}
 	goToEventPerferences(){
 		this.navCtrl.push(EventPrefPage, { value: this.memberProvider.member, mode: "Profile" });
@@ -50,7 +54,7 @@ export class ProfilePage {
 				this.profileExpand = false;
 				this.eventExpand = false;
 			// 	break;
-			
+
 			// default:
 			// 	// code...
 			// 	break;

@@ -34,9 +34,9 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #68737A,
-  secondary:  #ff6961,
-  main: 	  #9FE49C,
+  primary:    #42494F,
+  secondary:  #F1646B,
+  main: 	  #99CD6F,
   danger:     #ED1B2E,
   light:      #ffffff,
   dark:       #333333,
@@ -46,7 +46,7 @@ $colors: (
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-$toolbar-ios-background:#68737A;
+$toolbar-ios-background:#42494F;
 $toolbar-ios-title-text-color: #ffffff;
 $tabs-ios-tab-color-active: #ff6961;
 // $tabs-ios-background: #ffffff;
@@ -64,7 +64,7 @@ $loading-ios-spinner-color: #ED1B2E;
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-$toolbar-md-background:#68737A;
+$toolbar-md-background:#42494F;
 $toolbar-md-title-text-color: #ffffff;
 $tabs-md-tab-color-active: #ff6961;
 // $tabs-md-background: #ffffff;

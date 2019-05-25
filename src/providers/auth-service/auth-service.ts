@@ -16,7 +16,7 @@ import { ToastController } from 'ionic-angular';
 @Injectable()
 export class AuthServiceProvider {
 
-	constructor(public http: HttpClient, public common: CommonProvider, 
+	constructor(public http: HttpClient, public common: CommonProvider,
     private navigation: NavigationProvider, private toastCtrl: ToastController) {
     console.log('Hello AuthServiceProvider Provider');
   }

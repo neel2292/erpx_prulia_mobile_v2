@@ -13,7 +13,6 @@
       <div class="align-mid">
         <div class="circular" [ngStyle]="{'background-image': 'url(' + this.memberProvider.member.profile_photo +')'}"></div>
         <h2>{{this.memberProvider.member.full_name}}</h2>
-        <p>{{this.memberProvider.member.prudential_id}}</p>
         <!-- <p class="profile-description">{{member.prudential_id}}</p> -->
         <!-- <hr> -->
         <br />
@@ -33,9 +32,21 @@
                 <ion-icon name="call" item-start></ion-icon>
                 {{this.memberProvider.member.cell_number}}
               </ion-item>
+              <ion-item>
+                <ion-icon name="mail" item-start></ion-icon>
+                {{this.memberProvider.member.email}}
+              </ion-item>
+              <button ion-item full color="primary" (click)="goToMemberInfo()">
+                <ion-icon name="create" item-start></ion-icon>
+                <ion-label>Update Personal Information</ion-label>
+              </button>
             </ion-list>
           </accordion>
           <accordion title="Prudential Information" [expanded]="this.eventExpand" (click)="hideList('event')"><ion-list>
+              <ion-item>
+                <ion-icon name="person" item-start></ion-icon>
+                {{this.memberProvider.member.prudential_id}} (Agent ID, eg: 1234567)
+              </ion-item>
               <ion-item>
                 <ion-icon name="briefcase" item-start></ion-icon>
                 {{this.memberProvider.member.branch}}
@@ -48,6 +59,10 @@
                 <ion-icon name="star" item-start></ion-icon>
                 {{this.memberProvider.member.position}}
               </ion-item>
+              <ion-item>
+                <ion-icon name="people" item-start></ion-icon>
+                {{this.memberProvider.member.agency_no}} (Agency Code, eg: ABC12345)
+              </ion-item>
             </ion-list></accordion>
           <accordion title="Event Perferences">
               <ion-item>
@@ -58,7 +73,7 @@
                 <ion-icon name="shirt" item-start></ion-icon>
                 {{this.memberProvider.member.shirt_size}}
               </ion-item>
-              <button ion-item full color="primary" (click)="goToEventPerferences()"> 
+              <button ion-item full color="primary" (click)="goToEventPerferences()">
                 <ion-icon name="create" item-start></ion-icon>
                 <ion-label>Update Default Event Perferences</ion-label>
               </button>
@@ -80,7 +95,7 @@
             <!-- <button ion-item (click)="goToProfile()">
               <ion-label>View Membership Profile</ion-label>
             </button>
-            <button ion-item (click)="goToEventPerferences()"> 
+            <button ion-item (click)="goToEventPerferences()">
               <ion-label>Update Default Event Perferences</ion-label>
             </button>
             <button ion-item (click)="goToUpdatePassword()">

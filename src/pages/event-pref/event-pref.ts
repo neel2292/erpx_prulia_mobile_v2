@@ -25,7 +25,8 @@ export class EventPrefPage {
   };
   acknowledgement: boolean = false;
   mode: any = "New"
-  	constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider, public eventProvider: PruliaEventProvider,
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider, public eventProvider: PruliaEventProvider,
   		public alertCtrl: AlertController, public toastCtrl: ToastController, private events:Events, public viewCtrl: ViewController) {
 		  this.member = Object.assign({}, navParams.get('value'));
       this.mode = navParams.get('mode');
@@ -39,7 +40,6 @@ export class EventPrefPage {
       }
   }
   saveEventPref(){
-  	console.log(this.member);
   	let that = this;
   	this.events.publish('loading:start', 'Saving...');
     switch(this.mode){
@@ -61,20 +61,20 @@ export class EventPrefPage {
           break;
         case "Update":
           this.eventProvider.update_event_registration(this.member, function(data){
-            
+
             let toast = that._createToast('Registration was update successfully');
             that.events.publish('event:update', function(){
               that.events.publish('loading:end');
               that.dismiss();
               toast.present();
             });
-            
+
           }, function(error){
             that._displayError(error);
           })
           break;
-        case "New": 
-          if(this.acknowledgement){ 
+        case "New":
+          if(this.acknowledgement){
             this.eventProvider.create_event_registration({
               "member": that.memberProvider.member.name,
               "member_name": that.memberProvider.member.full_name,
@@ -83,7 +83,7 @@ export class EventPrefPage {
               "shirt": this.member.shirt_size,
               "accomodation" : this.member.accomodation
             }, function(data){
-              
+
               let toast = that._createToast('Registration was update successfully');
               that.events.publish('event:update', function(){
                 that.events.publish('loading:end');
@@ -98,7 +98,7 @@ export class EventPrefPage {
           }
           break;
     }
-  	
+
   }
 
   ionViewDidLoad() {

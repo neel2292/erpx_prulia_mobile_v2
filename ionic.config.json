@@ -1,17 +1,16 @@
 {
   "name": "prulia_member",
-  "app_id": "",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   },
+  "type": "ionic-angular",
   "proxies": [
     {
-      "path":"/api/",
+      "path": "/api/",
       "proxyUrl": "http://localhost:8000/api/"
     },
     {
-      "path":"/files/",
+      "path": "/files/",
       "proxyUrl": "http://localhost:8000/files/"
     }
   ]

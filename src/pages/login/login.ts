@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { TabsPage } from '../tabs/tabs';
@@ -20,7 +20,7 @@ import { CommonProvider } from '../../providers/common/common';
 export class LoginPage {
 	@ViewChild("username") username;
 	@ViewChild("password") password;
-	constructor(public navCtrl: NavController, public navParams: NavParams, 
+	constructor(public navCtrl: NavController, public navParams: NavParams,
 		private iab: InAppBrowser, private auth: AuthServiceProvider, public alertCtrl: AlertController,
 		private toastCtrl: ToastController, private events:Events, public common: CommonProvider) {
 	}
@@ -130,7 +130,7 @@ export class LoginPage {
 	            			this.events.publish('loading:end');
 	            			toast.present();
 	            		}
-						
+
 					},(error => {
 						console.log(error)
 						// let error_message = "";
@@ -150,7 +150,7 @@ export class LoginPage {
 						// if(error_message == ""){
 						// 	error_message = "Unable to send out email";
 						// }
-						
+
 						// if(error_message.indexOf('not found') >= 0){
 	            			let notFoundAlert = this.alertCtrl.create({
 									      title: "Error",
@@ -183,7 +183,7 @@ export class LoginPage {
 	         //    		}
 					})
 				)
-	            
+
 	          }
 	        }
 	      ]
@@ -232,7 +232,7 @@ export class LoginPage {
 	   //          			this.events.publish('loading:end');
 	   //          			toast.present();
 	   //          		}
-						
+
 				// 	},(error => {
 				// 		console.log(error)
 				// 		let alert = this.alertCtrl.create({
@@ -244,7 +244,7 @@ export class LoginPage {
 				// 	    alert.present();
 				// 	})
 				// )
-	            
+
 	   //        }
 	   //      }
 	   //    ]
@@ -297,7 +297,7 @@ export class LoginPage {
 	            			this.events.publish('loading:end');
 	            			toast.present();
 	            		}
-						
+
 					},(error => {
 						console.log(error)
 						let alert = this.alertCtrl.create({
@@ -309,7 +309,7 @@ export class LoginPage {
 					    alert.present();
 					})
 				)
-	            
+
 	          }
 	        }
 	      ]

@@ -7,10 +7,10 @@ webpackJsonp([0],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profile_profile__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_event__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__newsletter_newsletter__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__partner_partner__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_event__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__newsletter_newsletter__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__partner_partner__ = __webpack_require__(219);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -35,7 +35,7 @@ var TabsPage = (function () {
         this.tab5Root = __WEBPACK_IMPORTED_MODULE_5__partner_partner__["a" /* PartnerPage */];
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Profile" tabIcon="contact"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Event" tabIcon="ribbon"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="News" tabIcon="desktop"></ion-tab>\n  <ion-tab [root]="tab5Root" tabTitle="Partner" tabIcon="people"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/tabs/tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\tabs\tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Profile" tabIcon="contact"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Event" tabIcon="ribbon"></ion-tab>\n  <ion-tab [root]="tab4Root" tabTitle="News" tabIcon="desktop"></ion-tab>\n  <ion-tab [root]="tab5Root" tabTitle="Partner" tabIcon="people"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\tabs\tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -53,7 +53,7 @@ var TabsPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventPrefPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_event_prulia_event__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_events__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -104,7 +104,6 @@ var EventPrefPage = (function () {
         }
     }
     EventPrefPage.prototype.saveEventPref = function () {
-        console.log(this.member);
         var that = this;
         this.events.publish('loading:start', 'Saving...');
         switch (this.mode) {
@@ -197,8 +196,8 @@ var EventPrefPage = (function () {
         });
     };
     EventPrefPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-event-pref',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/event-pref/event-pref.html"*/'<!--\n  Generated template for the EventPrefPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n  	<ion-buttons start *ngIf="mode" [hidden]="mode===\'Profile\'">\n      <button ion-button (click)="dismiss()">Close</button>\n    </ion-buttons>\n    <ion-title>Event Perferences</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding *ngIf="member">\n	<form #formCtrl="ngForm" class="list-form">\n		<ion-list>\n		     <ion-item no-lines>\n		        <ion-label floating>Meal Perference</ion-label>\n		        <ion-select [(ngModel)]="member.meal_option" name="meal_option" required>\n		            <ion-option value="Non-Vegetarian">Non-Vegetarian</ion-option>\n		            <ion-option value="Vegetarian">Vegetarian</ion-option>\n		        </ion-select>\n		     </ion-item>\n		     <ion-item no-lines [hidden]="mode === \'New\' && member.display_shirt_option == \'0\'">\n		        <ion-label floating>Shirt Size Perference</ion-label>\n		        <ion-select [(ngModel)]="member.shirt_size" name="shirt_size" required>\n		            <ion-option value="XS">Extra Small (XS)</ion-option>\n		            <ion-option value="S">Small (S)</ion-option>\n		            <ion-option value="M">Medium (M)</ion-option>\n		            <ion-option value="L">Large (L)</ion-option>\n		            <ion-option value="XL">Extra Large (XL)</ion-option>\n		            <ion-option value="XXL">Double Extra Large (XXL)</ion-option>\n		            <ion-option value="XXXL">Triple Extra Large (XXXL)</ion-option>\n		        </ion-select>\n		     </ion-item>\n		     <ion-item no-lines [hidden]="member.display_accomodation_option != 1">\n		        <ion-label floating>Accomodation Needed</ion-label>\n		        <ion-select [(ngModel)]="member.accomodation" name="accomodation" required>\n		            <ion-option value="Yes">Yes</ion-option>\n		            <ion-option value="No">No</ion-option>\n		        </ion-select>\n		     </ion-item>\n	  </ion-list>\n	  <div [hidden]="mode !== \'New\'">\n	  	<p>I declare that the information given herein are correct to the best of my knowledge and belief. </p> \n		<p>I agree to be govern by the rules and regulations of PRULIA as they now exist as they may hereafter be altered.</p>\n		<p>I hereby authorize Prudential Assurance Malaysia Berhad to debit by commission account for the registration of the event</p>\n		<p><ion-checkbox [(ngModel)]="acknowledgement" name="acknowledgement"></ion-checkbox>  I agree the statement above</p>\n	  </div>\n	</form>\n	<div>\n      <button ion-button icon-start block color="secondary" tappable (click)="saveEventPref()">\n        <ion-icon name="save"></ion-icon>\n        SAVE\n      </button>\n\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/event-pref/event-pref.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-event-pref',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\event-pref\event-pref.html"*/'<!--\n  Generated template for the EventPrefPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n  	<ion-buttons start *ngIf="mode" [hidden]="mode===\'Profile\'">\n      <button ion-button (click)="dismiss()">Close</button>\n    </ion-buttons>\n    <ion-title>Event Perferences</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding *ngIf="member">\n	<form #formCtrl="ngForm" class="list-form">\n		<ion-list>\n		     <ion-item no-lines>\n		        <ion-label floating>Meal Perference</ion-label>\n		        <ion-select [(ngModel)]="member.meal_option" name="meal_option" required>\n		            <ion-option value="Non-Vegetarian">Non-Vegetarian</ion-option>\n		            <ion-option value="Vegetarian">Vegetarian</ion-option>\n		        </ion-select>\n		     </ion-item>\n		     <ion-item no-lines [hidden]="mode === \'New\' && member.display_shirt_option == \'0\'">\n		        <ion-label floating>Shirt Size Perference</ion-label>\n		        <ion-select [(ngModel)]="member.shirt_size" name="shirt_size" required>\n		            <ion-option value="XS">Extra Small (XS)</ion-option>\n		            <ion-option value="S">Small (S)</ion-option>\n		            <ion-option value="M">Medium (M)</ion-option>\n		            <ion-option value="L">Large (L)</ion-option>\n		            <ion-option value="XL">Extra Large (XL)</ion-option>\n		            <ion-option value="XXL">Double Extra Large (XXL)</ion-option>\n		            <ion-option value="XXXL">Triple Extra Large (XXXL)</ion-option>\n		        </ion-select>\n		     </ion-item>\n		     <ion-item no-lines [hidden]="member.display_accomodation_option != 1">\n		        <ion-label floating>Accomodation Needed</ion-label>\n		        <ion-select [(ngModel)]="member.accomodation" name="accomodation" required>\n		            <ion-option value="Yes">Yes</ion-option>\n		            <ion-option value="No">No</ion-option>\n		        </ion-select>\n		     </ion-item>\n	  </ion-list>\n	  <div [hidden]="mode !== \'New\'">\n	  	<p>I declare that the information given herein are correct to the best of my knowledge and belief. </p> \n		<p>I agree to be govern by the rules and regulations of PRULIA as they now exist as they may hereafter be altered.</p>\n		<p>I hereby authorize Prudential Assurance Malaysia Berhad to debit by commission account for the registration of the event</p>\n		<p><ion-checkbox [(ngModel)]="acknowledgement" name="acknowledgement"></ion-checkbox>  I agree the statement above</p>\n	  </div>\n	</form>\n	<div>\n      <button ion-button icon-start block color="secondary" tappable (click)="saveEventPref()">\n        <ion-icon name="save"></ion-icon>\n        SAVE\n      </button>\n\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\event-pref\event-pref.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_prulia_event_prulia_event__["a" /* PruliaEventProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
@@ -249,7 +248,7 @@ var NavigationProvider = (function () {
         this.events.publish('navigate:logout');
     };
     NavigationProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__["a" /* Events */]])
     ], NavigationProvider);
     return NavigationProvider;
@@ -334,7 +333,7 @@ var PruliaHomeProvider = (function () {
         });
     };
     PruliaHomeProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__common_common__["a" /* CommonProvider */]])
     ], PruliaHomeProvider);
     return PruliaHomeProvider;
@@ -428,7 +427,7 @@ var PruliaNewsletterProvider = (function () {
         });
     };
     PruliaNewsletterProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__common_common__["a" /* CommonProvider */]])
     ], PruliaNewsletterProvider);
     return PruliaNewsletterProvider;
@@ -513,7 +512,7 @@ var PruliaBannerProvider = (function () {
         });
     };
     PruliaBannerProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__common_common__["a" /* CommonProvider */]])
     ], PruliaBannerProvider);
     return PruliaBannerProvider;
@@ -567,9 +566,10 @@ webpackEmptyAsyncContext.id = 167;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__member_detail_member_detail__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event_pref_event_pref__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__update_password_update_password__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_prulia_member_prulia_member__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_auth_service_auth_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__member_info_member_info__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__update_password_update_password__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_prulia_member_prulia_member__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_auth_service_auth_service__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -579,6 +579,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -606,11 +607,14 @@ var ProfilePage = (function () {
     ProfilePage.prototype.goToProfile = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__member_detail_member_detail__["a" /* MemberDetailPage */], { value: this.memberProvider.member });
     };
+    ProfilePage.prototype.goToMemberInfo = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__member_info_member_info__["a" /* MemberInfoPage */], { value: this.memberProvider.member, mode: "Profile" });
+    };
     ProfilePage.prototype.goToEventPerferences = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__event_pref_event_pref__["a" /* EventPrefPage */], { value: this.memberProvider.member, mode: "Profile" });
     };
     ProfilePage.prototype.goToUpdatePassword = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__update_password_update_password__["a" /* UpdatePasswordPage */], { value: this.memberProvider.member });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__update_password_update_password__["a" /* UpdatePasswordPage */], { value: this.memberProvider.member });
     };
     ProfilePage.prototype.logout = function () {
         this.auth.logout();
@@ -638,11 +642,11 @@ var ProfilePage = (function () {
         }));
     };
     ProfilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/profile/profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content fullscreen no-bounce class="bg-modal header-image" [ngStyle]="{\'background-image\': \'url(\' + this.memberProvider.member.profile_photo +\')\'}">\n    <div class="bler">\n\n    </div>\n    <div class="absolute">\n    <div class="main-content" text-wrap text-center>\n      <div class="align-mid">\n        <div class="circular" [ngStyle]="{\'background-image\': \'url(\' + this.memberProvider.member.profile_photo +\')\'}"></div>\n        <h2>{{this.memberProvider.member.full_name}}</h2>\n        <p>{{this.memberProvider.member.prudential_id}}</p>\n        <!-- <p class="profile-description">{{member.prudential_id}}</p> -->\n        <!-- <hr> -->\n        <br />\n\n        <ion-list no-lines>\n          <accordion title="Personal Information" [expanded]="this.profileExpand" (click)="hideList(\'Profile\')" >\n            <ion-list>\n              <ion-item>\n                <ion-icon name="card" item-start></ion-icon>\n                {{this.memberProvider.member.nric_number}}\n              </ion-item>\n              <ion-item>\n                <ion-icon [name]="this.memberProvider.member.gender == \'Male\' ? \'male\' : \'female\'" item-start></ion-icon>\n                {{this.memberProvider.member.gender}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="call" item-start></ion-icon>\n                {{this.memberProvider.member.cell_number}}\n              </ion-item>\n            </ion-list>\n          </accordion>\n          <accordion title="Prudential Information" [expanded]="this.eventExpand" (click)="hideList(\'event\')"><ion-list>\n              <ion-item>\n                <ion-icon name="briefcase" item-start></ion-icon>\n                {{this.memberProvider.member.branch}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="globe" item-start></ion-icon>\n                {{this.memberProvider.member.region}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="star" item-start></ion-icon>\n                {{this.memberProvider.member.position}}\n              </ion-item>\n            </ion-list></accordion>\n          <accordion title="Event Perferences">\n              <ion-item>\n                <ion-icon name="restaurant" item-start></ion-icon>\n                {{this.memberProvider.member.meal_option}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="shirt" item-start></ion-icon>\n                {{this.memberProvider.member.shirt_size}}\n              </ion-item>\n              <button ion-item full color="primary" (click)="goToEventPerferences()"> \n                <ion-icon name="create" item-start></ion-icon>\n                <ion-label>Update Default Event Perferences</ion-label>\n              </button>\n          </accordion>\n          <ion-item transparent>\n            <ion-grid class="grid" no-padding>\n              <ion-row>\n                <ion-col col-6>\n                  <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>\n                </ion-col>\n                <ion-col col-6>\n                  <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n          </ion-item>\n          <!-- <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>\n          <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion> -->\n            <!-- <button ion-item (click)="goToProfile()">\n              <ion-label>View Membership Profile</ion-label>\n            </button>\n            <button ion-item (click)="goToEventPerferences()"> \n              <ion-label>Update Default Event Perferences</ion-label>\n            </button>\n            <button ion-item (click)="goToUpdatePassword()">\n              <ion-label>Update Password</ion-label>\n            </button>\n            <button ion-item (click)="logout()">\n              <ion-label>Sign Out</ion-label>\n            </button> -->\n        </ion-list>\n      </div>\n    </div>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/profile/profile.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content fullscreen no-bounce class="bg-modal header-image" [ngStyle]="{\'background-image\': \'url(\' + this.memberProvider.member.profile_photo +\')\'}">\n    <div class="bler">\n\n    </div>\n    <div class="absolute">\n    <div class="main-content" text-wrap text-center>\n      <div class="align-mid">\n        <div class="circular" [ngStyle]="{\'background-image\': \'url(\' + this.memberProvider.member.profile_photo +\')\'}"></div>\n        <h2>{{this.memberProvider.member.full_name}}</h2>\n        <!-- <p class="profile-description">{{member.prudential_id}}</p> -->\n        <!-- <hr> -->\n        <br />\n\n        <ion-list no-lines>\n          <accordion title="Personal Information" [expanded]="this.profileExpand" (click)="hideList(\'Profile\')" >\n            <ion-list>\n              <ion-item>\n                <ion-icon name="card" item-start></ion-icon>\n                {{this.memberProvider.member.nric_number}}\n              </ion-item>\n              <ion-item>\n                <ion-icon [name]="this.memberProvider.member.gender == \'Male\' ? \'male\' : \'female\'" item-start></ion-icon>\n                {{this.memberProvider.member.gender}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="call" item-start></ion-icon>\n                {{this.memberProvider.member.cell_number}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="mail" item-start></ion-icon>\n                {{this.memberProvider.member.email}}\n              </ion-item>\n              <button ion-item full color="primary" (click)="goToMemberInfo()">\n                <ion-icon name="create" item-start></ion-icon>\n                <ion-label>Update Personal Information</ion-label>\n              </button>\n            </ion-list>\n          </accordion>\n          <accordion title="Prudential Information" [expanded]="this.eventExpand" (click)="hideList(\'event\')"><ion-list>\n              <ion-item>\n                <ion-icon name="person" item-start></ion-icon>\n                {{this.memberProvider.member.prudential_id}} (Agent ID, eg: 1234567)\n              </ion-item>\n              <ion-item>\n                <ion-icon name="briefcase" item-start></ion-icon>\n                {{this.memberProvider.member.branch}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="globe" item-start></ion-icon>\n                {{this.memberProvider.member.region}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="star" item-start></ion-icon>\n                {{this.memberProvider.member.position}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="people" item-start></ion-icon>\n                {{this.memberProvider.member.agency_no}} (Agency Code, eg: ABC12345)\n              </ion-item>\n            </ion-list></accordion>\n          <accordion title="Event Perferences">\n              <ion-item>\n                <ion-icon name="restaurant" item-start></ion-icon>\n                {{this.memberProvider.member.meal_option}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="shirt" item-start></ion-icon>\n                {{this.memberProvider.member.shirt_size}}\n              </ion-item>\n              <button ion-item full color="primary" (click)="goToEventPerferences()">\n                <ion-icon name="create" item-start></ion-icon>\n                <ion-label>Update Default Event Perferences</ion-label>\n              </button>\n          </accordion>\n          <ion-item transparent>\n            <ion-grid class="grid" no-padding>\n              <ion-row>\n                <ion-col col-6>\n                  <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>\n                </ion-col>\n                <ion-col col-6>\n                  <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n          </ion-item>\n          <!-- <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>\n          <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion> -->\n            <!-- <button ion-item (click)="goToProfile()">\n              <ion-label>View Membership Profile</ion-label>\n            </button>\n            <button ion-item (click)="goToEventPerferences()">\n              <ion-label>Update Default Event Perferences</ion-label>\n            </button>\n            <button ion-item (click)="goToUpdatePassword()">\n              <ion-label>Update Password</ion-label>\n            </button>\n            <button ion-item (click)="logout()">\n              <ion-label>Sign Out</ion-label>\n            </button> -->\n        </ion-list>\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\profile\profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__["a" /* Events */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
+            __WEBPACK_IMPORTED_MODULE_8__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__["a" /* Events */]])
     ], ProfilePage);
     return ProfilePage;
 }());
@@ -658,7 +662,7 @@ var ProfilePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemberDetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -687,8 +691,8 @@ var MemberDetailPage = (function () {
         console.log('ionViewDidLoad MemberDetailPage');
     };
     MemberDetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-member-detail',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/member-detail/member-detail.html"*/'<!--\n  Generated template for the MemberDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Member\'s Details</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="label-demo">\n\n  <ion-list>\n  	<ion-list-header>\n		Personnal Information\n	</ion-list-header>\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Name</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.full_name" name="name" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">NRIC Number</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.nric_number" name="nric_number" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Gender</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.gender" name="gender" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Contact</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.cell_number" name="cell_number" readonly></ion-input>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n  	<ion-list-header>\n		Prudential Information\n	</ion-list-header>\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Prudential ID</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.prudential_id" name="prudential_id" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Branch</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.branch" name="branch" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Region</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.region" name="region" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Position</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.position" name="position" readonly></ion-input>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/member-detail/member-detail.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-member-detail',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\member-detail\member-detail.html"*/'<!--\n  Generated template for the MemberDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Member\'s Details</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="label-demo">\n\n  <ion-list>\n  	<ion-list-header>\n		Personnal Information\n	</ion-list-header>\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Name</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.full_name" name="name" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">NRIC Number</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.nric_number" name="nric_number" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Gender</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.gender" name="gender" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Contact</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.cell_number" name="cell_number" readonly></ion-input>\n    </ion-item>\n  </ion-list>\n\n  <ion-list>\n  	<ion-list-header>\n		Prudential Information\n	</ion-list-header>\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Prudential ID</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.prudential_id" name="prudential_id" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Branch</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.branch" name="branch" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Region</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.region" name="region" readonly></ion-input>\n    </ion-item>\n\n    <ion-item no-lines>\n      <ion-label stacked color="primary">Position</ion-label>\n      <ion-input [(ngModel)]="memberProvider.member.position" name="position" readonly></ion-input>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\member-detail\member-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */]])
     ], MemberDetailPage);
@@ -700,6 +704,126 @@ var MemberDetailPage = (function () {
 /***/ }),
 
 /***/ 211:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemberInfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the MemberInfoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MemberInfoPage = (function () {
+    function MemberInfoPage(navCtrl, navParams, memberProvider, alertCtrl, toastCtrl, events, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.memberProvider = memberProvider;
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.events = events;
+        this.viewCtrl = viewCtrl;
+        this.member = {
+            full_name: '',
+            nric_number: '',
+            gender: '',
+            cell_number: '',
+            email: ''
+        };
+        this.acknowledgement = false;
+        this.mode = "New";
+        this.member = Object.assign({}, navParams.get('value'));
+        this.mode = navParams.get('mode');
+        Object.keys(this.member).forEach(function (key) {
+            if (this.member[key] === undefined) {
+                this.member[key] = '';
+            }
+        }.bind(this));
+    }
+    MemberInfoPage.prototype.saveMemberInfo = function () {
+        var that = this;
+        this.events.publish('loading:start', 'Saving...');
+        this.memberProvider.post_member_profile(this.member, function (data) {
+            var toast = that._createToast('Personal information was update successfully');
+            that.memberProvider.get_member_profile(true)
+                .then(function (data) {
+                that.events.publish('loading:end');
+                that.dismiss();
+                toast.present();
+            }, (function (error) {
+                that._displayError(error);
+            }));
+        }, function (error) {
+            that._displayError(error);
+        });
+    };
+    MemberInfoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MemberInfoPage');
+    };
+    MemberInfoPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    MemberInfoPage.prototype._displayAckError = function () {
+        console.log("No acknowledgement");
+        var alert = this.alertCtrl.create({
+            title: 'Alert',
+            subTitle: 'Please kindly acknowledge the declaration by clicking the checkbox in the form',
+            buttons: ['Dismiss']
+        });
+        this.events.publish('loading:end');
+        alert.present();
+    };
+    MemberInfoPage.prototype._displayError = function (error) {
+        console.log(error);
+        var alert = this.alertCtrl.create({
+            title: 'Error',
+            subTitle: 'Error in update',
+            buttons: ['Dismiss']
+        });
+        this.events.publish('loading:end');
+        alert.present();
+    };
+    MemberInfoPage.prototype._createToast = function (message) {
+        return this.toastCtrl.create({
+            message: message,
+            duration: 10000,
+            showCloseButton: true,
+            closeButtonText: 'OK',
+            position: 'bottom'
+        });
+    };
+    MemberInfoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-member-info',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\member-info\member-info.html"*/'<!--\n  Generated template for the EventPrefPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n  	<ion-buttons start *ngIf="mode" [hidden]="mode===\'Profile\'">\n      <button ion-button (click)="dismiss()">Close</button>\n    </ion-buttons>\n    <ion-title>Personal Information</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding *ngIf="member">\n	<form #formCtrl="ngForm" class="list-form">\n		<ion-list>\n      <ion-item no-lines>\n        <ion-label floating>Name</ion-label>\n        <ion-input [(ngModel)]="member.full_name" name="full_name" required type="text"></ion-input>\n      </ion-item>\n      <ion-item no-lines>\n        <ion-label floating>NRIC Number (eg: xxxx-xx-xxxx)</ion-label>\n        <ion-input [(ngModel)]="member.nric_number" name="nric_number" required type="text" placeholder="xxxx-xx-xxxx"></ion-input>\n      </ion-item>\n      <ion-item no-lines>\n        <ion-label floating>Gender</ion-label>\n        <ion-select [(ngModel)]="member.gender" name="gender" required>\n          <ion-option value="Male">Male</ion-option>\n          <ion-option value="Female">Female</ion-option>\n        </ion-select>\n       </ion-item>\n      <ion-item no-lines>\n        <ion-label floating>Mobile Number (eg: 601x xxx xxxx)</ion-label>\n        <ion-input [(ngModel)]="member.cell_number" name="cell_number" required type="number" placeholder="eg: 601x xxx xxxx"></ion-input>\n      </ion-item>\n      <ion-item no-lines>\n        <ion-label floating>Email</ion-label>\n        <ion-input [(ngModel)]="member.email" name="email" required type="email"></ion-input>\n      </ion-item>\n		     <!--<ion-item no-lines>-->\n		        <!--<ion-label floating>Meal Perference</ion-label>-->\n		        <!--<ion-select [(ngModel)]="member.meal_option" name="meal_option" required>-->\n		            <!--<ion-option value="Non-Vegetarian">Non-Vegetarian</ion-option>-->\n		            <!--<ion-option value="Vegetarian">Vegetarian</ion-option>-->\n		        <!--</ion-select>-->\n		     <!--</ion-item>-->\n		     <!--<ion-item no-lines [hidden]="mode === \'New\' && member.display_shirt_option == \'0\'">-->\n		        <!--<ion-label floating>Shirt Size Perference</ion-label>-->\n		        <!--<ion-select [(ngModel)]="member.shirt_size" name="shirt_size" required>-->\n		            <!--<ion-option value="XS">Extra Small (XS)</ion-option>-->\n		            <!--<ion-option value="S">Small (S)</ion-option>-->\n		            <!--<ion-option value="M">Medium (M)</ion-option>-->\n		            <!--<ion-option value="L">Large (L)</ion-option>-->\n		            <!--<ion-option value="XL">Extra Large (XL)</ion-option>-->\n		            <!--<ion-option value="XXL">Double Extra Large (XXL)</ion-option>-->\n		            <!--<ion-option value="XXXL">Triple Extra Large (XXXL)</ion-option>-->\n		        <!--</ion-select>-->\n		     <!--</ion-item>-->\n		     <!--<ion-item no-lines [hidden]="member.display_accomodation_option != 1">-->\n		        <!--<ion-label floating>Accomodation Needed</ion-label>-->\n		        <!--<ion-select [(ngModel)]="member.accomodation" name="accomodation" required>-->\n		            <!--<ion-option value="Yes">Yes</ion-option>-->\n		            <!--<ion-option value="No">No</ion-option>-->\n		        <!--</ion-select>-->\n		     <!--</ion-item>-->\n	  </ion-list>\n	  <div [hidden]="mode !== \'New\'">\n	  	<p>I declare that the information given herein are correct to the best of my knowledge and belief. </p>\n		<p>I agree to be govern by the rules and regulations of PRULIA as they now exist as they may hereafter be altered.</p>\n		<p>I hereby authorize Prudential Assurance Malaysia Berhad to debit by commission account for the registration of the event</p>\n		<p><ion-checkbox [(ngModel)]="acknowledgement" name="acknowledgement"></ion-checkbox>  I agree the statement above</p>\n	  </div>\n	</form>\n	<div>\n      <button ion-button icon-start block color="secondary" tappable (click)="saveMemberInfo()">\n        <ion-icon name="save"></ion-icon>\n        SAVE\n      </button>\n\n    </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\member-info\member-info.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+    ], MemberInfoPage);
+    return MemberInfoPage;
+}());
+
+//# sourceMappingURL=member-info.js.map
+
+/***/ }),
+
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -776,16 +900,16 @@ var UpdatePasswordPage = (function () {
         this.viewCtrl.dismiss();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("old_password"),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("old_password"),
         __metadata("design:type", Object)
     ], UpdatePasswordPage.prototype, "old_password", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("new_password"),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("new_password"),
         __metadata("design:type", Object)
     ], UpdatePasswordPage.prototype, "new_password", void 0);
     UpdatePasswordPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-update-password',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/update-password/update-password.html"*/'<!--\n  Generated template for the UpdatePasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Update Password</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<form #formCtrl="ngForm" class="list-form">\n		<ion-list>\n			<ion-item no-lines>\n		        <ion-label floating>Current Password</ion-label>\n		        <ion-input type="password" required #old_password></ion-input>\n		     </ion-item>\n		     <ion-item no-lines>\n		        <ion-label floating>New Password</ion-label>\n		        <ion-input type="password" required #new_password></ion-input>\n		     </ion-item> \n	  </ion-list>\n	</form>\n	<div>\n      <button ion-button icon-start block color="secondary" tappable (click)="updatePassword()">\n        <ion-icon name="save"></ion-icon>\n        Update Password\n      </button>\n\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/update-password/update-password.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-update-password',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\update-password\update-password.html"*/'<!--\n  Generated template for the UpdatePasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Update Password</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<form #formCtrl="ngForm" class="list-form">\n		<ion-list>\n			<ion-item no-lines>\n		        <ion-label floating>Current Password</ion-label>\n		        <ion-input type="password" required #old_password></ion-input>\n		     </ion-item>\n		     <ion-item no-lines>\n		        <ion-label floating>New Password</ion-label>\n		        <ion-input type="password" required #new_password></ion-input>\n		     </ion-item> \n	  </ion-list>\n	</form>\n	<div>\n      <button ion-button icon-start block color="secondary" tappable (click)="updatePassword()">\n        <ion-icon name="save"></ion-icon>\n        Update Password\n      </button>\n\n    </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\update-password\update-password.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__["a" /* Events */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
@@ -797,16 +921,16 @@ var UpdatePasswordPage = (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_event_prulia_event__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event_detail_event_detail__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event_detail_event_detail__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -875,8 +999,8 @@ var EventPage = (function () {
         }));
     };
     EventPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-event',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/event/event.html"*/'<!--\n  Generated template for the EventPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Event</ion-title>\n  </ion-navbar>\n    <!-- <ion-toolbar no-border-top>\n    <ion-searchbar color="primary"\n                   [(ngModel)]="queryText"\n                   (ionInput)="updateSchedule()"\n                   placeholder="Search">\n    </ion-searchbar>\n  </ion-toolbar> -->\n</ion-header>\n\n<ion-content class="event-page">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list [virtualScroll] = "eventProvider.listings" [hidden]="eventProvider.listings.length === 0">\n    	<ion-card *virtualItem="let listing" (click)="eventTapped(listing.name)" ion-item>\n        <div class="card_background" [ngStyle]="{\'background-image\': \'url(\' + listing.event_image +\')\'}">\n        </div>\n        <div class="registered" [hidden]="!listing.register">Registered</div>\n        <div class="open_registration" [hidden]="!(!listing.register && listing.event_status== \'Open For Registration\') && !(listing.event_status == \'Publish\' && listing.show_open_for_registration == 1)">Open for Registration</div>\n        <div class="close_registration" [hidden]="!(!listing.register && listing.event_status== \'Registration Closed\')">Registration Closed</div>\n        <div class="card_content">\n          <div class="event_image">\n            <img [src]="listing.event_image"  />\n          </div>\n          \n        </div>\n        <div class="description">\n          <h1 class="event_title">\n                {{listing.event_name}}\n            </h1>\n          <p class="event_subtitle">\n                {{listing.start_date_time | date: \'MMM d, y, h:mm a\'}} - \n                {{listing.start_date_time.getDate() == listing.end_date_time.getDate() ? (listing.end_date_time | date: \'h:mm a\' ) : (listing.end_date_time | date: \'MMM d, y, h:mm a\') }}\n                <br />\n                {{listing.venue}}\n            </p>\n        </div>\n	   </ion-card>\n\n  </ion-list>\n\n  <ion-list-header [hidden]="eventProvider.listings.length > 0">\n      No Events Found\n  </ion-list-header>\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/event/event.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-event',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\event\event.html"*/'<!--\n  Generated template for the EventPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Event</ion-title>\n  </ion-navbar>\n    <!-- <ion-toolbar no-border-top>\n    <ion-searchbar color="primary"\n                   [(ngModel)]="queryText"\n                   (ionInput)="updateSchedule()"\n                   placeholder="Search">\n    </ion-searchbar>\n  </ion-toolbar> -->\n</ion-header>\n\n<ion-content class="event-page">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list [virtualScroll] = "eventProvider.listings" [hidden]="eventProvider.listings.length === 0">\n    	<ion-card *virtualItem="let listing" (click)="eventTapped(listing.name)" ion-item>\n        <div class="card_background" [ngStyle]="{\'background-image\': \'url(\' + listing.event_image +\')\'}">\n        </div>\n        <div class="registered" [hidden]="!listing.register">Registered</div>\n        <div class="open_registration" [hidden]="!(!listing.register && listing.event_status== \'Open For Registration\') && !(listing.event_status == \'Publish\' && listing.show_open_for_registration == 1)">Open for Registration</div>\n        <div class="close_registration" [hidden]="!(!listing.register && listing.event_status== \'Registration Closed\')">Registration Closed</div>\n        <div class="card_content">\n          <div class="event_image">\n            <img [src]="listing.event_image"  />\n          </div>\n          \n        </div>\n        <div class="description">\n          <h1 class="event_title">\n                {{listing.event_name}}\n            </h1>\n          <p class="event_subtitle">\n                {{listing.start_date_time | date: \'MMM d, y, h:mm a\'}} - \n                {{listing.start_date_time.getDate() == listing.end_date_time.getDate() ? (listing.end_date_time | date: \'h:mm a\' ) : (listing.end_date_time | date: \'MMM d, y, h:mm a\') }}\n                <br />\n                {{listing.venue}}\n            </p>\n        </div>\n	   </ion-card>\n\n  </ion-list>\n\n  <ion-list-header [hidden]="eventProvider.listings.length > 0">\n      No Events Found\n  </ion-list-header>\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\event\event.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
             __WEBPACK_IMPORTED_MODULE_3__providers_prulia_event_prulia_event__["a" /* PruliaEventProvider */],
@@ -889,7 +1013,7 @@ var EventPage = (function () {
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -897,7 +1021,7 @@ var EventPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_pref_event_pref__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_member_prulia_member__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_member_prulia_member__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_prulia_event_prulia_event__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1027,12 +1151,12 @@ var EventDetailPage = (function () {
         confirm.present();
     };
     EventDetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-event-detail',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/event-detail/event-detail.html"*/'<!--\n  Generated template for the EventDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <!-- <ion-title *ngIf="eventProvider.listings[eventIter]" text-uppercase>{{eventProvider.listings[eventIter].event_name}}</ion-title> -->\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="event-det-page">\n  <div class="content" *ngIf="eventProvider.listings[eventIter]">\n      <div class="the-header">\n        <div class="background">\n          <div class="image_background" [ngStyle]="{\'background-image\': \'url(\' + eventProvider.listings[eventIter].event_image +\')\'}">\n          </div>\n          <img [src]="eventProvider.listings[eventIter].event_image"/>\n        </div>\n        <button ion-fab>\n          <ion-icon name="ribbon"></ion-icon>\n        </button>\n      </div>\n      <div class="the-content" padding >\n        <div class="transparent-bg">\n          <h1>{{eventProvider.listings[eventIter].event_name}}</h1>\n          \n          </div>\n      </div>\n      <div padding [innerHtml]="eventProvider.listings[eventIter].description"></div>\n      <div class="the-details">\n        <ion-list padding no-lines>\n          <ion-item text-wrap class="item item-trns">\n            <ion-icon name="time" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].start_date_time | date: \'MMM d, y, h:mm a\'}} - \n              {{eventProvider.listings[eventIter].start_date_time.getDate() == eventProvider.listings[eventIter].end_date_time.getDate() ? (eventProvider.listings[eventIter].end_date_time | date: \'h:mm a\') : (eventProvider.listings[eventIter].end_date_time | date: \'MMM d, y, h:mm a\') }}\n          </ion-item>\n          <ion-item text-wrap class="item item-trns">\n            <ion-icon name="pin" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].venue}}\n          </ion-item>\n           <div [hidden]="eventProvider.listings[eventIter].event_status!== \'Open For Registration\'"> \n            <button ion-button block [hidden]="eventProvider.listings[eventIter].register" (click)="register()">Register</button>\n          </div>\n          <ion-item text-wrap class="item item-trns" [hidden]="!eventProvider.listings[eventIter].register">\n            <ion-icon name="restaurant" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].meal_option}}\n          </ion-item>\n          <ion-item text-wrap class="item item-trns" [hidden]="!eventProvider.listings[eventIter].register || eventProvider.listings[eventIter].display_shirt_option == \'0\'">\n            <ion-icon name="shirt" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].shirt_size}}\n          </ion-item>\n          <ion-item text-wrap class="item item-trns" [hidden]="!eventProvider.listings[eventIter].register || eventProvider.listings[eventIter].display_accomodation_option == \'0\'">\n            <ion-icon name="home" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].accomodation}}\n          </ion-item>\n        </ion-list>\n          <!-- <h2 text-uppercase>{{eventProvider.listings[eventIter].event_name}}</h2>\n          <div padding [innerHtml]="eventProvider.listings[eventIter].description">\n          </div>\n          \n          <div class="event-content">\n                {{eventProvider.listings[eventIter].start_date_time | date: \'MMM d, y, h:mm: a\'}} - \n  			      	{{eventProvider.listings[eventIter].start_date_time.getDate() == eventProvider.listings[eventIter].end_date_time.getDate() ? (eventProvider.listings[eventIter].end_date_time | date: \'MMM d, y, h:mm a\') : (eventProvider.listings[eventIter].end_date_time | date: \'h:mm a\') }}\n          </div>\n          <h5 text-uppercase>VENUE</h5>\n          <div class="event-content">\n                {{eventProvider.listings[eventIter].venue}}\n          </div>\n          <h5 text-uppercase [hidden]="!eventProvider.listings[eventIter].register">MY EVENT PERFERENCES</h5>\n          <div class="event-content" [hidden]="!eventProvider.listings[eventIter].register">\n                <p>Shirt Size: {{eventProvider.listings[eventIter].shirt_size}}</p>\n                <p>Meal Option: {{eventProvider.listings[eventIter].meal_option}}</p>\n          </div>\n          <div [hidden]="eventProvider.listings[eventIter].open_for_registration!= 1" padding>\n            <button ion-button block [style.background]="ff6961" [hidden]="eventProvider.listings[eventIter].register" (click)="register()">Register</button>\n            <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="update()">Change Perference</button>\n            <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="cancel()">Withdraw Registration</button> \n          </div> -->\n        </div>\n    </div>\n</ion-content>'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/event-detail/event-detail.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-event-detail',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\event-detail\event-detail.html"*/'<!--\n  Generated template for the EventDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <!-- <ion-title *ngIf="eventProvider.listings[eventIter]" text-uppercase>{{eventProvider.listings[eventIter].event_name}}</ion-title> -->\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="event-det-page">\n  <div class="content" *ngIf="eventProvider.listings[eventIter]">\n      <div class="the-header">\n        <div class="background">\n          <div class="image_background" [ngStyle]="{\'background-image\': \'url(\' + eventProvider.listings[eventIter].event_image +\')\'}">\n          </div>\n          <img [src]="eventProvider.listings[eventIter].event_image"/>\n        </div>\n        <button ion-fab>\n          <ion-icon name="ribbon"></ion-icon>\n        </button>\n      </div>\n      <div class="the-content" padding >\n        <div class="transparent-bg">\n          <h1>{{eventProvider.listings[eventIter].event_name}}</h1>\n          \n          </div>\n      </div>\n      <div padding [innerHtml]="eventProvider.listings[eventIter].description"></div>\n      <div class="the-details">\n        <ion-list padding no-lines>\n          <ion-item text-wrap class="item item-trns">\n            <ion-icon name="time" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].start_date_time | date: \'MMM d, y, h:mm a\'}} - \n              {{eventProvider.listings[eventIter].start_date_time.getDate() == eventProvider.listings[eventIter].end_date_time.getDate() ? (eventProvider.listings[eventIter].end_date_time | date: \'h:mm a\') : (eventProvider.listings[eventIter].end_date_time | date: \'MMM d, y, h:mm a\') }}\n          </ion-item>\n          <ion-item text-wrap class="item item-trns">\n            <ion-icon name="pin" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].venue}}\n          </ion-item>\n           <div [hidden]="eventProvider.listings[eventIter].event_status!== \'Open For Registration\'"> \n            <button ion-button block [hidden]="eventProvider.listings[eventIter].register" (click)="register()">Register</button>\n          </div>\n          <ion-item text-wrap class="item item-trns" [hidden]="!eventProvider.listings[eventIter].register">\n            <ion-icon name="restaurant" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].meal_option}}\n          </ion-item>\n          <ion-item text-wrap class="item item-trns" [hidden]="!eventProvider.listings[eventIter].register || eventProvider.listings[eventIter].display_shirt_option == \'0\'">\n            <ion-icon name="shirt" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].shirt_size}}\n          </ion-item>\n          <ion-item text-wrap class="item item-trns" [hidden]="!eventProvider.listings[eventIter].register || eventProvider.listings[eventIter].display_accomodation_option == \'0\'">\n            <ion-icon name="home" item-start></ion-icon>\n            {{eventProvider.listings[eventIter].accomodation}}\n          </ion-item>\n        </ion-list>\n          <!-- <h2 text-uppercase>{{eventProvider.listings[eventIter].event_name}}</h2>\n          <div padding [innerHtml]="eventProvider.listings[eventIter].description">\n          </div>\n          \n          <div class="event-content">\n                {{eventProvider.listings[eventIter].start_date_time | date: \'MMM d, y, h:mm: a\'}} - \n  			      	{{eventProvider.listings[eventIter].start_date_time.getDate() == eventProvider.listings[eventIter].end_date_time.getDate() ? (eventProvider.listings[eventIter].end_date_time | date: \'MMM d, y, h:mm a\') : (eventProvider.listings[eventIter].end_date_time | date: \'h:mm a\') }}\n          </div>\n          <h5 text-uppercase>VENUE</h5>\n          <div class="event-content">\n                {{eventProvider.listings[eventIter].venue}}\n          </div>\n          <h5 text-uppercase [hidden]="!eventProvider.listings[eventIter].register">MY EVENT PERFERENCES</h5>\n          <div class="event-content" [hidden]="!eventProvider.listings[eventIter].register">\n                <p>Shirt Size: {{eventProvider.listings[eventIter].shirt_size}}</p>\n                <p>Meal Option: {{eventProvider.listings[eventIter].meal_option}}</p>\n          </div>\n          <div [hidden]="eventProvider.listings[eventIter].open_for_registration!= 1" padding>\n            <button ion-button block [style.background]="ff6961" [hidden]="eventProvider.listings[eventIter].register" (click)="register()">Register</button>\n            <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="update()">Change Perference</button>\n            <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="cancel()">Withdraw Registration</button> \n          </div> -->\n        </div>\n    </div>\n</ion-content>'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\event-detail\event-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_4__providers_prulia_event_prulia_event__["a" /* PruliaEventProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]])
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]])
     ], EventDetailPage);
     return EventDetailPage;
 }());
@@ -1041,17 +1165,17 @@ var EventDetailPage = (function () {
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_home_prulia_home__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_detail_home_detail__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_detail_home_detail__ = __webpack_require__(216);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1100,8 +1224,8 @@ var HomePage = (function () {
         // 
     };
     HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/home/home.html"*/'<<!-- ion-header>\n  <ion-navbar>\n    <ion-title>PRULIA Member App</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="home-page">\n	<div *ngIf="memberProvider.member" padding class="welcome_member">\n		<h1 >Welcome Back {{memberProvider.member.full_name}}</h1>\n	</div>\n\n	  <ion-list [virtualScroll] = "homeProvider.home_entries" [hidden]="homeProvider.home_entries.length === 0">\n	    	<ion-card *virtualItem="let home_entry" (click)="eventTapped(home_entry)" ion-item>\n		        <div class="home_background" [ngStyle]="{\'background-image\': \'url(\' + home_entry.image +\')\'}">\n		        </div>\n		        <div class="home_content" center>\n		          <div class="home_image">\n		            <img [src]="home_entry.image"  />\n		          </div>\n		          \n		        </div>\n		        <h1 class="home_title">\n		              {{home_entry.title}}\n		          </h1>\n		  	  </ion-card>\n	  </ion-list>\n\n	  <ion-list-header [hidden]="homeProvider.home_entries.length > 0">\n	      No Home Content setup\n	  </ion-list-header>\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/home/home.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\home\home.html"*/'<<!-- ion-header>\n  <ion-navbar>\n    <ion-title>PRULIA Member App</ion-title>\n  </ion-navbar>\n</ion-header> -->\n\n<ion-content class="home-page">\n	<div *ngIf="memberProvider.member" padding class="welcome_member">\n		<h1 >Welcome Back {{memberProvider.member.full_name}}</h1>\n	</div>\n\n	  <ion-list [virtualScroll] = "homeProvider.home_entries" [hidden]="homeProvider.home_entries.length === 0">\n	    	<ion-card *virtualItem="let home_entry" (click)="eventTapped(home_entry)" ion-item>\n		        <div class="home_background" [ngStyle]="{\'background-image\': \'url(\' + home_entry.image +\')\'}">\n		        </div>\n		        <div class="home_content" center>\n		          <div class="home_image">\n		            <img [src]="home_entry.image"  />\n		          </div>\n		          \n		        </div>\n		        <h1 class="home_title">\n		              {{home_entry.title}}\n		          </h1>\n		  	  </ion-card>\n	  </ion-list>\n\n	  <ion-list-header [hidden]="homeProvider.home_entries.length > 0">\n	      No Home Content setup\n	  </ion-list-header>\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_prulia_home_prulia_home__["a" /* PruliaHomeProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_events__["a" /* Events */]])
@@ -1113,7 +1237,7 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1157,8 +1281,8 @@ var HomeDetailPage = (function () {
         }
     };
     HomeDetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home-detail',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/home-detail/home-detail.html"*/'<!--\n  Generated template for the HomeDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{homeProvider.home_entries[homeEntriesIter].title}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n	<div class="content" *ngIf="homeProvider.home_entries[homeEntriesIter]">\n      <!-- <div class="the-header">\n        <div class="background">\n          <div class="image_background" [ngStyle]="{\'background-image\': \'url(\' + bannerProvider.home_entries[homeEntriesIter].image +\')\'}">\n          </div>\n          <img [src]="bannerProvider.home_entries[homeEntriesIter].image"/>\n        </div>\n        <button ion-fab>\n          <ion-icon name="people"></ion-icon>\n        </button>\n      </div> -->\n<!--       <div class="the-content" padding >\n          <h1 class="newsletter_title">\n		      {{homeProvider.home_entries[homeEntriesIter].title}}\n	  		</h1>\n      </div> -->\n      <div padding [innerHtml]="homeProvider.home_entries[homeEntriesIter].content"></div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/home-detail/home-detail.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-home-detail',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\home-detail\home-detail.html"*/'<!--\n  Generated template for the HomeDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{homeProvider.home_entries[homeEntriesIter].title}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n	<div class="content" *ngIf="homeProvider.home_entries[homeEntriesIter]">\n      <!-- <div class="the-header">\n        <div class="background">\n          <div class="image_background" [ngStyle]="{\'background-image\': \'url(\' + bannerProvider.home_entries[homeEntriesIter].image +\')\'}">\n          </div>\n          <img [src]="bannerProvider.home_entries[homeEntriesIter].image"/>\n        </div>\n        <button ion-fab>\n          <ion-icon name="people"></ion-icon>\n        </button>\n      </div> -->\n<!--       <div class="the-content" padding >\n          <h1 class="newsletter_title">\n		      {{homeProvider.home_entries[homeEntriesIter].title}}\n	  		</h1>\n      </div> -->\n      <div padding [innerHtml]="homeProvider.home_entries[homeEntriesIter].content"></div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\home-detail\home-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_home_prulia_home__["a" /* PruliaHomeProvider */]])
     ], HomeDetailPage);
@@ -1169,17 +1293,17 @@ var HomeDetailPage = (function () {
 
 /***/ }),
 
-/***/ 216:
+/***/ 217:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewsletterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_newsletter_prulia_newsletter__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__newsletter_detail_newsletter_detail__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__newsletter_detail_newsletter_detail__ = __webpack_require__(218);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1251,8 +1375,8 @@ var NewsletterPage = (function () {
         }));
     };
     NewsletterPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-newsletter',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/newsletter/newsletter.html"*/'<!--\n  Generated template for the NewsletterPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Newsletter</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="newsletter-page">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list [virtualScroll] = "newsletterProvider.newsletters"  [hidden]="newsletterProvider.newsletters.length === 0">\n      <ion-item *virtualItem="let newsletter" (click)="eventTapped(newsletter)" ion-item>\n        <ion-thumbnail item-start>\n        <ion-img [src]="newsletter.news_image"></ion-img>\n      </ion-thumbnail>\n        <h2 text-wrap>{{newsletter.title}}</h2>\n        <p>{{newsletter.publish_date | date: \'MMM d, y\'}}</p>\n      </ion-item>\n  </ion-list>\n\n  <ion-list-header [hidden]="newsletterProvider.newsletters.length > 0">\n      No Newsletter available\n  </ion-list-header>\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/newsletter/newsletter.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-newsletter',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\newsletter\newsletter.html"*/'<!--\n  Generated template for the NewsletterPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Newsletter</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="newsletter-page">\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-list [virtualScroll] = "newsletterProvider.newsletters"  [hidden]="newsletterProvider.newsletters.length === 0">\n      <ion-item *virtualItem="let newsletter" (click)="eventTapped(newsletter)" ion-item>\n        <ion-thumbnail item-start>\n        <ion-img [src]="newsletter.news_image"></ion-img>\n      </ion-thumbnail>\n        <h2 text-wrap>{{newsletter.title}}</h2>\n        <p>{{newsletter.publish_date | date: \'MMM d, y\'}}</p>\n      </ion-item>\n  </ion-list>\n\n  <ion-list-header [hidden]="newsletterProvider.newsletters.length > 0">\n      No Newsletter available\n  </ion-list-header>\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\newsletter\newsletter.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
             __WEBPACK_IMPORTED_MODULE_3__providers_prulia_newsletter_prulia_newsletter__["a" /* PruliaNewsletterProvider */],
@@ -1265,7 +1389,7 @@ var NewsletterPage = (function () {
 
 /***/ }),
 
-/***/ 217:
+/***/ 218:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1330,11 +1454,11 @@ var NewsletterDetailPage = (function () {
         this.appEvent.publish('loading:end');
     };
     NewsletterDetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-newsletter-detail',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/newsletter-detail/newsletter-detail.html"*/'<!--\n  Generated template for the NewsletterDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!-- <ion-title *ngIf="newsletterProvider.newsletters[newsletterIter]" text-uppercase>{{newsletterProvider.newsletters[newsletterIter].title}}</ion-title> -->\n  </ion-navbar>\n\n</ion-header>\n\n\n<!-- <ion-content>\n	<div class="newsletter_image">\n		<img [src]="newsletterProvider.newsletters[newsletterIter].news_image"  />\n	</div>\n	<div class="newsletter_content" padding>\n		<h1 class="newsletter_title">\n	      {{newsletterProvider.newsletters[newsletterIter].title}}\n  		</h1>\n  		<p class="newsletter_date">{{newsletterProvider.newsletters[newsletterIter].publish_date | date: \'MMM d, y\'}} </p>\n  </div>\n  <div padding [innerHtml]="newsletterProvider.newsletters[newsletterIter].content"></div>\n</ion-content> -->\n\n<ion-content>\n  <div class="content" *ngIf="newsletterProvider.newsletters[newsletterIter]">\n      <div class="the-header">\n        <div class="background">\n          <div class="image_background" [ngStyle]="{\'background-image\': \'url(\' + newsletterProvider.newsletters[newsletterIter].news_image +\')\'}">\n          </div>\n          <img [src]="newsletterProvider.newsletters[newsletterIter].news_image"/>\n        </div>\n        <button ion-fab>\n          <ion-icon name="desktop"></ion-icon>\n        </button>\n      </div>\n      <div class="the-content" padding >\n          <h1 class="newsletter_title">\n		      {{newsletterProvider.newsletters[newsletterIter].title}}\n	  		</h1>\n	  		<p class="newsletter_date">{{newsletterProvider.newsletters[newsletterIter].publish_date | date: \'MMM d, y\'}} </p>\n      </div>\n      <div padding [innerHtml]="newsletterProvider.newsletters[newsletterIter].content"></div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/newsletter-detail/newsletter-detail.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-newsletter-detail',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\newsletter-detail\newsletter-detail.html"*/'<!--\n  Generated template for the NewsletterDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!-- <ion-title *ngIf="newsletterProvider.newsletters[newsletterIter]" text-uppercase>{{newsletterProvider.newsletters[newsletterIter].title}}</ion-title> -->\n  </ion-navbar>\n\n</ion-header>\n\n\n<!-- <ion-content>\n	<div class="newsletter_image">\n		<img [src]="newsletterProvider.newsletters[newsletterIter].news_image"  />\n	</div>\n	<div class="newsletter_content" padding>\n		<h1 class="newsletter_title">\n	      {{newsletterProvider.newsletters[newsletterIter].title}}\n  		</h1>\n  		<p class="newsletter_date">{{newsletterProvider.newsletters[newsletterIter].publish_date | date: \'MMM d, y\'}} </p>\n  </div>\n  <div padding [innerHtml]="newsletterProvider.newsletters[newsletterIter].content"></div>\n</ion-content> -->\n\n<ion-content>\n  <div class="content" *ngIf="newsletterProvider.newsletters[newsletterIter]">\n      <div class="the-header">\n        <div class="background">\n          <div class="image_background" [ngStyle]="{\'background-image\': \'url(\' + newsletterProvider.newsletters[newsletterIter].news_image +\')\'}">\n          </div>\n          <img [src]="newsletterProvider.newsletters[newsletterIter].news_image"/>\n        </div>\n        <button ion-fab>\n          <ion-icon name="desktop"></ion-icon>\n        </button>\n      </div>\n      <div class="the-content" padding >\n          <h1 class="newsletter_title">\n		      {{newsletterProvider.newsletters[newsletterIter].title}}\n	  		</h1>\n	  		<p class="newsletter_date">{{newsletterProvider.newsletters[newsletterIter].publish_date | date: \'MMM d, y\'}} </p>\n      </div>\n      <div padding [innerHtml]="newsletterProvider.newsletters[newsletterIter].content"></div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\newsletter-detail\newsletter-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_newsletter_prulia_newsletter__["a" /* PruliaNewsletterProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */]])
     ], NewsletterDetailPage);
     return NewsletterDetailPage;
 }());
@@ -1343,7 +1467,7 @@ var NewsletterDetailPage = (function () {
 
 /***/ }),
 
-/***/ 218:
+/***/ 219:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1352,7 +1476,7 @@ var NewsletterDetailPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_banner_prulia_banner__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__partner_detail_partner_detail__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__partner_detail_partner_detail__ = __webpack_require__(220);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1419,8 +1543,8 @@ var PartnerPage = (function () {
         }));
     };
     PartnerPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-partner',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/partner/partner.html"*/'<!--\n  Generated template for the PartnerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Partner</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="partner-page">\n	<ion-refresher (ionRefresh)="doRefresh($event)">\n		<ion-refresher-content></ion-refresher-content>\n	</ion-refresher>\n\n	<ion-list [virtualScroll] = "bannerProvider.banners" [hidden]="bannerProvider.banners.length === 0">\n\n		<ion-card *virtualItem="let banner" (click)="eventTapped(banner)" ion-item>\n	        <div class="partner_background" [ngStyle]="{\'background-image\': \'url(\' + banner.image +\')\'}">\n	        </div>\n	        <div class="partner_content">\n	          <div class="partner_image">\n	            <img [src]="banner.image"  />\n	          </div>\n	          \n	        </div>\n	        <h1 class="partner_title">\n	              {{banner.banner_name}}\n	          </h1>\n		</ion-card>\n\n	</ion-list>\n\n	<ion-list-header [hidden]="bannerProvider.banners.length > 0">\n		No Partners offer found\n	</ion-list-header>\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/partner/partner.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-partner',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\partner\partner.html"*/'<!--\n  Generated template for the PartnerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Partner</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="partner-page">\n	<ion-refresher (ionRefresh)="doRefresh($event)">\n		<ion-refresher-content></ion-refresher-content>\n	</ion-refresher>\n\n	<ion-list [virtualScroll] = "bannerProvider.banners" [hidden]="bannerProvider.banners.length === 0">\n\n		<ion-card *virtualItem="let banner" (click)="eventTapped(banner)" ion-item>\n	        <div class="partner_background" [ngStyle]="{\'background-image\': \'url(\' + banner.image +\')\'}">\n	        </div>\n	        <div class="partner_content">\n	          <div class="partner_image">\n	            <img [src]="banner.image"  />\n	          </div>\n	          \n	        </div>\n	        <h1 class="partner_title">\n	              {{banner.banner_name}}\n	          </h1>\n		</ion-card>\n\n	</ion-list>\n\n	<ion-list-header [hidden]="bannerProvider.banners.length > 0">\n		No Partners offer found\n	</ion-list-header>\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\partner\partner.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_banner_prulia_banner__["a" /* PruliaBannerProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */]])
     ], PartnerPage);
@@ -1431,7 +1555,7 @@ var PartnerPage = (function () {
 
 /***/ }),
 
-/***/ 219:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1497,11 +1621,11 @@ var PartnerDetailPage = (function () {
         this.appEvent.publish('loading:end');
     };
     PartnerDetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-partner-detail',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/partner-detail/partner-detail.html"*/'<!--\n  Generated template for the PartnerDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <!-- <ion-title>PartnerDetail</ion-title> -->\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <div class="content" *ngIf="bannerProvider.banners[bannerIter]">\n      <div class="the-header">\n        <div class="background">\n          <div class="image_background" [ngStyle]="{\'background-image\': \'url(\' + bannerProvider.banners[bannerIter].image +\')\'}">\n          </div>\n          <img [src]="bannerProvider.banners[bannerIter].image"/>\n        </div>\n        <button ion-fab>\n          <ion-icon name="people"></ion-icon>\n        </button>\n      </div>\n      <div class="the-content" padding >\n          <h1 class="newsletter_title">\n		      {{bannerProvider.banners[bannerIter].banner_name}}\n	  		</h1>\n      </div>\n      <div padding [innerHtml]="bannerProvider.banners[bannerIter].content"></div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/partner-detail/partner-detail.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-partner-detail',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\partner-detail\partner-detail.html"*/'<!--\n  Generated template for the PartnerDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <!-- <ion-title>PartnerDetail</ion-title> -->\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <div class="content" *ngIf="bannerProvider.banners[bannerIter]">\n      <div class="the-header">\n        <div class="background">\n          <div class="image_background" [ngStyle]="{\'background-image\': \'url(\' + bannerProvider.banners[bannerIter].image +\')\'}">\n          </div>\n          <img [src]="bannerProvider.banners[bannerIter].image"/>\n        </div>\n        <button ion-fab>\n          <ion-icon name="people"></ion-icon>\n        </button>\n      </div>\n      <div class="the-content" padding >\n          <h1 class="newsletter_title">\n		      {{bannerProvider.banners[bannerIter].banner_name}}\n	  		</h1>\n      </div>\n      <div padding [innerHtml]="bannerProvider.banners[bannerIter].content"></div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\partner-detail\partner-detail.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_banner_prulia_banner__["a" /* PruliaBannerProvider */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_prulia_banner_prulia_banner__["a" /* PruliaBannerProvider */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__["a" /* Events */]])
     ], PartnerDetailPage);
     return PartnerDetailPage;
 }());
@@ -1510,14 +1634,14 @@ var PartnerDetailPage = (function () {
 
 /***/ }),
 
-/***/ 220:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabs_tabs__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(12);
@@ -1839,16 +1963,16 @@ var LoginPage = (function () {
         console.log('ionViewDidLoad LoginPage');
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("username"),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("username"),
         __metadata("design:type", Object)
     ], LoginPage.prototype, "username", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("password"),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("password"),
         __metadata("design:type", Object)
     ], LoginPage.prototype, "password", void 0);
     LoginPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-content class="animated fadeIn login auth-page">\n	<div padding class="login-content">\n\n    <!-- Logo -->\n    <div padding-horizontal text-center class="animated fadeInDown">\n      <div class="logo"></div>\n      <h5 ion-text class="title-secondary title">\n        PRULIA Membership App\n      </h5>\n    </div>\n    <br />\n    <!-- Login form -->\n    <form class="list-form" inset>\n      <ion-item>\n        <ion-label floating>\n          <ion-icon name="person" item-start class="title-secondary"></ion-icon>\n          Prudential ID\n        </ion-label>\n        <ion-input type="text" required #username ></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>\n          <ion-icon name="lock" item-start class="title-secondary"></ion-icon>\n          Password\n        </ion-label>\n        <ion-input type="password" required #password></ion-input>\n      </ion-item>\n    </form>\n    <p><br /></p>\n\n    <!-- <p text-right ion-text color="dark" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p> -->\n\n    <div>\n      <button ion-button icon-start block color="secondary" tappable (click)="login()">\n        <ion-icon name="log-in"></ion-icon>\n        SIGN IN\n      </button>\n\n      <button ion-button icon-start block color="primary" outline tappable (click)="forgotPass()">\n        First &amp; Forgot Password?\n      </button>\n\n      <!-- <button ion-button icon-start block color="primary" clear tappable (click)="openRegistrationPage()">\n        New here? &nbsp; <strong> Sign up</strong>\n      </button> -->\n\n    </div>\n\n\n    <!-- Other links -->\n    <!-- <div text-center margin-top>\n      <span ion-text color="dark" tappable (click)="openRegistrationPage()">New here? <strong>Sign up</strong></span>\n    </div> -->\n\n  </div>\n	<!-- <form (ngSubmit)="loginUser()" class="loginsection">\n		<img src="assets/imgs/Prulia-word-logo.png" style="display: block; width: 90%; height: auto; margin-left: auto; margin-right: auto;">\n		<ion-list>\n			<ion-item>\n		    	<ion-input type="text" [(ngModel)]="login.username" name="name" placeholder="Username" ></ion-input>\n		  	</ion-item>\n		  	<ion-item>\n		    	<ion-input type="password" [(ngModel)]="login.password" name="password" placeholder="Password"></ion-input>\n		  	</ion-item>\n		</ion-list>\n		<div class="spacer" style="height: 2em;"></div>\n		<button ion-button block color="primary" type="submit">Log in</button> \n	</form>\n	<button class="bottom" ion-button clear full color="primary" (click)="openRegistrationPage()" >Don\'t have an account? Sign up</button>  -->\n</ion-content>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/pages/login/login.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\login\login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-content class="animated fadeIn login auth-page">\n	<div padding class="login-content">\n\n    <!-- Logo -->\n    <div padding-horizontal text-center class="animated fadeInDown">\n      <div class="logo"></div>\n      <h5 ion-text class="title-secondary title">\n        PRULIA Membership App\n      </h5>\n    </div>\n    <br />\n    <!-- Login form -->\n    <form class="list-form" inset>\n      <ion-item>\n        <ion-label floating>\n          <ion-icon name="person" item-start class="title-secondary"></ion-icon>\n          Prudential ID\n        </ion-label>\n        <ion-input type="text" required #username ></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>\n          <ion-icon name="lock" item-start class="title-secondary"></ion-icon>\n          Password\n        </ion-label>\n        <ion-input type="password" required #password></ion-input>\n      </ion-item>\n    </form>\n    <p><br /></p>\n\n    <!-- <p text-right ion-text color="dark" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p> -->\n\n    <div>\n      <button ion-button icon-start block color="secondary" tappable (click)="login()">\n        <ion-icon name="log-in"></ion-icon>\n        SIGN IN\n      </button>\n\n      <button ion-button icon-start block color="primary" outline tappable (click)="forgotPass()">\n        First &amp; Forgot Password?\n      </button>\n\n      <!-- <button ion-button icon-start block color="primary" clear tappable (click)="openRegistrationPage()">\n        New here? &nbsp; <strong> Sign up</strong>\n      </button> -->\n\n    </div>\n\n\n    <!-- Other links -->\n    <!-- <div text-center margin-top>\n      <span ion-text color="dark" tappable (click)="openRegistrationPage()">New here? <strong>Sign up</strong></span>\n    </div> -->\n\n  </div>\n	<!-- <form (ngSubmit)="loginUser()" class="loginsection">\n		<img src="assets/imgs/Prulia-word-logo.png" style="display: block; width: 90%; height: auto; margin-left: auto; margin-right: auto;">\n		<ion-list>\n			<ion-item>\n		    	<ion-input type="text" [(ngModel)]="login.username" name="name" placeholder="Username" ></ion-input>\n		  	</ion-item>\n		  	<ion-item>\n		    	<ion-input type="password" [(ngModel)]="login.password" name="password" placeholder="Password"></ion-input>\n		  	</ion-item>\n		</ion-list>\n		<div class="spacer" style="height: 2em;"></div>\n		<button ion-button block color="primary" type="submit">Log in</button> \n	</form>\n	<button class="bottom" ion-button clear full color="primary" (click)="openRegistrationPage()" >Don\'t have an account? Sign up</button>  -->\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -1861,13 +1985,13 @@ var LoginPage = (function () {
 
 /***/ }),
 
-/***/ 222:
+/***/ 224:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(246);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1875,154 +1999,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 244:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_detail_home_detail__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_profile_profile__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_member_detail_member_detail__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_event_pref_event_pref__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_update_password_update_password__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_event_event__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_event_detail_event_detail__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_newsletter_newsletter__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_newsletter_detail_newsletter_detail__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_partner_partner__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_partner_detail_partner_detail__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_in_app_browser__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_auth_service_auth_service__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_common_common__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_prulia_member_prulia_member__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_navigation_navigation__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_prulia_event_prulia_event__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_prulia_newsletter_prulia_newsletter__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_accordion_accordion__ = __webpack_require__(303);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_prulia_banner_prulia_banner__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_prulia_home_prulia_home__ = __webpack_require__(110);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var AppModule = (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_detail_home_detail__["a" /* HomeDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_profile_profile__["a" /* ProfilePage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_member_detail_member_detail__["a" /* MemberDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_event_pref_event_pref__["a" /* EventPrefPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_update_password_update_password__["a" /* UpdatePasswordPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_event_event__["a" /* EventPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_event_detail_event_detail__["a" /* EventDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_newsletter_newsletter__["a" /* NewsletterPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_newsletter_detail_newsletter_detail__["a" /* NewsletterDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_29__components_accordion_accordion__["a" /* AccordionComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_partner_partner__["a" /* PartnerPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_partner_detail_partner_detail__["a" /* PartnerDetailPage */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
-                    links: []
-                }),
-                __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["a" /* IonicStorageModule */].forRoot()
-            ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicApp */]],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_detail_home_detail__["a" /* HomeDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_profile_profile__["a" /* ProfilePage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_member_detail_member_detail__["a" /* MemberDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_event_pref_event_pref__["a" /* EventPrefPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_update_password_update_password__["a" /* UpdatePasswordPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_event_event__["a" /* EventPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_event_detail_event_detail__["a" /* EventDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_newsletter_newsletter__["a" /* NewsletterPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_newsletter_detail_newsletter_detail__["a" /* NewsletterDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_partner_partner__["a" /* PartnerPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_partner_detail_partner_detail__["a" /* PartnerDetailPage */]
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_22__ionic_native_in_app_browser__["a" /* InAppBrowser */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_23__providers_auth_service_auth_service__["a" /* AuthServiceProvider */],
-                __WEBPACK_IMPORTED_MODULE_24__providers_common_common__["a" /* CommonProvider */],
-                __WEBPACK_IMPORTED_MODULE_25__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
-                __WEBPACK_IMPORTED_MODULE_26__providers_navigation_navigation__["a" /* NavigationProvider */],
-                __WEBPACK_IMPORTED_MODULE_27__providers_prulia_event_prulia_event__["a" /* PruliaEventProvider */],
-                __WEBPACK_IMPORTED_MODULE_28__providers_prulia_newsletter_prulia_newsletter__["a" /* PruliaNewsletterProvider */],
-                __WEBPACK_IMPORTED_MODULE_30__providers_prulia_banner_prulia_banner__["a" /* PruliaBannerProvider */],
-                __WEBPACK_IMPORTED_MODULE_31__providers_prulia_home_prulia_home__["a" /* PruliaHomeProvider */]
-            ]
-        })
-    ], AppModule);
-    return AppModule;
-}());
-
-//# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 28:
+/***/ 23:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2105,13 +2082,168 @@ var PruliaMemberProvider = (function () {
         });
     };
     PruliaMemberProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__common_common__["a" /* CommonProvider */]])
     ], PruliaMemberProvider);
     return PruliaMemberProvider;
 }());
 
 //# sourceMappingURL=prulia-member.js.map
+
+/***/ }),
+
+/***/ 246:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_text_mask__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_text_mask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_text_mask__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_detail_home_detail__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_profile_profile__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_member_detail_member_detail__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_event_pref_event_pref__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_member_info_member_info__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_update_password_update_password__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_event_event__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_event_detail_event_detail__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_newsletter_newsletter__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_newsletter_detail_newsletter_detail__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_partner_partner__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_partner_detail_partner_detail__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_in_app_browser__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_auth_service_auth_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_common_common__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_prulia_member_prulia_member__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_navigation_navigation__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_prulia_event_prulia_event__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_prulia_newsletter_prulia_newsletter__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_accordion_accordion__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_prulia_banner_prulia_banner__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_prulia_home_prulia_home__ = __webpack_require__(110);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_home_detail_home_detail__["a" /* HomeDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_profile_profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_member_detail_member_detail__["a" /* MemberDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_event_pref_event_pref__["a" /* EventPrefPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_member_info_member_info__["a" /* MemberInfoPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_update_password_update_password__["a" /* UpdatePasswordPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_event_event__["a" /* EventPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_event_detail_event_detail__["a" /* EventDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_newsletter_newsletter__["a" /* NewsletterPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_newsletter_detail_newsletter_detail__["a" /* NewsletterDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_31__components_accordion_accordion__["a" /* AccordionComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_partner_partner__["a" /* PartnerPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_partner_detail_partner_detail__["a" /* PartnerDetailPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["BrowserModule"],
+                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                    links: []
+                }),
+                __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_6_angular2_text_mask__["TextMaskModule"]
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_home_detail_home_detail__["a" /* HomeDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_profile_profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_member_detail_member_detail__["a" /* MemberDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_event_pref_event_pref__["a" /* EventPrefPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_member_info_member_info__["a" /* MemberInfoPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_update_password_update_password__["a" /* UpdatePasswordPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_event_event__["a" /* EventPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_event_detail_event_detail__["a" /* EventDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_newsletter_newsletter__["a" /* NewsletterPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_newsletter_detail_newsletter_detail__["a" /* NewsletterDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_partner_partner__["a" /* PartnerPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_partner_detail_partner_detail__["a" /* PartnerDetailPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_24__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_25__providers_auth_service_auth_service__["a" /* AuthServiceProvider */],
+                __WEBPACK_IMPORTED_MODULE_26__providers_common_common__["a" /* CommonProvider */],
+                __WEBPACK_IMPORTED_MODULE_27__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
+                __WEBPACK_IMPORTED_MODULE_28__providers_navigation_navigation__["a" /* NavigationProvider */],
+                __WEBPACK_IMPORTED_MODULE_29__providers_prulia_event_prulia_event__["a" /* PruliaEventProvider */],
+                __WEBPACK_IMPORTED_MODULE_30__providers_prulia_newsletter_prulia_newsletter__["a" /* PruliaNewsletterProvider */],
+                __WEBPACK_IMPORTED_MODULE_32__providers_prulia_banner_prulia_banner__["a" /* PruliaBannerProvider */],
+                __WEBPACK_IMPORTED_MODULE_33__providers_prulia_home_prulia_home__["a" /* PruliaHomeProvider */]
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
 
 /***/ }),
 
@@ -2173,11 +2305,11 @@ var CommonProvider = (function () {
         return this.get_service_endpoint() + URL;
     };
     CommonProvider.prototype.get_service_endpoint = function () {
-        // return "";
-        return "http://103.253.146.122";
+        return "http://167.99.77.197:8000";
+        // return "http://103.253.146.122";
     };
     CommonProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
     ], CommonProvider);
     return CommonProvider;
@@ -2187,7 +2319,7 @@ var CommonProvider = (function () {
 
 /***/ }),
 
-/***/ 294:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2199,7 +2331,7 @@ var CommonProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_auth_service_auth_service__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_navigation_navigation__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2234,7 +2366,7 @@ var MyApp = (function () {
             splashScreen.hide();
             _this.presentLoading("Loading...");
             var args = ['GET', 'http://103.253.146.122'];
-            cordova.exec(null, null, 'WKWebViewSyncCookies', 'sync', args);
+            //cordova.exec(null, null, 'WKWebViewSyncCookies', 'sync', args);
             // WKWebViewSync.sync(args);
             if (localStorage.session_id) {
                 auth.set_sid_cookie();
@@ -2273,11 +2405,11 @@ var MyApp = (function () {
         this.loader.dismiss();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
     ], MyApp.prototype, "rootNav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */],
             __WEBPACK_IMPORTED_MODULE_8__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_9__providers_navigation_navigation__["a" /* NavigationProvider */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
@@ -2289,7 +2421,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 303:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2334,30 +2466,30 @@ var AccordionComponent = (function () {
         // }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("cc"),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("cc"),
         __metadata("design:type", Object)
     ], AccordionComponent.prototype, "cardContent", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])('title'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('title'),
         __metadata("design:type", String)
     ], AccordionComponent.prototype, "title", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])('expanded'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('expanded'),
         __metadata("design:type", Boolean)
     ], AccordionComponent.prototype, "accordionExapanded", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])('expandable'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('expandable'),
         __metadata("design:type", Boolean)
     ], AccordionComponent.prototype, "expandable", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])('icon'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('icon'),
         __metadata("design:type", String)
     ], AccordionComponent.prototype, "icon", void 0);
     AccordionComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'accordion',template:/*ion-inline-start:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/components/accordion/accordion.html"*/'<!-- Generated template for the AccordionComponent component -->\n<ion-card>\n  <ion-card-header (click)="toggleAccordion()">\n    <ion-list>\n      <ion-item color="primary">\n        <button ion-button  icon-only item-right color="primary">\n          <ion-icon color="light" [name]="!this.icon ? this.accordionExapanded === true ? \'close\' : \'add\' : this.icon"></ion-icon>\n        </button>\n        {{ title }}\n      </ion-item>\n    </ion-list>\n  </ion-card-header>\n  <ion-card-content #cc [class]="this.expandable && this.accordionExapanded === true ? \'showAccordion\' : \'hideAccordion\'">\n    <ng-content></ng-content>\n  </ion-card-content>\n</ion-card>\n'/*ion-inline-end:"/Users/saptcctechnical/Documents/Liang's Folder/workspace/myApp/prulia_member/src/components/accordion/accordion.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'accordion',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\components\accordion\accordion.html"*/'<!-- Generated template for the AccordionComponent component -->\n<ion-card>\n  <ion-card-header (click)="toggleAccordion()">\n    <ion-list>\n      <ion-item color="primary">\n        <button ion-button  icon-only item-right color="primary">\n          <ion-icon color="light" [name]="!this.icon ? this.accordionExapanded === true ? \'close\' : \'add\' : this.icon"></ion-icon>\n        </button>\n        {{ title }}\n      </ion-item>\n    </ion-list>\n  </ion-card-header>\n  <ion-card-content #cc [class]="this.expandable && this.accordionExapanded === true ? \'showAccordion\' : \'hideAccordion\'">\n    <ng-content></ng-content>\n  </ion-card-content>\n</ion-card>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\components\accordion\accordion.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]])
     ], AccordionComponent);
     return AccordionComponent;
 }());
@@ -2494,7 +2626,7 @@ var AuthServiceProvider = (function () {
             "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
     };
     AuthServiceProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__common_common__["a" /* CommonProvider */],
             __WEBPACK_IMPORTED_MODULE_3__providers_navigation_navigation__["a" /* NavigationProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* ToastController */]])
     ], AuthServiceProvider);
@@ -2621,7 +2753,7 @@ var PruliaEventProvider = (function () {
         });
     };
     PruliaEventProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__common_common__["a" /* CommonProvider */]])
     ], PruliaEventProvider);
     return PruliaEventProvider;
@@ -2631,5 +2763,5 @@ var PruliaEventProvider = (function () {
 
 /***/ })
 
-},[222]);
+},[224]);
 //# sourceMappingURL=main.js.map
