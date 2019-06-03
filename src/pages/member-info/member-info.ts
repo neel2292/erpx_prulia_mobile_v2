@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, AlertController, ToastController } from 'ionic-angular';
-import { PruliaMemberProvider } from "../../providers/prulia-member/prulia-member";
+import {Component} from '@angular/core';
+import {NavController, NavParams, ViewController, AlertController, ToastController} from 'ionic-angular';
+import {PruliaMemberProvider} from "../../providers/prulia-member/prulia-member";
 import {Events} from "ionic-angular/util/events";
 
 /**
@@ -25,31 +25,33 @@ export class MemberInfoPage {
   mode: any = "New";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider,
-  		public alertCtrl: AlertController, public toastCtrl: ToastController, private events:Events, public viewCtrl: ViewController) {
-		  this.member = Object.assign({}, navParams.get('value'));
-      this.mode = navParams.get('mode');
+              public alertCtrl: AlertController, public toastCtrl: ToastController, private events: Events, public viewCtrl: ViewController) {
+    this.member = Object.assign({}, navParams.get('value'));
+    this.mode = navParams.get('mode');
 
 
-      Object.keys(this.member).forEach(function (key) {
-        if (this.member[key] === undefined) { this.member[key] = ''; }
-      }.bind(this));
+    Object.keys(this.member).forEach(function (key) {
+      if (this.member[key] === undefined) {
+        this.member[key] = '';
+      }
+    }.bind(this));
   }
 
   saveMemberInfo() {
     let that = this;
     this.events.publish('loading:start', 'Saving...');
-    this.memberProvider.post_member_profile(this.member, function(data){
+    this.memberProvider.post_member_profile(this.member, function (data) {
       let toast = that._createToast('Personal information was update successfully');
       that.memberProvider.get_member_profile(true)
         .then(data => {
-          that.events.publish('loading:end');
-          that.dismiss();
-          toast.present();
-        },(error => {
-          that._displayError(error);
-        })
-      )
-    }, function(error){
+            that.events.publish('loading:end');
+            that.dismiss();
+            toast.present();
+          }, (error => {
+            that._displayError(error);
+          })
+        )
+    }, function (error) {
       that._displayError(error);
     })
   }
@@ -62,7 +64,7 @@ export class MemberInfoPage {
     this.viewCtrl.dismiss();
   }
 
-  _displayAckError(){
+  _displayAckError() {
     console.log("No acknowledgement");
     let alert = this.alertCtrl.create({
       title: 'Alert',
@@ -73,7 +75,7 @@ export class MemberInfoPage {
     alert.present();
   }
 
-  _displayError(error){
+  _displayError(error) {
     console.log(error);
     let alert = this.alertCtrl.create({
       title: 'Error',
@@ -84,13 +86,13 @@ export class MemberInfoPage {
     alert.present();
   }
 
-  _createToast(message){
+  _createToast(message) {
     return this.toastCtrl.create({
-              message: message,
-              duration: 10000,
-              showCloseButton: true,
-              closeButtonText: 'OK',
-              position: 'bottom'
-            });
+      message: message,
+      duration: 10000,
+      showCloseButton: true,
+      closeButtonText: 'OK',
+      position: 'bottom'
+    });
   }
 }

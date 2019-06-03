@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { PruliaMemberProvider } from "../../providers/prulia-member/prulia-member";
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import {PruliaMemberProvider} from "../../providers/prulia-member/prulia-member";
 
 /**
  * Generated class for the MemberDetailPage page.
@@ -15,11 +15,11 @@ import { PruliaMemberProvider } from "../../providers/prulia-member/prulia-membe
 })
 export class MemberDetailPage {
 
-  	constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider) {
-	}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider) {
+  }
 
-	ionViewDidLoad() {
-	    console.log('ionViewDidLoad MemberDetailPage');
-	}
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MemberDetailPage');
+  }
 
 }

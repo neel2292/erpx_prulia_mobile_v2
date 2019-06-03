@@ -1,10 +1,9 @@
-import { Component, Renderer, ElementRef } from '@angular/core';
-import { DatePipe } from '@angular/common';
-import { NavController, ModalController, AlertController, ToastController, NavParams, Platform } from 'ionic-angular';
-import { EventPrefPage } from '../event-pref/event-pref';
-import { PruliaMemberProvider } from '../../providers/prulia-member/prulia-member';
-import { PruliaEventProvider } from '../../providers/prulia-event/prulia-event';
-import { Events } from 'ionic-angular/util/events';
+import {Component, Renderer, ElementRef} from '@angular/core';
+import {NavController, ModalController, AlertController, ToastController, NavParams, Platform} from 'ionic-angular';
+import {EventPrefPage} from '../event-pref/event-pref';
+import {PruliaMemberProvider} from '../../providers/prulia-member/prulia-member';
+import {PruliaEventProvider} from '../../providers/prulia-event/prulia-event';
+import {Events} from 'ionic-angular/util/events';
 
 /**
  * Generated class for the EventDetailPage page.
@@ -19,59 +18,63 @@ import { Events } from 'ionic-angular/util/events';
 })
 export class EventDetailPage {
 
-  eventIter : any = 0;
+  eventIter: any = 0;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
-    public eventProvider: PruliaEventProvider, public memberProvider: PruliaMemberProvider, public alertCtrl: AlertController,
-    public appEvent: Events, public toastCtrl: ToastController, public renderer: Renderer, private elRef:ElementRef, public plt: Platform) {
+              public eventProvider: PruliaEventProvider, public memberProvider: PruliaMemberProvider, public alertCtrl: AlertController,
+              public appEvent: Events, public toastCtrl: ToastController, public renderer: Renderer, private elRef: ElementRef, public plt: Platform) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventDetailPage');
-    for(let i = 0; i < this.eventProvider.listings.length; i++){
-      if(this.eventProvider.listings[i].name === this.navParams.get('event_name')){
+    for (let i = 0; i < this.eventProvider.listings.length; i++) {
+      if (this.eventProvider.listings[i].name === this.navParams.get('event_name')) {
         this.eventIter = i;
         break;
       }
-      
+
       console.log(this.eventProvider.listings[this.eventIter]);
     }
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.appEvent.publish('loading:start', 'loading...');
     // if(this.plt.is('ios')){
-      let links = this.elRef.nativeElement.querySelectorAll('a');
-        links.forEach(function(element) {
-          this.renderer.listen(element, 'tap', (evt) => {
-            // console.log();
-            // evt.stopPropagation();
-            window.open(element.getAttribute('href'),'_system');
-            return false;
-          })
-        }, this);
+    let links = this.elRef.nativeElement.querySelectorAll('a');
+    links.forEach(function (element) {
+      this.renderer.listen(element, 'tap', (evt) => {
+        // console.log();
+        // evt.stopPropagation();
+        window.open(element.getAttribute('href'), '_system');
+        return false;
+      })
+    }, this);
     // }
     this.appEvent.publish('loading:end');
   }
 
-  register(){
+  register() {
     let tempEvent = Object.assign({}, this.eventProvider.listings[this.eventIter]);
     tempEvent.meal_option = this.memberProvider.member.meal_option;
-    if(tempEvent.display_shirt_option == 1){
+    if (tempEvent.display_shirt_option == 1) {
       tempEvent.shirt_size = this.memberProvider.member.shirt_size;
     }
-    if(tempEvent.display_accomodation_option == 1){
+    if (tempEvent.display_accomodation_option == 1) {
       tempEvent.accomodation = "Yes";
     }
-    let myModal = this.modalCtrl.create(EventPrefPage, { 'value': tempEvent, mode: 'New' });
+    let myModal = this.modalCtrl.create(EventPrefPage, {'value': tempEvent, mode: 'New'});
     myModal.present();
   }
 
-  update(){
-    let myModal = this.modalCtrl.create(EventPrefPage, { 'value': this.eventProvider.listings[this.eventIter], mode: 'Update' });
+  update() {
+    let myModal = this.modalCtrl.create(EventPrefPage, {
+      'value': this.eventProvider.listings[this.eventIter],
+      mode: 'Update'
+    });
     myModal.present();
   }
 
-  cancel(){
+  cancel() {
     let that = this;
     let confirm = this.alertCtrl.create({
       title: 'Withdraw Confirmation',
@@ -85,7 +88,7 @@ export class EventDetailPage {
             this.eventProvider.withdraw_event_registration({
               member: this.memberProvider.member.prudential_id,
               event: this.eventProvider.listings[this.eventIter].name
-            }, function(){
+            }, function () {
               let toast = that.toastCtrl.create({
                 message: 'Your registration was withdraw successfully',
                 duration: 10000,
@@ -93,12 +96,12 @@ export class EventDetailPage {
                 closeButtonText: 'OK',
                 position: 'bottom'
               });
-              that.appEvent.publish('event:update', function(){
+              that.appEvent.publish('event:update', function () {
                 that.appEvent.publish('loading:end');
                 toast.present();
               });
-              
-            }, function(error){
+
+            }, function (error) {
               let alert = that.alertCtrl.create({
                 title: 'Error',
                 subTitle: 'Error in update',

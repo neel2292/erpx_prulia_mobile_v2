@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, Renderer, Input } from '@angular/core';
+import {Component, ViewChild, Renderer, Input} from '@angular/core';
 
 /**
  * Generated class for the AccordionComponent component.
@@ -12,7 +12,7 @@ import { Component, ViewChild, OnInit, Renderer, Input } from '@angular/core';
 })
 export class AccordionComponent {
 
-  
+
   @ViewChild("cc") cardContent: any;
   @Input('title') title: string;
   @Input('expanded') accordionExapanded: boolean = false;
@@ -30,8 +30,8 @@ export class AccordionComponent {
   }
 
   toggleAccordion() {
-      this.accordionExapanded = !this.accordionExapanded;
-      // this._setMaxHeight(this.accordionExapanded)
+    this.accordionExapanded = !this.accordionExapanded;
+    // this._setMaxHeight(this.accordionExapanded)
     // if (this.accordionExapanded) {
     //   this.renderer.setElementStyle(this.cardContent.nativeElement, "max-height", "0px");
     //   this.renderer.setElementStyle(this.cardContent.nativeElement, "padding", "0px 16px");
@@ -41,8 +41,7 @@ export class AccordionComponent {
     //   this.renderer.setElementStyle(this.cardContent.nativeElement, "padding", "13px 16px");
 
     // }
-    
-    
+
 
   }
 

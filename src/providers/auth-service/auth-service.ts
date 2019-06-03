@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { CommonProvider } from '../common/common';
-import { NavigationProvider } from "../../providers/navigation/navigation";
-import { ToastController } from 'ionic-angular';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {CommonProvider} from '../common/common';
+import {NavigationProvider} from "../../providers/navigation/navigation";
+import {ToastController} from 'ionic-angular';
 
 /*
   Generated class for the AuthServiceProvider provider.
@@ -12,27 +12,29 @@ import { ToastController } from 'ionic-angular';
 */
 
 
-
 @Injectable()
 export class AuthServiceProvider {
 
-	constructor(public http: HttpClient, public common: CommonProvider,
-    private navigation: NavigationProvider, private toastCtrl: ToastController) {
+  constructor(public http: HttpClient, public common: CommonProvider,
+              private navigation: NavigationProvider, private toastCtrl: ToastController) {
     console.log('Hello AuthServiceProvider Provider');
   }
 
   login(username, password) {
-    let credentials = { usr: username, pwd: password, device: "mobile" };
+    let credentials = {usr: username, pwd: password, device: "mobile"};
 
     return new Promise((resolve, reject) => {
-      this.http.post(this.common.get_api_url('/api/method/login') , credentials, { observe: 'response', withCredentials: true })
+      this.http.post(this.common.get_api_url('/api/method/login'), credentials, {
+        observe: 'response',
+        withCredentials: true
+      })
         .subscribe(res => {
           debugger;
           // if(document.cookie !== ""){
-            localStorage.user = username;
-            let cookie = this.common.getCookies(document.cookie);
-            localStorage.session_id = cookie["sid"];
-            resolve(res.body);
+          localStorage.user = username;
+          let cookie = this.common.getCookies(document.cookie);
+          localStorage.session_id = cookie["sid"];
+          resolve(res.body);
           // } else {
           //   this.login(username, password).then(data => {
           //     resolve(data);
@@ -46,7 +48,7 @@ export class AuthServiceProvider {
     });
   }
 
-	logout() {
+  logout() {
     localStorage.clear();
     this.navigation.userLogout();
     const toast = this.toastCtrl.create({
@@ -61,19 +63,25 @@ export class AuthServiceProvider {
 
   if_session_valid() {
     return new Promise((resolve, reject) => {
-      this.http.get(this.common.get_api_url('/api/method/frappe.auth.get_logged_user'), {observe: 'response', withCredentials: true})
+      this.http.get(this.common.get_api_url('/api/method/frappe.auth.get_logged_user'), {
+        observe: 'response',
+        withCredentials: true
+      })
         .subscribe(res => {
           resolve(res.body);
         }, (err) => {
           reject(err)
         });
     });
-	}
+  }
 
-  reset_password(email){
+  reset_password(email) {
     let data = {user: email};
     return new Promise((resolve, reject) => {
-      this.http.post(this.common.get_api_url('/api/method/frappe.core.doctype.user.user.reset_password') , data, { observe: 'response', withCredentials: true })
+      this.http.post(this.common.get_api_url('/api/method/frappe.core.doctype.user.user.reset_password'), data, {
+        observe: 'response',
+        withCredentials: true
+      })
         .subscribe(res => {
           resolve(res.body);
         }, (err) => {
@@ -82,10 +90,13 @@ export class AuthServiceProvider {
     });
   }
 
-  forget_password(prulia_id, nric_number){
+  forget_password(prulia_id, nric_number) {
     let data = {prulia_id: prulia_id, nric_number: nric_number};
     return new Promise((resolve, reject) => {
-      this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_members.doctype.prulia_member.prulia_member.forget_password') , data, { observe: 'response', withCredentials: true })
+      this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_members.doctype.prulia_member.prulia_member.forget_password'), data, {
+        observe: 'response',
+        withCredentials: true
+      })
         .subscribe(res => {
           resolve(res.body);
         }, (err) => {
@@ -94,24 +105,24 @@ export class AuthServiceProvider {
     });
   }
 
-  update_password(old_password, new_password, fnSuccess, fnError){
+  update_password(old_password, new_password, fnSuccess, fnError) {
     let data = {
       old_password: old_password,
       new_password: new_password,
       logout_all_sessions: false
     }
-    this.http.post(this.common.get_api_url('/api/method/frappe.core.doctype.user.user.update_password') , data, {withCredentials: true})
-        .subscribe(res => {
-          fnSuccess(res['message']);
-        }, (err) => {
-          fnError(err);
-        });
+    this.http.post(this.common.get_api_url('/api/method/frappe.core.doctype.user.user.update_password'), data, {withCredentials: true})
+      .subscribe(res => {
+        fnSuccess(res['message']);
+      }, (err) => {
+        fnError(err);
+      });
   }
 
   set_sid_cookie() {
     console.log("Session ID found", localStorage.session_id);
     document.cookie = "sid=" + localStorage.session_id +
-			"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-	}
+      "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+  }
 
 }

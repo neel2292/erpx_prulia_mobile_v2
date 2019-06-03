@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Events } from 'ionic-angular/util/events';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {Events} from 'ionic-angular/util/events';
 
 /*
   Generated class for the NavigationProvider provider.

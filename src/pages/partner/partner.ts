@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PruliaBannerProvider } from '../../providers/prulia-banner/prulia-banner';
-import { Events } from 'ionic-angular/util/events';
-import { PartnerDetailPage } from "../partner-detail/partner-detail"
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import {PruliaBannerProvider} from '../../providers/prulia-banner/prulia-banner';
+import {Events} from 'ionic-angular/util/events';
+import {PartnerDetailPage} from "../partner-detail/partner-detail"
 
 /**
  * Generated class for the PartnerPage page.
@@ -25,42 +25,46 @@ export class PartnerPage {
     this._updatePartner(false, false);
   }
 
-	doRefresh(refresher){
-		this._updatePartner(true, false, (data=>{refresher.complete()}), (data=>{refresher.complete()}))
-	}
+  doRefresh(refresher) {
+    this._updatePartner(true, false, (data => {
+      refresher.complete()
+    }), (data => {
+      refresher.complete()
+    }))
+  }
 
-	eventTapped(partner) {
-		if(partner["type"] === "Content"){
-	      this.navCtrl.push(PartnerDetailPage, { partner_name: partner['name'] });
-	    } else{
-	      window.open(partner["link"],'_blank');
-	    }
-	}
+  eventTapped(partner) {
+    if (partner["type"] === "Content") {
+      this.navCtrl.push(PartnerDetailPage, {partner_name: partner['name']});
+    } else {
+      window.open(partner["link"], '_blank');
+    }
+  }
 
-	_updatePartner(bRefresh, bFromModel, fnSuccess?, fnError?) {
-		if(!bFromModel){
-			this.appEvent.publish('loading:start', 'Loading...');
-		}
-	    
-		this.bannerProvider.get_banner(bRefresh)
-	        .then(data => {
-	          if(fnSuccess){
-	            fnSuccess();
-	          }
-	          if(!bFromModel){
-	            this.appEvent.publish('loading:end');
-	          }
-	          
-	        },(error => {
-	          if(fnError){
-	            fnError();
-	          }
-	          console.log(error)
-	          if(!bFromModel){
-	            this.appEvent.publish('loading:end');
-	          }
-	        })
-	      )
-	  }
+  _updatePartner(bRefresh, bFromModel, fnSuccess?, fnError?) {
+    if (!bFromModel) {
+      this.appEvent.publish('loading:start', 'Loading...');
+    }
+
+    this.bannerProvider.get_banner(bRefresh)
+      .then(data => {
+          if (fnSuccess) {
+            fnSuccess();
+          }
+          if (!bFromModel) {
+            this.appEvent.publish('loading:end');
+          }
+
+        }, (error => {
+          if (fnError) {
+            fnError();
+          }
+          console.log(error)
+          if (!bFromModel) {
+            this.appEvent.publish('loading:end');
+          }
+        })
+      )
+  }
 
 }

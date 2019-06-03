@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PruliaHomeProvider } from '../../providers/prulia-home/prulia-home';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import {PruliaHomeProvider} from '../../providers/prulia-home/prulia-home';
 
 /**
  * Generated class for the HomeDetailPage page.
@@ -14,7 +14,7 @@ import { PruliaHomeProvider } from '../../providers/prulia-home/prulia-home';
   templateUrl: 'home-detail.html',
 })
 export class HomeDetailPage {
-  homeEntriesIter : any = 0;
+  homeEntriesIter: any = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public homeProvider: PruliaHomeProvider) {
   }
@@ -22,13 +22,13 @@ export class HomeDetailPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomeDetailPage');
 
-    for(let i = 0; i < this.homeProvider.home_entries.length; i++){
-		if(this.homeProvider.home_entries[i].name === this.navParams.get('entry_name')){
-			this.homeEntriesIter = i;
-			break;
-		}
-		console.log(this.homeProvider.home_entries[this.homeEntriesIter]);
-	}	
+    for (let i = 0; i < this.homeProvider.home_entries.length; i++) {
+      if (this.homeProvider.home_entries[i].name === this.navParams.get('entry_name')) {
+        this.homeEntriesIter = i;
+        break;
+      }
+      console.log(this.homeProvider.home_entries[this.homeEntriesIter]);
+    }
   }
 
 }
