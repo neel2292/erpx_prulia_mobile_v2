@@ -1,160 +1,159 @@
 .ios, .md {
-	// $content-color: #9FE49C;
-	$content-color: #F6F6F6;
-    page-profile {
-    	.header-image {
-	        background-size: cover;
-	        background-position: center center;
-	        position: relative;
-	        // z-index: -1;
-	    }
-	.bler{
-		height: 100%;
-		// min-height: 34rem;
-		-webkit-filter: blur(5px);
-		-moz-filter: blur(5px);
-		-o-filter: blur(5px);
-		-ms-filter: blur(5px);
-		filter: blur(5px);
-		// z-index: 0;
-		
-	}
-	.absolute{
-		position: absolute;
-		top:0;
-	    bottom: 0;
-	    left: 0;
-	    right: 0;
+  // $content-color: #9FE49C;
+  $content-color: #F6F6F6;
+  page-profile {
+    .header-image {
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+      // z-index: -1;
+    }
+    .bler {
+      height: 100%;
+      // min-height: 34rem;
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px);
+      // z-index: 0;
 
-	    margin: auto;
-		min-width: 100%;
-		min-height: 100vh;
-	}
-	
-    .main-content {
-        // margin-top: -20px;
-        // margin-left: 10px;
-        // margin-right: 10px;
-        // height: 25%;
-        // min-height: 34rem;
-        padding-top: 1rem;
-        background: rgba(255,255,255,.5);
-        padding-bottom: 1rem;
-		// 
-  		vertical-align: baseline;
-  		width: auto;
-    	display: block;
-	    margin-left: auto;
-	    margin-right: auto;
-        // padding-left: 1rem;
-        // padding-right: 1rem;
-        // background-color: $content-color;
-        // -webkit-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
-        // -moz-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
-        // box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
-        // background: #F5F5F5;
-        position: relative !important;
-        // z-index: 1;
-        min-height: 100vh;
-        // margin-top: -40vh;
+    }
+    .absolute {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      margin: auto;
+      min-width: 100%;
+      min-height: 100vh;
     }
 
-    .align-mid{
-	 //    position: absolute;
-		// top: 50%;
-		// left: 50%;
-		// transform: translate(-50%, -50%);
-		width: 100%;
-		padding-top:5vh;
-		padding-bottom: 2vh;
+    .main-content {
+      // margin-top: -20px;
+      // margin-left: 10px;
+      // margin-right: 10px;
+      // height: 25%;
+      // min-height: 34rem;
+      padding-top: 1rem;
+      background: rgba(255, 255, 255, .5);
+      padding-bottom: 1rem;
+      //
+      vertical-align: baseline;
+      width: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      // padding-left: 1rem;
+      // padding-right: 1rem;
+      // background-color: $content-color;
+      // -webkit-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+      // -moz-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+      // box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+      // background: #F5F5F5;
+      position: relative !important;
+      // z-index: 1;
+      min-height: 100vh;
+      // margin-top: -40vh;
+    }
+
+    .align-mid {
+      //    position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      width: 100%;
+      padding-top: 5vh;
+      padding-bottom: 2vh;
     }
     .circular {
-        width: 100px;
-        height: 100px;
-        position: relative;
-        border-radius: 50%;
-        -webkit-border-radius: 150px;
-        -moz-border-radius: 150px;
-        border: solid $content-color;
-        // background: url(../../assets/img/avatar/cosima-avatar.jpg) no-repeat;
-        // background-size: 100%;
-        // margin-top: -28rem;
-        margin-left: auto;
-        margin-right: auto;
-        background-size:     cover;
-    	background-repeat:   no-repeat;
-    	background-position: center center; 
-        // margin-bottom: 50px;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      border-radius: 50%;
+      -webkit-border-radius: 150px;
+      -moz-border-radius: 150px;
+      border: solid $content-color;
+      // background: url(../../assets/img/avatar/cosima-avatar.jpg) no-repeat;
+      // background-size: 100%;
+      // margin-top: -28rem;
+      margin-left: auto;
+      margin-right: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      // margin-bottom: 50px;
     }
 
-	.profile-content{
-		// background-color: $content-color;
-		height: 100%;
-		width: 100%;
-		ion-card{
-			padding: 0.5rem;
-			margin: auto;
-		}
-	}
-
-	.content{
-		margin:auto;
-	}
-    
-
-    ion-card{
-    	box-shadow: none !important;
-    	-webkit-box-shadow: none!important;
+    .profile-content {
+      // background-color: $content-color;
+      height: 100%;
+      width: 100%;
+      ion-card {
+        padding: 0.5rem;
+        margin: auto;
+      }
     }
-    .item{
-    	padding-left: 10px;
+
+    .content {
+      margin: auto;
+    }
+
+    ion-card {
+      box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+    }
+    .item {
+      padding-left: 10px;
     }
 
     .profile-description {
-        font-size: 15px;
-        color: #888;
+      font-size: 15px;
+      color: #888;
     }
 
-        ion-list{
-        	width:100%;
-        	ion-item{
-        		background: none;
-        		width: 100%;
-        		.label {
-				   margin: 0;
-				   .card{
-				 		margin:0px;
-				 		width: calc(100% - 5px);
-				    }
-				}
-        	}
-
-        	button{
-        	// 	height: 100%;
-    //     		// background-color: $content-color;
-    //     		box-shadow: none;
-    //     		padding: 0;
-				// &:first-child {
-				// 	border-top: none;
-				// }
-
-		  //         &:after {
-		  //           display: none;
-		  //         }
-
-		  //         ion-label {
-		  //         	padding-left: 1em;
-		  //           font-size: 1em;
-		  //           color: color($colors, dark);
-		  //           margin-top: 1.5rem;
-    //     			margin-bottom: 1.5rem;
-		  //         }
-	      	}
+    ion-list {
+      width: 100%;
+      ion-item {
+        background: none;
+        width: 100%;
+        .label {
+          margin: 0;
+          .card {
+            margin: 0px;
+            width: calc(100% - 5px);
+          }
         }
- 
+      }
+
+      button {
+        // 	height: 100%;
+        //     		// background-color: $content-color;
+        //     		box-shadow: none;
+        //     		padding: 0;
+        // &:first-child {
+        // 	border-top: none;
+        // }
+
+        //         &:after {
+        //           display: none;
+        //         }
+
+        //         ion-label {
+        //         	padding-left: 1em;
+        //           font-size: 1em;
+        //           color: color($colors, dark);
+        //           margin-top: 1.5rem;
+        //     			margin-bottom: 1.5rem;
+        //         }
+      }
     }
-    //red: ff6961
-    //blue: DAECF4
-    //green: 9FE49C
- 
+
+  }
+  //red: ff6961
+  //blue: DAECF4
+  //green: 9FE49C
+
 }

@@ -74,7 +74,7 @@ export class ProfilePage {
     this.imagePicker.getPictures(options).then((results) => {
       var result = results[0];
 
-      if (result) {
+      if (result && Array.isArray(results)) {
         this.base64.encodeFile(result).then((b64: string) => {
           b64 = b64.split('base64,').pop();
 

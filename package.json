@@ -51,7 +51,8 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.8",
-    "typescript": "2.4.2"
+    "typescript": "2.4.2",
+    "cordova-plugin-telerik-imagepicker ": "^2.3.2"
   },
   "description": "An Ionic project",
   "cordova": {
@@ -68,7 +69,8 @@
       "cordova-plugin-telerik-imagepicker": {
         "PHOTO_LIBRARY_USAGE_DESCRIPTION": "Upload profile picture"
       },
-      "com-badrit-base64": {}
+      "com-badrit-base64": {},
+      "cordova-plugin-telerik-imagepicker ": {}
     },
     "platforms": [
       "ios",
