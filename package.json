@@ -70,8 +70,7 @@
       "cordova-plugin-telerik-imagepicker": {
         "PHOTO_LIBRARY_USAGE_DESCRIPTION": "Upload profile picture"
       },
-      "com-badrit-base64": {},
-      "cordova-plugin-telerik-imagepicker ": {}
+      "com-badrit-base64": {}
     },
     "platforms": [
       "android",
