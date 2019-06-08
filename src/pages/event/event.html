@@ -27,20 +27,22 @@
         <div class="card_background" [ngStyle]="{'background-image': 'url(' + listing.event_image +')'}">
         </div>
         <div class="registered" [hidden]="!listing.register">Registered</div>
-        <div class="open_registration" [hidden]="!(!listing.register && listing.event_status== 'Open For Registration') && !(listing.event_status == 'Publish' && listing.show_open_for_registration == 1)">Open for Registration</div>
+        <div class="open_registration" [hidden]="!(!listing.register && listing.event_status== 'Open For Registration') && !(listing.event_status == 'Publish' && listing.show_open_for_registration == 1)">
+          Ready for Registration
+        </div>
         <div class="close_registration" [hidden]="!(!listing.register && listing.event_status== 'Registration Closed')">Registration Closed</div>
         <div class="card_content">
           <div class="event_image">
             <img [src]="listing.event_image"  />
           </div>
-          
+
         </div>
         <div class="description">
           <h1 class="event_title">
                 {{listing.event_name}}
             </h1>
           <p class="event_subtitle">
-                {{listing.start_date_time | date: 'MMM d, y, h:mm a'}} - 
+                {{listing.start_date_time | date: 'MMM d, y, h:mm a'}} -
                 {{listing.start_date_time.getDate() == listing.end_date_time.getDate() ? (listing.end_date_time | date: 'h:mm a' ) : (listing.end_date_time | date: 'MMM d, y, h:mm a') }}
                 <br />
                 {{listing.venue}}

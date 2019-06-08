@@ -1,81 +1,70 @@
 page-partner {
-	.partner-page{
-		background-color: color($colors, light);
-	  	background-image: url("../assets/imgs/abstract-2829965_1920.png");
-	  	background-size: cover;
-	  	background-position: center center;
-		&::after {
-		    content: "";
-		    background-size: cover;
-		    top: 0;
-		    left: 0;
-		    bottom: 0;
-		    right: 0;
-		    position: absolute;
-		    // z-index: 0;
-		}
-	
+  .partner-page {
+    background-color: color($colors, light);
+    &::after {
+      content: "";
+      background-size: cover;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      // z-index: 0;
+    }
 
-		.scroll-content{
-			background-color: rgba(255,255,255,.8);
-		}
+    .scroll-content {
+      background-color: rgba(255, 255, 255, .8);
+    }
 
-		ion-card {
-	        position: relative;
-	    	text-align: center;
-	    }
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
 
-		.partner_background{
-	    	height:100%;
-		    background-size: cover;
-		    background-position: center center;
-		    position:absolute;
-			left:0;
-			right:0;
-			top:0;
-			bottom:0;
-		    -webkit-filter: blur(10px);
-			-moz-filter: blur(10px);
-			-o-filter: blur(10px);
-			-ms-filter: blur(10px);
-			filter: blur(10px);
-	    }
+    .partner_background {
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
 
-	    .partner_content{
-	    	position:relative;
-			// z-index:2;
-	    }
+    .partner_content {
+      position: relative;
+      // z-index:2;
+    }
 
-		.partner_image{
-			height: 15rem;
-			margin: 0px;
-			img{
-				position: relative;
-  				top: 50%;
-  				transform: perspective(1px) translateY(-50%);
-				background-color: #FFFFFF;
-		  		vertical-align: baseline;
-		  		width: auto;
-		  		max-height: 100%;
-		    	display: block;
-			    margin-left: auto;
-			    margin-right: auto;
-	    	}
-		}
-		.partner_title{
-			font-weight: bold;
-			position: absolute;
-		    top: 60%;
-		    left: 0;
-		    width: 100%;
-		    font-weight: bold;
-		    color: #fff;
-		    background: rgba(0,0,0,0.5);
-		    overflow: hidden;
-		    display: -webkit-box;
-		    -webkit-line-clamp: 2;
-		    -webkit-box-orient: vertical;  
-		}
-	}
+    .partner_image {
+      height: 15rem;
+      margin: 0px;
+      img {
+        position: relative;
+        background-color: #FFFFFF;
+        vertical-align: baseline;
+        width: auto;
+        max-height: 100%;
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .partner_title {
+      font-weight: bold;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: #fff;
+      background-color: rgba(157,199,216,.85);
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
 
 }

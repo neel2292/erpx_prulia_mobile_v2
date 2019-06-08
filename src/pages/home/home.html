@@ -4,27 +4,38 @@
   </ion-navbar>
 </ion-header> -->
 
-<ion-content class="home-page">
-  <div *ngIf="memberProvider.member" padding class="welcome_member">
-    <h1>Welcome Back {{memberProvider.member.full_name}}</h1>
-  </div>
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="!memberProvider.member">Home</ion-title>
+    <ion-title *ngIf="memberProvider.member">Welcome Back {{memberProvider.member.full_name}}</ion-title>
+  </ion-navbar>
+</ion-header>
 
-  <ion-list [virtualScroll]="homeProvider.home_entries" [hidden]="homeProvider.home_entries.length === 0">
-    <ion-card *virtualItem="let home_entry" (click)="eventTapped(home_entry)" ion-item>
-      <div class="home_background">
-      </div>
-      <div class="home_content" center>
-        <h1 class="home_title">
-          {{home_entry.title}}
-        </h1>
-        <div class="home_image">
-          <img [src]="home_entry.image"/>
-        </div>
-      </div>
+<ion-content>
+  <!--<div *ngIf="memberProvider.member" padding class="welcome_member">-->
+    <!--<h1>Welcome Back {{memberProvider.member.full_name}}</h1>-->
+  <!--</div>-->
+
+  <!--<ion-list [virtualScroll]="homeProvider.home_entries" [hidden]="homeProvider.home_entries.length === 0">-->
+    <!--<ion-card *virtualItem="let home_entry" (click)="eventTapped(home_entry)" ion-item>-->
+      <!--<div class="home_background">-->
+      <!--</div>-->
+      <!--<div class="home_content" center>-->
+        <!--<h1 class="home_title">-->
+          <!--{{home_entry.title}}-->
+        <!--</h1>-->
+        <!--<div class="home_image">-->
+          <!--<img [src]="home_entry.image"/>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</ion-card>-->
+  <!--</ion-list>-->
+
+  <ion-list>
+    <ion-list-header [hidden]="homeProvider.home_entries.length > 0">No Home Content setup</ion-list-header>
+    <ion-card *ngFor="let home_entry of homeProvider.home_entries" (click)="eventTapped(home_entry)">
+      <ion-card-header>{{home_entry.title}}</ion-card-header>
+      <img [src]="home_entry.image"/>
     </ion-card>
   </ion-list>
-
-  <ion-list-header [hidden]="homeProvider.home_entries.length > 0">
-    No Home Content setup
-  </ion-list-header>
 </ion-content>
