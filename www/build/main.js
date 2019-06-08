@@ -7,10 +7,10 @@ webpackJsonp([0],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__profile_profile__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_event__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__newsletter_newsletter__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__partner_partner__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_event__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__newsletter_newsletter__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__partner_partner__ = __webpack_require__(221);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,7 +54,7 @@ var TabsPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_event_prulia_event__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_event_prulia_event__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_events__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -564,12 +564,14 @@ webpackEmptyAsyncContext.id = 167;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__member_detail_member_detail__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event_pref_event_pref__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__member_info_member_info__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__update_password_update_password__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_prulia_member_prulia_member__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_auth_service_auth_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_image_picker__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_base64__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__member_detail_member_detail__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__event_pref_event_pref__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__member_info_member_info__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__update_password_update_password__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_prulia_member_prulia_member__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_auth_service_auth_service__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -588,6 +590,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -595,26 +599,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ProfilePage = (function () {
-    function ProfilePage(navCtrl, navParams, memberProvider, auth, appEvent) {
+    function ProfilePage(navCtrl, navParams, memberProvider, auth, appEvent, alertCtrl, imagePicker, base64) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.memberProvider = memberProvider;
         this.auth = auth;
         this.appEvent = appEvent;
+        this.alertCtrl = alertCtrl;
+        this.imagePicker = imagePicker;
+        this.base64 = base64;
         this.profileExpand = false;
         this.eventExpand = false;
     }
     ProfilePage.prototype.goToProfile = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__member_detail_member_detail__["a" /* MemberDetailPage */], { value: this.memberProvider.member });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__member_detail_member_detail__["a" /* MemberDetailPage */], { value: this.memberProvider.member });
     };
     ProfilePage.prototype.goToMemberInfo = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__member_info_member_info__["a" /* MemberInfoPage */], { value: this.memberProvider.member, mode: "Profile" });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__member_info_member_info__["a" /* MemberInfoPage */], { value: this.memberProvider.member, mode: "Profile" });
     };
     ProfilePage.prototype.goToEventPerferences = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__event_pref_event_pref__["a" /* EventPrefPage */], { value: this.memberProvider.member, mode: "Profile" });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__event_pref_event_pref__["a" /* EventPrefPage */], { value: this.memberProvider.member, mode: "Profile" });
     };
     ProfilePage.prototype.goToUpdatePassword = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__update_password_update_password__["a" /* UpdatePasswordPage */], { value: this.memberProvider.member });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__update_password_update_password__["a" /* UpdatePasswordPage */], { value: this.memberProvider.member });
     };
     ProfilePage.prototype.logout = function () {
         this.auth.logout();
@@ -630,6 +637,64 @@ var ProfilePage = (function () {
         // 	break;
         // }(expandedAccordion)
     };
+    ProfilePage.prototype.selectPicture = function () {
+        var _this = this;
+        var options = { maximumImagesCount: 1 };
+        this.appEvent.publish('loading:start', 'Loading...');
+        this.imagePicker.getPictures(options).then(function (results) {
+            var result = results[0];
+            if (result) {
+                _this.base64.encodeFile(result).then(function (b64) {
+                    b64 = b64.split('base64,').pop();
+                    _this.uploadPicture(result, b64);
+                }, function (err) {
+                    _this._displayError(err);
+                });
+            }
+            else {
+                _this.appEvent.publish('loading:end');
+            }
+        }, function (err) {
+            _this._displayError(err);
+        });
+    };
+    ProfilePage.prototype.uploadPicture = function (path, b64) {
+        var _this = this;
+        if (getSize(b64) > 2000) {
+            this.appEvent.publish('loading:end');
+            var alert_1 = this.alertCtrl.create({
+                title: 'Error',
+                subTitle: 'File limit size is 2MB',
+                buttons: ['Dismiss']
+            });
+            alert_1.present();
+        }
+        else {
+            this.memberProvider.post_member_picture({
+                filename: path.split('/').pop(),
+                filedata: b64
+            }, function (data) {
+                console.log(data);
+                _this.appEvent.publish('loading:end');
+            }, function (err) {
+                _this._displayError(err);
+            });
+        }
+        //returns in kB
+        function getSize(base64) {
+            return (4 * Math.ceil(base64.length / 3)) / 1000;
+        }
+    };
+    ProfilePage.prototype._displayError = function (error) {
+        console.log(error);
+        var alert = this.alertCtrl.create({
+            title: 'Error',
+            subTitle: 'Error in update',
+            buttons: ['Dismiss']
+        });
+        this.appEvent.publish('loading:end');
+        alert.present();
+    };
     ProfilePage.prototype.ionViewDidLoad = function () {
         var _this = this;
         console.log('ionViewDidLoad ProfilePage');
@@ -643,10 +708,11 @@ var ProfilePage = (function () {
     };
     ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content fullscreen no-bounce class="bg-modal header-image">\n    <div class="bler">\n\n    </div>\n    <div class="absolute">\n    <div class="main-content" text-wrap text-center>\n      <div class="align-mid">\n        <div class="circular" [ngStyle]="{\'background-image\': \'url(\' + this.memberProvider.member.profile_photo +\')\'}"></div>\n        <h2>{{this.memberProvider.member.full_name}}</h2>\n        <!-- <p class="profile-description">{{member.prudential_id}}</p> -->\n        <!-- <hr> -->\n        <br />\n\n        <ion-list no-lines>\n          <accordion title="Personal Information" [expanded]="this.profileExpand" (click)="hideList(\'Profile\')" >\n            <ion-list>\n              <ion-item>\n                <ion-icon name="card" item-start></ion-icon>\n                {{this.memberProvider.member.nric_number}}\n              </ion-item>\n              <ion-item>\n                <ion-icon [name]="this.memberProvider.member.gender == \'Male\' ? \'male\' : \'female\'" item-start></ion-icon>\n                {{this.memberProvider.member.gender}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="call" item-start></ion-icon>\n                {{this.memberProvider.member.cell_number}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="mail" item-start></ion-icon>\n                {{this.memberProvider.member.email}}\n              </ion-item>\n              <button ion-item full color="primary" (click)="goToMemberInfo()">\n                <ion-icon name="create" item-start></ion-icon>\n                <ion-label>Update Personal Information</ion-label>\n              </button>\n            </ion-list>\n          </accordion>\n          <accordion title="Prudential Information" [expanded]="this.eventExpand" (click)="hideList(\'event\')"><ion-list>\n              <ion-item>\n                <ion-icon name="person" item-start></ion-icon>\n                {{this.memberProvider.member.prudential_id}} (Agent ID, eg: 1234567)\n              </ion-item>\n              <ion-item>\n                <ion-icon name="briefcase" item-start></ion-icon>\n                {{this.memberProvider.member.branch}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="globe" item-start></ion-icon>\n                {{this.memberProvider.member.region}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="star" item-start></ion-icon>\n                {{this.memberProvider.member.position}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="people" item-start></ion-icon>\n                {{this.memberProvider.member.agency_no}} (Agency Code, eg: ABC12345)\n              </ion-item>\n            </ion-list></accordion>\n          <accordion title="Event Perferences">\n              <ion-item>\n                <ion-icon name="restaurant" item-start></ion-icon>\n                {{this.memberProvider.member.meal_option}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="shirt" item-start></ion-icon>\n                {{this.memberProvider.member.shirt_size}}\n              </ion-item>\n              <button ion-item full color="primary" (click)="goToEventPerferences()">\n                <ion-icon name="create" item-start></ion-icon>\n                <ion-label>Update Default Event Perferences</ion-label>\n              </button>\n          </accordion>\n          <ion-item transparent>\n            <ion-grid class="grid" no-padding>\n              <ion-row>\n                <ion-col col-6>\n                  <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>\n                </ion-col>\n                <ion-col col-6>\n                  <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n          </ion-item>\n          <!-- <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>\n          <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion> -->\n            <!-- <button ion-item (click)="goToProfile()">\n              <ion-label>View Membership Profile</ion-label>\n            </button>\n            <button ion-item (click)="goToEventPerferences()">\n              <ion-label>Update Default Event Perferences</ion-label>\n            </button>\n            <button ion-item (click)="goToUpdatePassword()">\n              <ion-label>Update Password</ion-label>\n            </button>\n            <button ion-item (click)="logout()">\n              <ion-label>Sign Out</ion-label>\n            </button> -->\n        </ion-list>\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\profile\profile.html"*/,
+            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content fullscreen no-bounce class="bg-modal header-image">\n    <div class="bler">\n\n    </div>\n    <div class="absolute">\n    <div class="main-content" text-wrap text-center>\n      <div class="align-mid">\n        <div class="circular" (click)="selectPicture()" [ngStyle]="{\'background-image\': \'url(\' + this.memberProvider.member.profile_photo +\')\'}"></div>\n        <h2>{{this.memberProvider.member.full_name}}</h2>\n        <!-- <p class="profile-description">{{member.prudential_id}}</p> -->\n        <!-- <hr> -->\n        <br />\n\n        <ion-list no-lines>\n          <accordion title="Personal Information" [expanded]="this.profileExpand" (click)="hideList(\'Profile\')" >\n            <ion-list>\n              <ion-item>\n                <ion-icon name="card" item-start></ion-icon>\n                {{this.memberProvider.member.nric_number}}\n              </ion-item>\n              <ion-item>\n                <ion-icon [name]="this.memberProvider.member.gender == \'Male\' ? \'male\' : \'female\'" item-start></ion-icon>\n                {{this.memberProvider.member.gender}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="call" item-start></ion-icon>\n                {{this.memberProvider.member.cell_number}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="mail" item-start></ion-icon>\n                {{this.memberProvider.member.email}}\n              </ion-item>\n              <button ion-item full color="primary" (click)="goToMemberInfo()">\n                <ion-icon name="create" item-start></ion-icon>\n                <ion-label>Update Personal Information</ion-label>\n              </button>\n            </ion-list>\n          </accordion>\n          <accordion title="Prudential Information" [expanded]="this.eventExpand" (click)="hideList(\'event\')"><ion-list>\n              <ion-item>\n                <ion-icon name="person" item-start></ion-icon>\n                {{this.memberProvider.member.prudential_id}} (Agent ID, eg: 1234567)\n              </ion-item>\n              <ion-item>\n                <ion-icon name="briefcase" item-start></ion-icon>\n                {{this.memberProvider.member.branch}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="globe" item-start></ion-icon>\n                {{this.memberProvider.member.region}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="star" item-start></ion-icon>\n                {{this.memberProvider.member.position}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="people" item-start></ion-icon>\n                {{this.memberProvider.member.agency_no}} (Agency Code, eg: ABC12345)\n              </ion-item>\n            </ion-list></accordion>\n          <accordion title="Event Perferences">\n              <ion-item>\n                <ion-icon name="restaurant" item-start></ion-icon>\n                {{this.memberProvider.member.meal_option}}\n              </ion-item>\n              <ion-item>\n                <ion-icon name="shirt" item-start></ion-icon>\n                {{this.memberProvider.member.shirt_size}}\n              </ion-item>\n              <button ion-item full color="primary" (click)="goToEventPerferences()">\n                <ion-icon name="create" item-start></ion-icon>\n                <ion-label>Update Default Event Perferences</ion-label>\n              </button>\n          </accordion>\n          <ion-item transparent>\n            <ion-grid class="grid" no-padding>\n              <ion-row>\n                <ion-col col-6>\n                  <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>\n                </ion-col>\n                <ion-col col-6>\n                  <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n          </ion-item>\n          <!-- <accordion title="Update Password" [expanded]="false" [expandable]="false" icon="lock" (click)="goToUpdatePassword()"></accordion>\n          <accordion title="Sign Out" [expanded]="false" [expandable]="false" icon="log-out" (click)="logout()"></accordion> -->\n            <!-- <button ion-item (click)="goToProfile()">\n              <ion-label>View Membership Profile</ion-label>\n            </button>\n            <button ion-item (click)="goToEventPerferences()">\n              <ion-label>Update Default Event Perferences</ion-label>\n            </button>\n            <button ion-item (click)="goToUpdatePassword()">\n              <ion-label>Update Password</ion-label>\n            </button>\n            <button ion-item (click)="logout()">\n              <ion-label>Sign Out</ion-label>\n            </button> -->\n        </ion-list>\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\neel\Desktop\Projects\erpx_mobile\src\pages\profile\profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
-            __WEBPACK_IMPORTED_MODULE_8__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__["a" /* Events */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_9__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
+            __WEBPACK_IMPORTED_MODULE_10__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_image_picker__["a" /* ImagePicker */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_base64__["a" /* Base64 */]])
     ], ProfilePage);
     return ProfilePage;
 }());
@@ -655,7 +721,7 @@ var ProfilePage = (function () {
 
 /***/ }),
 
-/***/ 210:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -703,7 +769,7 @@ var MemberDetailPage = (function () {
 
 /***/ }),
 
-/***/ 211:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -823,7 +889,7 @@ var MemberInfoPage = (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -831,7 +897,7 @@ var MemberInfoPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular_util_events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -921,7 +987,7 @@ var UpdatePasswordPage = (function () {
 
 /***/ }),
 
-/***/ 213:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -929,8 +995,8 @@ var UpdatePasswordPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_event_prulia_event__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event_detail_event_detail__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_event_prulia_event__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__event_detail_event_detail__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1017,7 +1083,7 @@ var EventPage = (function () {
 
 /***/ }),
 
-/***/ 214:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1026,7 +1092,7 @@ var EventPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_pref_event_pref__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_member_prulia_member__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_prulia_event_prulia_event__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_prulia_event_prulia_event__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1172,7 +1238,7 @@ var EventDetailPage = (function () {
 
 /***/ }),
 
-/***/ 215:
+/***/ 217:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1182,7 +1248,7 @@ var EventDetailPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_home_prulia_home__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_detail_home_detail__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_detail_home_detail__ = __webpack_require__(218);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1244,7 +1310,7 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 216:
+/***/ 218:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1300,7 +1366,7 @@ var HomeDetailPage = (function () {
 
 /***/ }),
 
-/***/ 217:
+/***/ 219:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1310,7 +1376,7 @@ var HomeDetailPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_member_prulia_member__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prulia_newsletter_prulia_newsletter__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__newsletter_detail_newsletter_detail__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__newsletter_detail_newsletter_detail__ = __webpack_require__(220);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1400,7 +1466,7 @@ var NewsletterPage = (function () {
 
 /***/ }),
 
-/***/ 218:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1478,7 +1544,7 @@ var NewsletterDetailPage = (function () {
 
 /***/ }),
 
-/***/ 219:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1487,7 +1553,7 @@ var NewsletterDetailPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_prulia_banner_prulia_banner__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular_util_events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__partner_detail_partner_detail__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__partner_detail_partner_detail__ = __webpack_require__(222);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1570,7 +1636,7 @@ var PartnerPage = (function () {
 
 /***/ }),
 
-/***/ 220:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1649,15 +1715,15 @@ var PartnerDetailPage = (function () {
 
 /***/ }),
 
-/***/ 221:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabs_tabs__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_common_common__ = __webpack_require__(29);
@@ -2000,13 +2066,13 @@ var LoginPage = (function () {
 
 /***/ }),
 
-/***/ 223:
+/***/ 225:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(247);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -2084,17 +2150,53 @@ var PruliaMemberProvider = (function () {
         this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_members.doctype.prulia_member.prulia_member.update_member_pref'), JSON.stringify(data), { withCredentials: true })
             .subscribe(function (res) {
             _this.member = res['message'];
-            // if(this.member.profile_photo !== ""){
-            //   this.member.profile_photo = this.common.get_service_endpoint() + this.member.profile_photo;
-            // } else {
-            //   this.member.profile_photo = "../../assets/imgs/avatar_placeholder-1.png";
-            // }
+            if (_this.member.profile_photo !== "") {
+                _this.member.profile_photo = _this.common.get_service_endpoint() + _this.member.profile_photo;
+            }
+            else {
+                _this.member.profile_photo = "../../assets/imgs/avatar_placeholder-1.png";
+            }
             console.log(_this.member);
             fnSuccess(_this.member);
         }, function (err) {
             console.log(err);
             fnError(err);
         });
+    };
+    PruliaMemberProvider.prototype.post_member_picture = function (data, fnSuccess, fnError) {
+        var _this = this;
+        var member = this.member;
+        data.filename = member.name + '_' + data.filename;
+        data = Object.assign(data, {
+            from_form: 1,
+            is_private: 0,
+            cmd: 'uploadfile',
+            doctype: 'PRULIA Member',
+            docname: member.name,
+        });
+        this.http.post(this.common.get_api_url(''), urlEncode(data), {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
+            withCredentials: true
+        })
+            .subscribe(function (res) {
+            var msg = res['message'] || {};
+            _this.member.profile_photo = msg.file_url;
+            _this.post_member_profile(_this.member, fnSuccess, fnError);
+        }, function (err) {
+            console.log(err);
+            fnError(err);
+        });
+        function urlEncode(obj) {
+            var str = [];
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    str.push(encodeURIComponent(key) + "=" + encodeURIComponent(obj[key]));
+                }
+            }
+            return str.join("&");
+        }
     };
     PruliaMemberProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
@@ -2107,7 +2209,7 @@ var PruliaMemberProvider = (function () {
 
 /***/ }),
 
-/***/ 245:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2117,40 +2219,44 @@ var PruliaMemberProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_detail_home_detail__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_profile_profile__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_member_detail_member_detail__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_event_pref_event_pref__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_member_info_member_info__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_update_password_update_password__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_event_event__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_event_detail_event_detail__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_newsletter_newsletter__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_newsletter_detail_newsletter_detail__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_partner_partner__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_partner_detail_partner_detail__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_status_bar__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_splash_screen__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_in_app_browser__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_auth_service_auth_service__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_common_common__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_prulia_member_prulia_member__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_navigation_navigation__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_prulia_event_prulia_event__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_prulia_newsletter_prulia_newsletter__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_accordion_accordion__ = __webpack_require__(303);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_prulia_banner_prulia_banner__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_prulia_home_prulia_home__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_image_picker__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_base64__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_detail_home_detail__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_profile_profile__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_member_detail_member_detail__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_event_pref_event_pref__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_member_info_member_info__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_update_password_update_password__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_event_event__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_event_detail_event_detail__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_newsletter_newsletter__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_newsletter_detail_newsletter_detail__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_partner_partner__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_partner_detail_partner_detail__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_in_app_browser__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_auth_service_auth_service__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_common_common__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_prulia_member_prulia_member__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_navigation_navigation__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_prulia_event_prulia_event__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_prulia_newsletter_prulia_newsletter__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_accordion_accordion__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_prulia_banner_prulia_banner__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_prulia_home_prulia_home__ = __webpack_require__(110);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -2191,22 +2297,22 @@ var AppModule = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_detail_home_detail__["a" /* HomeDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_profile_profile__["a" /* ProfilePage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_member_detail_member_detail__["a" /* MemberDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_event_pref_event_pref__["a" /* EventPrefPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_member_info_member_info__["a" /* MemberInfoPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_update_password_update_password__["a" /* UpdatePasswordPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_event_event__["a" /* EventPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_event_detail_event_detail__["a" /* EventDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_newsletter_newsletter__["a" /* NewsletterPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_newsletter_detail_newsletter_detail__["a" /* NewsletterDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_30__components_accordion_accordion__["a" /* AccordionComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_partner_partner__["a" /* PartnerPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_partner_detail_partner_detail__["a" /* PartnerDetailPage */]
+                __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_detail_home_detail__["a" /* HomeDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_profile_profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_member_detail_member_detail__["a" /* MemberDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_event_pref_event_pref__["a" /* EventPrefPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_member_info_member_info__["a" /* MemberInfoPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_update_password_update_password__["a" /* UpdatePasswordPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_event_event__["a" /* EventPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_event_detail_event_detail__["a" /* EventDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_newsletter_newsletter__["a" /* NewsletterPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_newsletter_detail_newsletter_detail__["a" /* NewsletterDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_32__components_accordion_accordion__["a" /* AccordionComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_partner_partner__["a" /* PartnerPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_partner_detail_partner_detail__["a" /* PartnerDetailPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
@@ -2219,35 +2325,37 @@ var AppModule = (function () {
             bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_detail_home_detail__["a" /* HomeDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_profile_profile__["a" /* ProfilePage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_member_detail_member_detail__["a" /* MemberDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_event_pref_event_pref__["a" /* EventPrefPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_member_info_member_info__["a" /* MemberInfoPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_update_password_update_password__["a" /* UpdatePasswordPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_event_event__["a" /* EventPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_event_detail_event_detail__["a" /* EventDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_newsletter_newsletter__["a" /* NewsletterPage */],
-                __WEBPACK_IMPORTED_MODULE_18__pages_newsletter_detail_newsletter_detail__["a" /* NewsletterDetailPage */],
-                __WEBPACK_IMPORTED_MODULE_19__pages_partner_partner__["a" /* PartnerPage */],
-                __WEBPACK_IMPORTED_MODULE_20__pages_partner_detail_partner_detail__["a" /* PartnerDetailPage */]
+                __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_detail_home_detail__["a" /* HomeDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_profile_profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_member_detail_member_detail__["a" /* MemberDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_event_pref_event_pref__["a" /* EventPrefPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_member_info_member_info__["a" /* MemberInfoPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_update_password_update_password__["a" /* UpdatePasswordPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_event_event__["a" /* EventPage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_event_detail_event_detail__["a" /* EventDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_newsletter_newsletter__["a" /* NewsletterPage */],
+                __WEBPACK_IMPORTED_MODULE_20__pages_newsletter_detail_newsletter_detail__["a" /* NewsletterDetailPage */],
+                __WEBPACK_IMPORTED_MODULE_21__pages_partner_partner__["a" /* PartnerPage */],
+                __WEBPACK_IMPORTED_MODULE_22__pages_partner_detail_partner_detail__["a" /* PartnerDetailPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_21__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_22__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_23__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+                __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_25__ionic_native_in_app_browser__["a" /* InAppBrowser */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_24__providers_auth_service_auth_service__["a" /* AuthServiceProvider */],
-                __WEBPACK_IMPORTED_MODULE_25__providers_common_common__["a" /* CommonProvider */],
-                __WEBPACK_IMPORTED_MODULE_26__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
-                __WEBPACK_IMPORTED_MODULE_27__providers_navigation_navigation__["a" /* NavigationProvider */],
-                __WEBPACK_IMPORTED_MODULE_28__providers_prulia_event_prulia_event__["a" /* PruliaEventProvider */],
-                __WEBPACK_IMPORTED_MODULE_29__providers_prulia_newsletter_prulia_newsletter__["a" /* PruliaNewsletterProvider */],
-                __WEBPACK_IMPORTED_MODULE_31__providers_prulia_banner_prulia_banner__["a" /* PruliaBannerProvider */],
-                __WEBPACK_IMPORTED_MODULE_32__providers_prulia_home_prulia_home__["a" /* PruliaHomeProvider */]
+                __WEBPACK_IMPORTED_MODULE_26__providers_auth_service_auth_service__["a" /* AuthServiceProvider */],
+                __WEBPACK_IMPORTED_MODULE_27__providers_common_common__["a" /* CommonProvider */],
+                __WEBPACK_IMPORTED_MODULE_28__providers_prulia_member_prulia_member__["a" /* PruliaMemberProvider */],
+                __WEBPACK_IMPORTED_MODULE_29__providers_navigation_navigation__["a" /* NavigationProvider */],
+                __WEBPACK_IMPORTED_MODULE_30__providers_prulia_event_prulia_event__["a" /* PruliaEventProvider */],
+                __WEBPACK_IMPORTED_MODULE_31__providers_prulia_newsletter_prulia_newsletter__["a" /* PruliaNewsletterProvider */],
+                __WEBPACK_IMPORTED_MODULE_33__providers_prulia_banner_prulia_banner__["a" /* PruliaBannerProvider */],
+                __WEBPACK_IMPORTED_MODULE_34__providers_prulia_home_prulia_home__["a" /* PruliaHomeProvider */],
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_image_picker__["a" /* ImagePicker */],
+                __WEBPACK_IMPORTED_MODULE_7__ionic_native_base64__["a" /* Base64 */]
             ]
         })
     ], AppModule);
@@ -2330,7 +2438,7 @@ var CommonProvider = (function () {
 
 /***/ }),
 
-/***/ 295:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2342,8 +2450,8 @@ var CommonProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_events__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_auth_service_auth_service__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_auth_service_auth_service__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_navigation_navigation__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2433,7 +2541,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 303:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2510,7 +2618,7 @@ var AccordionComponent = (function () {
 
 /***/ }),
 
-/***/ 45:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2661,7 +2769,7 @@ var AuthServiceProvider = (function () {
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2787,5 +2895,5 @@ var PruliaEventProvider = (function () {
 
 /***/ })
 
-},[223]);
+},[225]);
 //# sourceMappingURL=main.js.map

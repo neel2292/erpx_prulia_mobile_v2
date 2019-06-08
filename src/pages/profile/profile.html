@@ -11,7 +11,7 @@
     <div class="absolute">
     <div class="main-content" text-wrap text-center>
       <div class="align-mid">
-        <div class="circular" [ngStyle]="{'background-image': 'url(' + this.memberProvider.member.profile_photo +')'}"></div>
+        <div class="circular" (click)="selectPicture()" [ngStyle]="{'background-image': 'url(' + this.memberProvider.member.profile_photo +')'}"></div>
         <h2>{{this.memberProvider.member.full_name}}</h2>
         <!-- <p class="profile-description">{{member.prudential_id}}</p> -->
         <!-- <hr> -->

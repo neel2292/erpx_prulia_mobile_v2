@@ -65,11 +65,11 @@ export class PruliaMemberProvider {
     this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_members.doctype.prulia_member.prulia_member.update_member_pref'), JSON.stringify(data), {withCredentials: true})
       .subscribe(res => {
         this.member = res['message'];
-        // if(this.member.profile_photo !== ""){
-        //   this.member.profile_photo = this.common.get_service_endpoint() + this.member.profile_photo;
-        // } else {
-        //   this.member.profile_photo = "../../assets/imgs/avatar_placeholder-1.png";
-        // }
+        if(this.member.profile_photo !== ""){
+          this.member.profile_photo = this.common.get_service_endpoint() + this.member.profile_photo;
+        } else {
+          this.member.profile_photo = "../../assets/imgs/avatar_placeholder-1.png";
+        }
         console.log(this.member);
         fnSuccess(this.member);
       }, (err) => {
@@ -78,4 +78,45 @@ export class PruliaMemberProvider {
       });
   }
 
+  post_member_picture(data, fnSuccess, fnError){
+    var member = this.member;
+
+    data.filename = member.name + '_' + data.filename;
+
+    data = Object.assign(data, {
+      from_form: 1,
+      is_private: 0,
+      cmd: 'uploadfile',
+      doctype: 'PRULIA Member',
+      docname: member.name,
+    });
+
+    this.http.post(this.common.get_api_url(''), urlEncode(data), {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        },
+        withCredentials: true
+      })
+      .subscribe(res => {
+        var msg = res['message'] || {};
+
+        this.member.profile_photo = msg.file_url;
+        this.post_member_profile(this.member, fnSuccess, fnError);
+      }, (err) => {
+        console.log(err);
+        fnError(err);
+      });
+
+    function urlEncode(obj) {
+      var str = [];
+
+      for (var key in obj) {
+           if (obj.hasOwnProperty(key)) {
+                 str.push(encodeURIComponent(key) + "=" + encodeURIComponent(obj[key]))
+           }
+      }
+
+      return str.join("&");
+    }
+  }
 }

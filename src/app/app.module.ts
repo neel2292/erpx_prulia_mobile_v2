@@ -5,6 +5,9 @@ import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {HttpClientModule} from '@angular/common/http';
 import {MyApp} from './app.component';
 
+import {ImagePicker} from '@ionic-native/image-picker';
+import {Base64} from '@ionic-native/base64';
+
 import {HomePage} from '../pages/home/home';
 import {HomeDetailPage} from '../pages/home-detail/home-detail'
 import {TabsPage} from '../pages/tabs/tabs';
@@ -92,7 +95,9 @@ import {PruliaHomeProvider} from '../providers/prulia-home/prulia-home';
     PruliaEventProvider,
     PruliaNewsletterProvider,
     PruliaBannerProvider,
-    PruliaHomeProvider
+    PruliaHomeProvider,
+    ImagePicker,
+    Base64
   ]
 })
 export class AppModule {
