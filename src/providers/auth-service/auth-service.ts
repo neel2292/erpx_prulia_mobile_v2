@@ -29,7 +29,6 @@ export class AuthServiceProvider {
         withCredentials: true
       })
         .subscribe(res => {
-          debugger;
           // if(document.cookie !== ""){
           localStorage.user = username;
           let cookie = this.common.getCookies(document.cookie);
