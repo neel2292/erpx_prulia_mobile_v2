@@ -32,8 +32,7 @@ export class MyApp {
       splashScreen.hide();
       this.presentLoading("Loading...");
 
-      // const args = ['GET', 'http://103.253.146.122'];
-      const args = ['GET', 'http://167.99.77.197:8000'];
+      const args = ['GET', 'http://103.253.146.122'];
       cordova.exec(null, null, 'WKWebViewSyncCookies', 'sync', args);
       // WKWebViewSync.sync(args);
 

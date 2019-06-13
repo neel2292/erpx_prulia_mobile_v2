@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.erpx.client.prulia" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.erpx.client.prulia.1" version="2.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PRULIA</name>
     <description>
         Prudential Life Insurance Agency Association.
@@ -88,7 +88,7 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-sqlite-storage" spec="^2.2.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
-    <plugin name="cordova-plugin-telerik-imagepicker " spec="^2.3.2" />
+    <plugin name="cordova-plugin-telerik-imagepicker" spec="^2.3.2" />
     <plugin name="com-badrit-base64" spec="^0.2.0" />
     <allow-navigation href="http://localhost:8080/*" />
     <allow-navigation href="http://192.168.0.121:8101" />
@@ -96,6 +96,5 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.2.0" />
     <plugin name="cordova-plugin-wkwebview-sync-cookies" spec="^1.0.0" />
-    <engine name="android" spec="^7.0.0" />
-    <engine name="ios" spec="~4.5.5" />
+    <engine name="ios" spec="4.5.5" />
 </widget>
