@@ -92,7 +92,7 @@ export class LoginPage {
               .then(data => {
                   if (data['message'].indexOf('not found') >= 0) {
                     let alert = this.alertCtrl.create({
-                      title: "Error",
+                      title: "Info",
                       message: "Noticed that you are new in PRULIA, please click OK to proceed with membership registration",
                       buttons: [{
                         text: 'OK',
@@ -113,7 +113,7 @@ export class LoginPage {
                     alert.present();
                   } else if (data['message'].indexOf('temporary login credential') < 0) {
                     let alert = this.alertCtrl.create({
-                      title: "Error",
+                      title: "Info",
                       message: data['message'],
                       buttons: ['OK']
                     });
@@ -154,7 +154,7 @@ export class LoginPage {
 
                   // if(error_message.indexOf('not found') >= 0){
                   let notFoundAlert = this.alertCtrl.create({
-                    title: "Error",
+                    title: "Info",
                     message: "Noticed that you are new in PRULIA, please click OK to proceed with membership registration",
                     buttons: [{
                       text: 'OK',
@@ -280,7 +280,7 @@ export class LoginPage {
               .then(data => {
                   if (data['message'] === 'not found') {
                     let alert = this.alertCtrl.create({
-                      title: "Error",
+                      title: "Warning",
                       message: "Unable to find user with the provided email",
                       buttons: ['OK']
                     });

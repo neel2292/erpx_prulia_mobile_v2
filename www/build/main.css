@@ -4992,7 +4992,10 @@ template {
   top: 0;
 }
 
-:focus, input:active, textarea:active, select:active, button:active, a:active { outline: none; }
+:focus,
+:active {
+  outline: none;
+}
 
 .focus-outline :focus {
   outline: thin dotted;

@@ -1,8 +1,9 @@
 import {NgModule, ErrorHandler} from '@angular/core';
 import {IonicStorageModule} from '@ionic/storage';
 import {BrowserModule} from '@angular/platform-browser';
-import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
-import {HttpClientModule} from '@angular/common/http';
+import {IonicApp, IonicModule, IonicErrorHandler, Platform} from 'ionic-angular';
+import {HttpBackend, HttpXhrBackend, HttpClientModule} from '@angular/common/http';
+import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ionic-native-http-connection-backend';
 import {MyApp} from './app.component';
 
 import {ImagePicker} from '@ionic-native/image-picker';
@@ -61,6 +62,7 @@ import {PruliaHomeProvider} from '../providers/prulia-home/prulia-home';
   imports: [
     BrowserModule,
     HttpClientModule,
+    NativeHttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -87,6 +89,7 @@ import {PruliaHomeProvider} from '../providers/prulia-home/prulia-home';
     StatusBar,
     SplashScreen,
     InAppBrowser,
+    {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     CommonProvider,
