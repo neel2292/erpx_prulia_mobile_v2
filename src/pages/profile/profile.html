@@ -64,6 +64,20 @@
                 {{this.memberProvider.member.agency_no}} (Agency Code, eg: ABC12345)
               </ion-item>
             </ion-list></accordion>
+          <accordion title="Smart Partners" [expanded]="this.eventExpand" (click)="hideList('event')"><ion-list>
+              <ion-item>
+                <h3>Personal Accident:</h3>
+                <p>{{this.memberProvider.member.pa_status ? this.memberProvider.member.pa_status : 'No Record Found' }}</p>
+              </ion-item>
+              <ion-item>
+                <h3>Professional Indemnity:</h3>
+                <p>{{this.memberProvider.member.pi_status ? this.memberProvider.member.pi_status : 'No Record Found' }}</p>
+              </ion-item>
+              <ion-item>
+                <h3>Maxis:</h3>
+                <p>{{this.memberProvider.member.maxis_status ? this.memberProvider.member.maxis_status : 'No Record Found'}}</p>
+              </ion-item>
+            </ion-list></accordion>
           <accordion title="Event Perferences">
               <ion-item>
                 <ion-icon name="restaurant" item-start></ion-icon>

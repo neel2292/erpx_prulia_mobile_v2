@@ -69,7 +69,7 @@ export class PruliaEventProvider {
   }
 
   update_event_registration(data, fnSuccess, fnError) {
-    this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_events.doctype.prulia_event.prulia_event.update_event_attendee'), JSON.stringify(data), {withCredentials: true})
+    this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_events.doctype.prulia_event.prulia_event.update_event_attendee'), data, {withCredentials: true})
       .subscribe(res => {
         console.log(res['message']);
         fnSuccess();

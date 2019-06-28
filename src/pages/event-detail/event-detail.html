@@ -29,6 +29,9 @@
           </div>
       </div>
       <div padding [innerHtml]="eventProvider.listings[eventIter].description"></div>
+      <div class="qr-img">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=480x480&data={{eventProvider.listings[eventIter].name}}">
+      </div>
       <div class="the-details">
         <ion-list padding no-lines>
           <ion-item text-wrap class="item item-trns">

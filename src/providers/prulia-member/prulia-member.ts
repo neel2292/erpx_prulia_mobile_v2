@@ -48,25 +48,54 @@ export class PruliaMemberProvider {
     this.http.get(this.common.get_api_url('/api/method/erpx_prulia.prulia_members.doctype.prulia_member.prulia_member.mobile_member_login'), {withCredentials: true})
       .subscribe(res => {
         this.member = res['message'];
+        //profile photo
         if (this.member.profile_photo !== undefined && this.member.profile_photo !== "") {
-          this.member.profile_photo = this.common.get_service_endpoint() + this.member.profile_photo;
+          if (this.member.profile_photo.indexOf(this.common.get_service_endpoint()) === -1) {
+            this.member.profile_photo = this.common.get_service_endpoint() + '/' + this.member.profile_photo;
+          }
         } else {
           this.member.profile_photo = "../www/assets/imgs/avatar_placeholder-1.png";
         }
+        //smart partners
+        ['pa_status', 'pi_status', 'maxis_status'].forEach(function (key) {
+          if (this.member[key]) {
+            this.member[key] = formatDate(this.member[key]);
+          }
+        });
+
         console.log(this.member);
         fnSuccess();
       }, (err) => {
         console.log(err);
         fnError();
       });
+
+    function formatDate(date) {
+      var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+      ];
+
+      var day = date.getDate();
+      var monthIndex = date.getMonth();
+      var year = date.getFullYear();
+
+      return day + ' ' + monthNames[monthIndex] + ' ' + year;
+    }
   }
 
   post_member_profile(data, fnSuccess, fnError) {
-    this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_members.doctype.prulia_member.prulia_member.update_member_pref'), JSON.stringify(data), {withCredentials: true})
+    console.log(data);
+    this.http.post(
+        this.common.get_api_url('/api/method/erpx_prulia.prulia_members.doctype.prulia_member.prulia_member.update_member_pref'), data, {withCredentials: true})
       .subscribe(res => {
         this.member = res['message'];
         if(this.member.profile_photo !== ""){
-          this.member.profile_photo = this.common.get_service_endpoint() + this.member.profile_photo;
+          if (this.member.profile_photo.indexOf(this.common.get_service_endpoint()) === -1) {
+            this.member.profile_photo = this.common.get_service_endpoint() + '/' + this.member.profile_photo;
+          }
         } else {
           this.member.profile_photo = "../../assets/imgs/avatar_placeholder-1.png";
         }
