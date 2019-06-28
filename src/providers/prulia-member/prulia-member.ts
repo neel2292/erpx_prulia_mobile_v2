@@ -56,12 +56,13 @@ export class PruliaMemberProvider {
         } else {
           this.member.profile_photo = "../www/assets/imgs/avatar_placeholder-1.png";
         }
+
         //smart partners
         ['pa_status', 'pi_status', 'maxis_status'].forEach(function (key) {
           if (this.member[key]) {
             this.member[key] = formatDate(this.member[key]);
           }
-        });
+        }.bind(this));
 
         console.log(this.member);
         fnSuccess();
