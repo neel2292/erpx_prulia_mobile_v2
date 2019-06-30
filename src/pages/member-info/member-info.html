@@ -25,7 +25,7 @@
       </ion-item>
       <ion-item no-lines>
         <ion-label floating>NRIC Number (eg: xxxx-xx-xxxx)</ion-label>
-        <ion-input [(ngModel)]="member.nric_number" name="nric_number" required type="text" placeholder="xxxx-xx-xxxx"></ion-input>
+        <ion-input mask="******-**-****" [(ngModel)]="member.nric_number" name="nric_number" required type="text" placeholder="xxxx-xx-xxxx"></ion-input>
       </ion-item>
       <ion-item no-lines>
         <ion-label floating>Gender</ion-label>
@@ -36,7 +36,7 @@
        </ion-item>
       <ion-item no-lines>
         <ion-label floating>Mobile Number (eg: 601x xxx xxxx)</ion-label>
-        <ion-input [(ngModel)]="member.cell_number" name="cell_number" required type="number" placeholder="eg: 601x xxx xxxx"></ion-input>
+        <ion-input mask="****-*** *****" pattern="[6,0]" [(ngModel)]="member.cell_number" name="cell_number" required placeholder="eg: 601x xxx xxxx"></ion-input>
       </ion-item>
       <ion-item no-lines>
         <ion-label floating>Email</ion-label>

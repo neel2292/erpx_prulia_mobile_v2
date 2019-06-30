@@ -25,25 +25,25 @@
       <div class="the-content" padding >
         <div class="transparent-bg">
           <h1>{{eventProvider.listings[eventIter].event_name}}</h1>
-          
+
           </div>
       </div>
       <div padding [innerHtml]="eventProvider.listings[eventIter].description"></div>
-      <div class="qr-img">
+      <div class="qr-img" [hidden]="!eventProvider.listings[eventIter].register">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=480x480&data={{eventProvider.listings[eventIter].name}}">
       </div>
       <div class="the-details">
         <ion-list padding no-lines>
           <ion-item text-wrap class="item item-trns">
             <ion-icon name="time" item-start></ion-icon>
-            {{eventProvider.listings[eventIter].start_date_time | date: 'MMM d, y, h:mm a'}} - 
+            {{eventProvider.listings[eventIter].start_date_time | date: 'MMM d, y, h:mm a'}} -
               {{eventProvider.listings[eventIter].start_date_time.getDate() == eventProvider.listings[eventIter].end_date_time.getDate() ? (eventProvider.listings[eventIter].end_date_time | date: 'h:mm a') : (eventProvider.listings[eventIter].end_date_time | date: 'MMM d, y, h:mm a') }}
           </ion-item>
           <ion-item text-wrap class="item item-trns">
             <ion-icon name="pin" item-start></ion-icon>
             {{eventProvider.listings[eventIter].venue}}
           </ion-item>
-           <div [hidden]="eventProvider.listings[eventIter].event_status!== 'Open For Registration'"> 
+           <div [hidden]="eventProvider.listings[eventIter].event_status!== 'Open For Registration'">
             <button ion-button block [hidden]="eventProvider.listings[eventIter].register" (click)="register()">Register</button>
           </div>
           <ion-item text-wrap class="item item-trns" [hidden]="!eventProvider.listings[eventIter].register">
@@ -62,9 +62,9 @@
           <!-- <h2 text-uppercase>{{eventProvider.listings[eventIter].event_name}}</h2>
           <div padding [innerHtml]="eventProvider.listings[eventIter].description">
           </div>
-          
+
           <div class="event-content">
-                {{eventProvider.listings[eventIter].start_date_time | date: 'MMM d, y, h:mm: a'}} - 
+                {{eventProvider.listings[eventIter].start_date_time | date: 'MMM d, y, h:mm: a'}} -
   			      	{{eventProvider.listings[eventIter].start_date_time.getDate() == eventProvider.listings[eventIter].end_date_time.getDate() ? (eventProvider.listings[eventIter].end_date_time | date: 'MMM d, y, h:mm a') : (eventProvider.listings[eventIter].end_date_time | date: 'h:mm a') }}
           </div>
           <h5 text-uppercase>VENUE</h5>
@@ -79,7 +79,7 @@
           <div [hidden]="eventProvider.listings[eventIter].open_for_registration!= 1" padding>
             <button ion-button block [style.background]="ff6961" [hidden]="eventProvider.listings[eventIter].register" (click)="register()">Register</button>
             <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="update()">Change Perference</button>
-            <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="cancel()">Withdraw Registration</button> 
+            <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="cancel()">Withdraw Registration</button>
           </div> -->
         </div>
     </div>

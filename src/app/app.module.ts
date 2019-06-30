@@ -3,6 +3,7 @@ import {IonicStorageModule} from '@ionic/storage';
 import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler, Platform} from 'ionic-angular';
 import {HttpBackend, HttpXhrBackend, HttpClientModule} from '@angular/common/http';
+//ENABLE THIS ONLY FOR iOS
 import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ionic-native-http-connection-backend';
 import {MyApp} from './app.component';
 
@@ -39,6 +40,8 @@ import {AccordionComponent} from '../components/accordion/accordion';
 import {PruliaBannerProvider} from '../providers/prulia-banner/prulia-banner';
 import {PruliaHomeProvider} from '../providers/prulia-home/prulia-home';
 
+import { Mask } from './mask'
+
 @NgModule({
   declarations: [
     MyApp,
@@ -57,11 +60,13 @@ import {PruliaHomeProvider} from '../providers/prulia-home/prulia-home';
     NewsletterDetailPage,
     AccordionComponent,
     PartnerPage,
-    PartnerDetailPage
+    PartnerDetailPage,
+    Mask
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    //ENABLE THIS ONLY FOR iOS
     NativeHttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
@@ -89,6 +94,7 @@ import {PruliaHomeProvider} from '../providers/prulia-home/prulia-home';
     StatusBar,
     SplashScreen,
     InAppBrowser,
+    //ENABLE THIS ONLY FOR iOS
     {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
