@@ -45,7 +45,7 @@
           <accordion title="Prudential Information" [expanded]="this.eventExpand" (click)="hideList('event')"><ion-list>
               <ion-item>
                 <ion-icon name="person" item-start></ion-icon>
-                {{this.memberProvider.member.prudential_id}} (Agent ID, eg: 1234567)
+                {{this.memberProvider.member.prudential_id}}
               </ion-item>
               <ion-item>
                 <ion-icon name="briefcase" item-start></ion-icon>
@@ -61,7 +61,7 @@
               </ion-item>
               <ion-item>
                 <ion-icon name="people" item-start></ion-icon>
-                {{this.memberProvider.member.agency_no}} (Agency Code, eg: ABC12345)
+                {{this.memberProvider.member.agency_no}}
               </ion-item>
             </ion-list></accordion>
           <accordion title="Smart Partners" [expanded]="this.eventExpand" (click)="hideList('event')"><ion-list>

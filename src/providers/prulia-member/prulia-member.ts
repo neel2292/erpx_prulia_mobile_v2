@@ -72,16 +72,17 @@ export class PruliaMemberProvider {
       });
 
     function formatDate(date) {
-      var monthNames = [
-        "January", "February", "March",
-        "April", "May", "June", "July",
-        "August", "September", "October",
-        "November", "December"
-      ];
+      if (typeof date === 'string') { date = new Date(date); }
 
-      var day = date.getDate();
-      var monthIndex = date.getMonth();
-      var year = date.getFullYear();
+      var monthNames = [
+          "January", "February", "March",
+          "April", "May", "June", "July",
+          "August", "September", "October",
+          "November", "December"
+        ],
+        day = date.getDate(),
+        monthIndex = date.getMonth(),
+        year = date.getFullYear();
 
       return day + ' ' + monthNames[monthIndex] + ' ' + year;
     }
