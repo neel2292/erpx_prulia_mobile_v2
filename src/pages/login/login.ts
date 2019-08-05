@@ -44,6 +44,29 @@ export class LoginPage {
 
   login() {
     this.events.publish('loading:start', 'Authenticating...');
+
+    if (!this.username.value || this.username.value.length !== 7) {
+      let alert = this.alertCtrl.create({
+        title: 'Invalid agent ID',
+        message: 'Agent ID must be of 7 character',
+        buttons: ['OK']
+      });
+      this.events.publish('loading:end');
+      alert.present();
+      return;
+    }
+
+    if (!this.password.value) {
+      let alert = this.alertCtrl.create({
+        title: 'Invalid password',
+        message: 'The password you entered is invalid',
+        buttons: ['OK']
+      });
+      this.events.publish('loading:end');
+      alert.present();
+      return;
+    }
+
     this.auth.login(this.username.value, this.password.value)
       .then(data => {
           this.navCtrl.push(TabsPage);
@@ -52,7 +75,7 @@ export class LoginPage {
           console.log(error)
           let alert = this.alertCtrl.create({
             title: 'Login Unsuccessful',
-            message: 'The username or password you entered is incorrect',
+            message: 'The agent ID or password you entered is incorrect',
             buttons: ['OK']
           });
           this.events.publish('loading:end');
@@ -88,6 +111,29 @@ export class LoginPage {
           handler: data => {
             console.log('Send clicked');
             this.events.publish('loading:start', 'Validating...');
+
+            if (!data.prulia_id || data.prulia_id.length !== 7) {
+              let alert = this.alertCtrl.create({
+                title: 'Invalid agent ID',
+                message: 'Agent ID must be of 7 character',
+                buttons: ['OK']
+              });
+              this.events.publish('loading:end');
+              alert.present();
+              return;
+            }
+
+            if (!/\d{6}-\d{2}-\d{4}/.test(data.nric_id)) {
+              let alert = this.alertCtrl.create({
+                title: 'Invalid NRIC number',
+                message: 'NRIC number must of the format xxxxxx-xx-xxxx',
+                buttons: ['OK']
+              });
+              this.events.publish('loading:end');
+              alert.present();
+              return;
+            }
+
             this.auth.forget_password(data.prulia_id, data.nric_id)
               .then(data => {
                   if (data['message'].indexOf('not found') >= 0) {
