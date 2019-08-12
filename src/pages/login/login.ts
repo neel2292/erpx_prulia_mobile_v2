@@ -95,7 +95,7 @@ export class LoginPage {
           type: 'string'
         }, {
           name: 'nric_id',
-          placeholder: 'NRIC Number (eg: xxxx-xx-xxxx)',
+          placeholder: 'NRIC Number (eg: xxxxxx-xx-xxxx)',
           type: 'integer'
         },
       ],
