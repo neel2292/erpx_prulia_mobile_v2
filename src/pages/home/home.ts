@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {NavController, AlertController} from 'ionic-angular';
+import {Component, ViewChild } from '@angular/core';
+import {NavController, AlertController, Content, Platform} from 'ionic-angular';
 import {PruliaMemberProvider} from "../../providers/prulia-member/prulia-member";
 import {PruliaHomeProvider} from "../../providers/prulia-home/prulia-home";
 import {Events} from 'ionic-angular/util/events';
@@ -10,12 +10,35 @@ import {HomeDetailPage} from "../home-detail/home-detail"
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController,
+  @ViewChild(Content) content: Content;
+
+  constructor(public platform: Platform, public navCtrl: NavController, public alertCtrl: AlertController,
               public memberProvider: PruliaMemberProvider, public homeProvider: PruliaHomeProvider, public appEvent: Events) {
 
   }
 
   ionViewDidLoad() {
+
+    //minor fix for ios srolling issue
+    if (this.platform.is('mobileweb') && this.platform.is('ios')) {
+
+      const scrollElement = this.content.getScrollElement();
+
+      scrollElement.scrollTo(0, 1);
+
+      this.content.ionScrollEnd.subscribe(evt => {
+        if ((this.content.contentHeight + 1) < scrollElement.scrollHeight) {
+
+          if (scrollElement.scrollTop === 0) {
+            scrollElement.scrollTo(0, 1);
+          }
+          else if ((scrollElement.scrollTop + this.content.contentHeight) === scrollElement.scrollHeight) {
+            scrollElement.scrollTo(0, (scrollElement.scrollTop - 1));
+          }
+        }
+      });
+    }
+
     console.log('ionViewDidLoad HomePage');
     this.appEvent.publish('loading:start', 'Loading...');
 

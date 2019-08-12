@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler, Platform} from 'ionic-angular';
 import {HttpBackend, HttpXhrBackend, HttpClientModule} from '@angular/common/http';
 //ENABLE THIS ONLY FOR iOS
-import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ionic-native-http-connection-backend';
+// import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ionic-native-http-connection-backend';
 import {MyApp} from './app.component';
 
 import {ImagePicker} from '@ionic-native/image-picker';
@@ -67,7 +67,7 @@ import { Mask } from './mask'
     BrowserModule,
     HttpClientModule,
     //ENABLE THIS ONLY FOR iOS
-    NativeHttpModule,
+    // NativeHttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -95,7 +95,7 @@ import { Mask } from './mask'
     SplashScreen,
     InAppBrowser,
     //ENABLE THIS ONLY FOR iOS
-    {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
+    // {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     CommonProvider,
