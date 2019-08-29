@@ -11,6 +11,7 @@ import {CommonProvider} from '../common/common';
 @Injectable()
 export class PruliaMemberProvider {
   member: {
+    agency_no: string,
     prudential_id: string,
     name: string,
     full_name: string,

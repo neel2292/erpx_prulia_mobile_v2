@@ -19,6 +19,7 @@ import {Events} from 'ionic-angular/util/events';
 export class EventDetailPage {
 
   eventIter: any = 0;
+  qr_content: any = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
               public eventProvider: PruliaEventProvider, public memberProvider: PruliaMemberProvider, public alertCtrl: AlertController,
@@ -30,10 +31,14 @@ export class EventDetailPage {
     for (let i = 0; i < this.eventProvider.listings.length; i++) {
       if (this.eventProvider.listings[i].name === this.navParams.get('event_name')) {
         this.eventIter = i;
+        this.qr_content = [
+          this.eventProvider.listings[i].name,
+          this.memberProvider.member.name,
+          this.memberProvider.member.agency_no
+        ].join('/');
         break;
       }
 
-      console.log(this.eventProvider.listings[this.eventIter]);
     }
   }
 
