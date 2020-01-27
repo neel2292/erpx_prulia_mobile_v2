@@ -22,7 +22,7 @@
             <ion-list>
               <ion-item>
                 <ion-icon name="card" item-start></ion-icon>
-                {{this.memberProvider.member.nric_number | ic}}
+                {{this.memberProvider.member.nric_number}}
               </ion-item>
               <ion-item>
                 <ion-icon [name]="this.memberProvider.member.gender == 'Male' ? 'male' : 'female'" item-start></ion-icon>
@@ -30,7 +30,7 @@
               </ion-item>
               <ion-item>
                 <ion-icon name="call" item-start></ion-icon>
-                {{this.memberProvider.member.cell_number | mobile}}
+                {{this.memberProvider.member.cell_number}}
               </ion-item>
               <ion-item>
                 <ion-icon name="mail" item-start></ion-icon>

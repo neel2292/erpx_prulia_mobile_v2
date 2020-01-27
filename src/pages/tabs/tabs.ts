@@ -5,6 +5,7 @@ import {EventPage} from '../event/event';
 import {HomePage} from '../home/home';
 import {NewsletterPage} from '../newsletter/newsletter'
 import {PartnerPage} from '../partner/partner'
+import {TrainingPage} from "../training/training";
 
 @Component({
   templateUrl: 'tabs.html'
@@ -14,8 +15,9 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = ProfilePage;
   tab3Root = EventPage;
-  tab4Root = NewsletterPage;
-  tab5Root = PartnerPage;
+  tab4Root = TrainingPage;
+  tab5Root = NewsletterPage;
+  tab6Root = PartnerPage;
 
   constructor() {
 

@@ -1,5 +1,5 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 /*
   Generated class for the CommonProvider provider.
@@ -46,9 +46,9 @@ export class CommonProvider {
     return this.get_service_endpoint() + URL;
   }
 
-  get_service_endpoint() {
-    // return "http://167.99.77.197:8000";
-    return "https://www.prulia.org.my";
+  get_service_endpoint(){
+  	return "http://167.99.77.197";
+  	// return "http://103.253.146.122";
   }
 
 }

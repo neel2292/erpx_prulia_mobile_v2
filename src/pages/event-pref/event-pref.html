@@ -10,7 +10,7 @@
   	<ion-buttons start *ngIf="mode" [hidden]="mode==='Profile'">
       <button ion-button (click)="dismiss()">Close</button>
     </ion-buttons>
-    <ion-title>Event Perferences</ion-title>
+    <ion-title>Event Preferences</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -47,7 +47,7 @@
 		     </ion-item>
 	  </ion-list>
 	  <div [hidden]="mode !== 'New'">
-	  	<p>I declare that the information given herein are correct to the best of my knowledge and belief. </p> 
+	  	<p>I declare that the information given herein are correct to the best of my knowledge and belief. </p>
 		<p>I agree to be govern by the rules and regulations of PRULIA as they now exist as they may hereafter be altered.</p>
 		<p>I hereby authorize Prudential Assurance Malaysia Berhad to debit by commission account for the registration of the event</p>
 		<p><ion-checkbox [(ngModel)]="acknowledgement" name="acknowledgement"></ion-checkbox>  I agree the statement above</p>

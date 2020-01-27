@@ -26,21 +26,23 @@ import {NewsletterDetailPage} from "../pages/newsletter-detail/newsletter-detail
 import {PartnerPage} from "../pages/partner/partner"
 import {PartnerDetailPage} from "../pages/partner-detail/partner-detail"
 
-
-import {StatusBar} from '@ionic-native/status-bar';
-import {SplashScreen} from '@ionic-native/splash-screen';
-import {InAppBrowser} from '@ionic-native/in-app-browser';
-import {AuthServiceProvider} from '../providers/auth-service/auth-service';
-import {CommonProvider} from '../providers/common/common';
-import {PruliaMemberProvider} from '../providers/prulia-member/prulia-member';
-import {NavigationProvider} from '../providers/navigation/navigation';
-import {PruliaEventProvider} from '../providers/prulia-event/prulia-event';
-import {PruliaNewsletterProvider} from '../providers/prulia-newsletter/prulia-newsletter';
-import {AccordionComponent} from '../components/accordion/accordion';
-import {PruliaBannerProvider} from '../providers/prulia-banner/prulia-banner';
-import {PruliaHomeProvider} from '../providers/prulia-home/prulia-home';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { CommonProvider } from '../providers/common/common';
+import { PruliaMemberProvider } from '../providers/prulia-member/prulia-member';
+import { NavigationProvider } from '../providers/navigation/navigation';
+import { PruliaEventProvider } from '../providers/prulia-event/prulia-event';
+import { PruliaNewsletterProvider } from '../providers/prulia-newsletter/prulia-newsletter';
+import { AccordionComponent } from '../components/accordion/accordion';
+import { PruliaBannerProvider } from '../providers/prulia-banner/prulia-banner';
+import { PruliaHomeProvider } from '../providers/prulia-home/prulia-home';
 
 import { Mask } from './mask'
+import {TrainingPage} from "../pages/training/training";
+import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-training';
+import {TrainingDetailPage} from "../pages/training-detail/training-detail";
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { Mask } from './mask'
     AccordionComponent,
     PartnerPage,
     PartnerDetailPage,
+    TrainingPage,
+    TrainingDetailPage,
     Mask
   ],
   imports: [
@@ -88,7 +92,9 @@ import { Mask } from './mask'
     NewsletterPage,
     NewsletterDetailPage,
     PartnerPage,
-    PartnerDetailPage
+    PartnerDetailPage,
+    TrainingPage,
+    TrainingDetailPage
   ],
   providers: [
     StatusBar,
@@ -105,6 +111,7 @@ import { Mask } from './mask'
     PruliaNewsletterProvider,
     PruliaBannerProvider,
     PruliaHomeProvider,
+    PruliaTrainingProvider,
     ImagePicker,
     Base64
   ]
