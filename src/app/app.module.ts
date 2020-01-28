@@ -17,10 +17,13 @@ import {LoginPage} from '../pages/login/login';
 import {ProfilePage} from '../pages/profile/profile'
 import {MemberDetailPage} from '../pages/member-detail/member-detail'
 import {EventPrefPage} from '../pages/event-pref/event-pref'
+import {TrainingPrefPage} from "../pages/training-pref/training-pref";
 import {MemberInfoPage} from '../pages/member-info/member-info'
 import {UpdatePasswordPage} from '../pages/update-password/update-password'
 import {EventPage} from "../pages/event/event"
 import {EventDetailPage} from "../pages/event-detail/event-detail"
+import {TrainingPage} from "../pages/training/training";
+import {TrainingDetailPage} from "../pages/training-detail/training-detail";
 import {NewsletterPage} from "../pages/newsletter/newsletter"
 import {NewsletterDetailPage} from "../pages/newsletter-detail/newsletter-detail"
 import {PartnerPage} from "../pages/partner/partner"
@@ -40,9 +43,7 @@ import { PruliaBannerProvider } from '../providers/prulia-banner/prulia-banner';
 import { PruliaHomeProvider } from '../providers/prulia-home/prulia-home';
 
 import { Mask } from './mask'
-import {TrainingPage} from "../pages/training/training";
 import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-training';
-import {TrainingDetailPage} from "../pages/training-detail/training-detail";
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import {TrainingDetailPage} from "../pages/training-detail/training-detail";
     PartnerDetailPage,
     TrainingPage,
     TrainingDetailPage,
+    TrainingPrefPage,
     Mask
   ],
   imports: [
@@ -94,7 +96,8 @@ import {TrainingDetailPage} from "../pages/training-detail/training-detail";
     PartnerPage,
     PartnerDetailPage,
     TrainingPage,
-    TrainingDetailPage
+    TrainingDetailPage,
+    TrainingPrefPage
   ],
   providers: [
     StatusBar,

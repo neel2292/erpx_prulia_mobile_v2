@@ -1,6 +1,6 @@
 import {Component, ElementRef, Renderer} from '@angular/core';
 import { NavController, ModalController, AlertController, ToastController, NavParams, Platform } from 'ionic-angular';
-import { EventPrefPage } from "../event-pref/event-pref";
+import { TrainingPrefPage } from "../training-pref/training-pref";
 import { PruliaMemberProvider } from "../../providers/prulia-member/prulia-member";
 import { PruliaTrainingProvider } from "../../providers/prulia-training/prulia-training";
 import { Events } from "ionic-angular/util/events";
@@ -62,19 +62,21 @@ export class TrainingDetailPage {
 
   register(){
     let tempEvent = Object.assign({}, this.trainingProvider.listings[this.eventIter]);
-    tempEvent.meal_option = this.memberProvider.member.meal_option;
+    if (tempEvent.display_food_option == 1) {
+      tempEvent.meal_option = this.memberProvider.member.meal_option;
+    }
     if(tempEvent.display_shirt_option == 1){
       tempEvent.shirt_size = this.memberProvider.member.shirt_size;
     }
     if(tempEvent.display_accomodation_option == 1){
       tempEvent.accomodation = "Yes";
     }
-    let myModal = this.modalCtrl.create(EventPrefPage, { 'value': tempEvent, mode: 'New' });
+    let myModal = this.modalCtrl.create(TrainingPrefPage, { 'value': tempEvent, mode: 'New' });
     myModal.present();
   }
 
   update(){
-    let myModal = this.modalCtrl.create(EventPrefPage, { 'value': this.trainingProvider.listings[this.eventIter], mode: 'Update' });
+    let myModal = this.modalCtrl.create(TrainingPrefPage, { 'value': this.trainingProvider.listings[this.eventIter], mode: 'Update' });
     myModal.present();
   }
 

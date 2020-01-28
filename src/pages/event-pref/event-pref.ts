@@ -46,7 +46,7 @@ export class EventPrefPage {
     switch (this.mode) {
       case "Profile":
         this.memberProvider.post_member_profile(this.member, function (data) {
-          let toast = that._createToast('Perferences was update successfully');
+          let toast = that._createToast('Preferences was update successfully');
           that.memberProvider.get_member_profile(true)
             .then(data => {
                 that.events.publish('loading:end');

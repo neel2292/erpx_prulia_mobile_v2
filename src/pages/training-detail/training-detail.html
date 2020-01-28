@@ -46,7 +46,7 @@
         <div [hidden]="trainingProvider.listings[eventIter].training_status!== 'Open For Registration'">
           <button ion-button block [hidden]="trainingProvider.listings[eventIter].register" (click)="register()">Register</button>
         </div>
-        <ion-item text-wrap class="item item-trns" [hidden]="!trainingProvider.listings[eventIter].register">
+        <ion-item text-wrap class="item item-trns" [hidden]="!trainingProvider.listings[eventIter].register || trainingProvider.listings[eventIter].display_food_option != '1'">
           <ion-icon name="restaurant" item-start></ion-icon>
           {{trainingProvider.listings[eventIter].meal_option}}
         </ion-item>
@@ -78,7 +78,7 @@
       </div>
       <div [hidden]="eventProvider.listings[eventIter].open_for_registration!= 1" padding>
         <button ion-button block [style.background]="ff6961" [hidden]="eventProvider.listings[eventIter].register" (click)="register()">Register</button>
-        <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="update()">Change Perference</button>
+        <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="update()">Change Preference</button>
         <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="cancel()">Withdraw Registration</button>
       </div> -->
     </div>

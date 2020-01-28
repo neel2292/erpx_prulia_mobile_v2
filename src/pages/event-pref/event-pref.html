@@ -20,14 +20,14 @@
 	<form #formCtrl="ngForm" class="list-form">
 		<ion-list>
 		     <ion-item no-lines>
-		        <ion-label floating>Meal Perference</ion-label>
+		        <ion-label floating>Meal Preference</ion-label>
 		        <ion-select [(ngModel)]="member.meal_option" name="meal_option" required>
 		            <ion-option value="Non-Vegetarian">Non-Vegetarian</ion-option>
 		            <ion-option value="Vegetarian">Vegetarian</ion-option>
 		        </ion-select>
 		     </ion-item>
 		     <ion-item no-lines [hidden]="mode === 'New' && member.display_shirt_option == '0'">
-		        <ion-label floating>Shirt Size Perference</ion-label>
+		        <ion-label floating>Shirt Size Preference</ion-label>
 		        <ion-select [(ngModel)]="member.shirt_size" name="shirt_size" required>
 		            <ion-option value="XS">Extra Small (XS)</ion-option>
 		            <ion-option value="S">Small (S)</ion-option>

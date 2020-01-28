@@ -78,7 +78,7 @@
                 <p>{{this.memberProvider.member.maxis_status ? this.memberProvider.member.maxis_status : 'No Record Found'}}</p>
               </ion-item>
             </ion-list></accordion>
-          <accordion title="Event Perferences">
+          <accordion title="Event Preferences">
               <ion-item>
                 <ion-icon name="restaurant" item-start></ion-icon>
                 {{this.memberProvider.member.meal_option}}
@@ -87,9 +87,9 @@
                 <ion-icon name="shirt" item-start></ion-icon>
                 {{this.memberProvider.member.shirt_size}}
               </ion-item>
-              <button ion-item full color="primary" (click)="goToEventPerferences()">
+              <button ion-item full color="primary" (click)="goToEventPreferences()">
                 <ion-icon name="create" item-start></ion-icon>
-                <ion-label>Update Default Event Perferences</ion-label>
+                <ion-label>Update Default Event Preferences</ion-label>
               </button>
           </accordion>
           <ion-item transparent>
@@ -109,8 +109,8 @@
             <!-- <button ion-item (click)="goToProfile()">
               <ion-label>View Membership Profile</ion-label>
             </button>
-            <button ion-item (click)="goToEventPerferences()">
-              <ion-label>Update Default Event Perferences</ion-label>
+            <button ion-item (click)="goToEventPreferences()">
+              <ion-label>Update Default Event Preferences</ion-label>
             </button>
             <button ion-item (click)="goToUpdatePassword()">
               <ion-label>Update Password</ion-label>

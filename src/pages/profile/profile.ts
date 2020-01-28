@@ -42,7 +42,7 @@ export class ProfilePage {
     this.navCtrl.push(MemberInfoPage, {value: this.memberProvider.member, mode: "Profile"});
   }
 
-  goToEventPerferences() {
+  goToEventPreferences() {
     this.navCtrl.push(EventPrefPage, {value: this.memberProvider.member, mode: "Profile"});
   }
 
