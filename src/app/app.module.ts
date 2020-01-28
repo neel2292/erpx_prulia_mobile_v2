@@ -43,6 +43,7 @@ import { PruliaBannerProvider } from '../providers/prulia-banner/prulia-banner';
 import { PruliaHomeProvider } from '../providers/prulia-home/prulia-home';
 
 import { Mask } from './mask'
+import {PipesModule} from "../pipes/pipes.module";
 import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-training';
 
 @NgModule({
@@ -72,6 +73,7 @@ import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-trai
   imports: [
     BrowserModule,
     HttpClientModule,
+    PipesModule,
     //ENABLE THIS ONLY FOR iOS
     // NativeHttpModule,
     IonicModule.forRoot(MyApp),
