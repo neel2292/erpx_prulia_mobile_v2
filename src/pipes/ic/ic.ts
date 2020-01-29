@@ -15,8 +15,9 @@ export class IcPipe implements PipeTransform {
   transform(value: string, ...args) {
     value = String(value);
 
-    value = value.slice(0, 6) + '-' + value.slice(6, 8) + '-' + value.slice(8);
-
-    return value;
+    if (/\d{6}-\d{2}-\d{4}/.test(value)) { return value }
+    else {
+      return value.slice(0, 6) + '-' + value.slice(6, 8) + '-' + value.slice(8);
+    }
   }
 }
