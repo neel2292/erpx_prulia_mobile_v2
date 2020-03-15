@@ -25,6 +25,7 @@ import {NewsletterPage} from "../pages/newsletter/newsletter"
 import {NewsletterDetailPage} from "../pages/newsletter-detail/newsletter-detail"
 import {PartnerPage} from "../pages/partner/partner"
 import {PartnerDetailPage} from "../pages/partner-detail/partner-detail"
+import { FeedbackPage } from "../pages/feedback/feedback";
 
 
 import {StatusBar} from '@ionic-native/status-bar';
@@ -39,6 +40,7 @@ import {PruliaNewsletterProvider} from '../providers/prulia-newsletter/prulia-ne
 import {AccordionComponent} from '../components/accordion/accordion';
 import {PruliaBannerProvider} from '../providers/prulia-banner/prulia-banner';
 import {PruliaHomeProvider} from '../providers/prulia-home/prulia-home';
+import { FeedbackProvider } from '../providers/feedback/feedback';
 
 import { Mask } from './mask'
 
@@ -61,6 +63,7 @@ import { Mask } from './mask'
     AccordionComponent,
     PartnerPage,
     PartnerDetailPage,
+    FeedbackPage,
     Mask
   ],
   imports: [
@@ -88,7 +91,8 @@ import { Mask } from './mask'
     NewsletterPage,
     NewsletterDetailPage,
     PartnerPage,
-    PartnerDetailPage
+    PartnerDetailPage,
+    FeedbackPage
   ],
   providers: [
     StatusBar,
@@ -106,7 +110,8 @@ import { Mask } from './mask'
     PruliaBannerProvider,
     PruliaHomeProvider,
     ImagePicker,
-    Base64
+    Base64,
+    FeedbackProvider
   ]
 })
 export class AppModule {

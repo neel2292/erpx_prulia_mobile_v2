@@ -30,7 +30,7 @@
       </div>
       <div padding [innerHtml]="eventProvider.listings[eventIter].description"></div>
       <div class="qr-img" [hidden]="!eventProvider.listings[eventIter].register">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=480x480&data={{qr_content}}">
+        <img [hidden]="eventProvider.listings[eventIter].attendance === 'Yes'" src="https://api.qrserver.com/v1/create-qr-code/?size=480x480&data={{qr_content}}">
       </div>
       <div class="the-details">
         <ion-list padding no-lines>

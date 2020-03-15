@@ -47,8 +47,8 @@ export class CommonProvider {
   }
 
   get_service_endpoint() {
-    // return "http://167.99.77.197:8000";
-    return "https://www.prulia.org.my";
+    return "http://167.99.77.197:8000";
+    // return "https://www.prulia.org.my";
   }
 
 }

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.erpx.client.prulia" version="2.1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>PRULIA</name>
+<widget id="com.erpx.client.pruliadev" version="2.1.15" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>PRULIA Dev</name>
     <description>
         Prudential Life Insurance Agency Association.
     </description>
@@ -104,4 +104,5 @@
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-advanced-http" spec="^1.11.1" />
     <engine name="ios" spec="4.5.5" />
+    <engine name="android" spec="8.0.0" />
 </widget>

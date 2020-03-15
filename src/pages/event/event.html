@@ -26,7 +26,7 @@
     	<ion-card *virtualItem="let listing" (click)="eventTapped(listing.name)" ion-item>
         <div class="card_background" [ngStyle]="{'background-image': 'url(' + listing.event_image +')'}">
         </div>
-        <div class="registered" [hidden]="!listing.register">Registered</div>
+        <div class="registered" [hidden]="!listing.register">{{ listing.attendance === 'Yes' ? 'Attended' : 'Registered' }}</div>
         <div class="open_registration" [hidden]="!(!listing.register && listing.event_status== 'Open For Registration') && !(listing.event_status == 'Publish' && listing.show_open_for_registration == 1)">
           Ready for Registration
         </div>

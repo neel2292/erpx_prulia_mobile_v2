@@ -27,6 +27,7 @@ export class EventDetailPage {
   }
 
   ionViewDidLoad() {
+    console.log(this.eventProvider.listings);
     console.log('ionViewDidLoad EventDetailPage');
     for (let i = 0; i < this.eventProvider.listings.length; i++) {
       if (this.eventProvider.listings[i].name === this.navParams.get('event_name')) {
