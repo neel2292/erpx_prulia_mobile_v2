@@ -21,15 +21,30 @@ export class EventPrefPage {
     shirt_size: "",
     meal_option: "",
     name: "",
-    accomodation: ""
+    accomodation: "",
+    pref_lang: ''
   };
+  languages: string[] = [];
   acknowledgement: boolean = false;
-  mode: any = "New"
+  mode: any = "New";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider, public eventProvider: PruliaEventProvider,
               public alertCtrl: AlertController, public toastCtrl: ToastController, private events: Events, public viewCtrl: ViewController) {
     this.member = Object.assign({}, navParams.get('value'));
     this.mode = navParams.get('mode');
+
+    if (this.member.break_up_session) {
+      eventProvider.get_lang(this.member.position_restriction).then((res) => {
+        this.languages = [];
+        (res['message'] || []).forEach((el) => {
+          this.languages.push(el.language);
+        });
+        //set default lang
+        this.member.pref_lang = this.languages[0];
+      }).catch(() => {
+        this._createToast('Something\' wrong. Please try again');
+      });
+    }
 
     if (this.member.accomodation == undefined) {
       this.member.accomodation = "";
@@ -82,7 +97,8 @@ export class EventPrefPage {
             "event": this.member.name,
             "meal": this.member.meal_option,
             "shirt": this.member.shirt_size,
-            "accomodation": this.member.accomodation
+            "accomodation": this.member.accomodation,
+            "pref_lang": this.member.pref_lang
           }, function (data) {
 
             let toast = that._createToast('Registration was update successfully');

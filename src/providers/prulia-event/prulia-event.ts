@@ -98,5 +98,15 @@ export class PruliaEventProvider {
       });
   }
 
-
+  get_lang(position: string) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_events.doctype.prulia_event.prulia_event.get_lang'), { position: position }, {withCredentials: true})
+      .subscribe(res => {
+        resolve(res);
+      }, (err) => {
+        console.log(err);
+        reject(err);
+      });
+    });
+  }
 }

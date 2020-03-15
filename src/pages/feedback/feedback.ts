@@ -66,6 +66,8 @@ export class FeedbackPage {
 
         if (res && res['message']) {
           msg = "Your feedback has been submitted";
+          this.category = '';
+          this.remark = '';
         }
         else {
           msg = "Something's wrong. Please try again";

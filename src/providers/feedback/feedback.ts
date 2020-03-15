@@ -33,7 +33,7 @@ export class FeedbackProvider {
   }
 
   submit_feedback(category, remark) {
-    var that = this;
+    let that = this;
 
     return new Promise((resolve) => {
       this.http.post(this.common.get_api_url('/api/method/erpx_prulia.prulia_members.doctype.prulia_feedback.prulia_feedback.submit_feedback'), {
