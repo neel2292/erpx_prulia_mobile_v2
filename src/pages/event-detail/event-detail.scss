@@ -111,7 +111,7 @@ page-event-detail {
         .item.item-trns {
             border-color: rgba(0, 0, 0, 0);
             background-color: rgba(0, 0, 0, 0);
-            color: color($colors, light); 
+            color: color($colors, light);
         }
         button {
             background-color: color($colors, secondary);
@@ -129,35 +129,5 @@ page-event-detail {
         -o-animation: blink-animation 1s steps(5, start) infinite;
         animation: blink-animation 1s steps(5, start) infinite;
       }
-    }
-}
-
-@-webkit-keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
-}
-
-@-moz-keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
-}
-
-@-ms-keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
-}
-
-@-o-keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
-}
-
-@keyframes blink-animation {
-    to {
-        visibility: hidden;
     }
 }

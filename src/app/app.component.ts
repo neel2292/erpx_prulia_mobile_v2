@@ -9,6 +9,7 @@ import {TabsPage} from '../pages/tabs/tabs';
 import {LoginPage} from '../pages/login/login';
 import {AuthServiceProvider} from '../providers/auth-service/auth-service';
 import {NavigationProvider} from '../providers/navigation/navigation';
+import { CommonProvider } from "../providers/common/common";
 
 declare var cordova: any;
 
@@ -23,7 +24,7 @@ export class MyApp {
 
   @ViewChild(Nav) rootNav: Nav;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage,
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage, commonProvider: CommonProvider,
               auth: AuthServiceProvider, private navigation: NavigationProvider, private events: Events, private loadingCtrl: LoadingController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -32,7 +33,7 @@ export class MyApp {
       splashScreen.hide();
       this.presentLoading("Loading...");
 
-      const args = ['GET', 'http://103.253.146.122'];
+      const args = ['GET', commonProvider.get_service_endpoint()];
       cordova.exec(null, null, 'WKWebViewSyncCookies', 'sync', args);
       // WKWebViewSync.sync(args);
 

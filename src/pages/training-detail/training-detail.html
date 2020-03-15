@@ -1,0 +1,86 @@
+<!--
+  Generated template for the EventDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <!-- <ion-title *ngIf="eventProvider.listings[eventIter]" text-uppercase>{{eventProvider.listings[eventIter].event_name}}</ion-title> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="event-det-page">
+  <div class="content" *ngIf="trainingProvider.listings[eventIter]">
+    <div class="the-header">
+      <div class="background">
+        <div class="image_background" [ngStyle]="{'background-image': 'url(' + trainingProvider.listings[eventIter].training_image +')'}">
+        </div>
+        <img [src]="trainingProvider.listings[eventIter].training_image"/>
+      </div>
+      <button ion-fab>
+        <ion-icon name="list-box"></ion-icon>
+      </button>
+    </div>
+    <div class="the-content" padding >
+      <div class="transparent-bg">
+        <h1>{{trainingProvider.listings[eventIter].training_name}}</h1>
+
+      </div>
+    </div>
+    <div padding [innerHtml]="trainingProvider.listings[eventIter].description"></div>
+    <div class="qr-img" [hidden]="!trainingProvider.listings[eventIter].register">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=480x480&data={{qr_content}}">
+    </div>
+    <div class="the-details">
+      <ion-list padding no-lines>
+        <ion-item text-wrap class="item item-trns">
+          <ion-icon name="time" item-start></ion-icon>
+          {{trainingProvider.listings[eventIter].start_date_time | date: 'MMM d, y, h:mm a'}} -
+          {{trainingProvider.listings[eventIter].start_date_time.getDate() == trainingProvider.listings[eventIter].end_date_time.getDate() ? (trainingProvider.listings[eventIter].end_date_time | date: 'h:mm a') : (trainingProvider.listings[eventIter].end_date_time | date: 'MMM d, y, h:mm a') }}
+        </ion-item>
+        <ion-item text-wrap class="item item-trns">
+          <ion-icon name="pin" item-start></ion-icon>
+          {{trainingProvider.listings[eventIter].venue}}
+        </ion-item>
+        <div [hidden]="trainingProvider.listings[eventIter].training_status!== 'Open For Registration'">
+          <button ion-button block [hidden]="trainingProvider.listings[eventIter].register" (click)="register()">Register</button>
+        </div>
+        <ion-item text-wrap class="item item-trns" [hidden]="!trainingProvider.listings[eventIter].register || trainingProvider.listings[eventIter].display_food_option != '1'">
+          <ion-icon name="restaurant" item-start></ion-icon>
+          {{trainingProvider.listings[eventIter].meal_option}}
+        </ion-item>
+        <ion-item text-wrap class="item item-trns" [hidden]="!trainingProvider.listings[eventIter].register || trainingProvider.listings[eventIter].display_shirt_option == '0'">
+          <ion-icon name="shirt" item-start></ion-icon>
+          {{trainingProvider.listings[eventIter].shirt_size}}
+        </ion-item>
+        <ion-item text-wrap class="item item-trns" [hidden]="!trainingProvider.listings[eventIter].register || trainingProvider.listings[eventIter].display_accomodation_option == '0'">
+          <ion-icon name="home" item-start></ion-icon>
+          {{trainingProvider.listings[eventIter].accomodation}}
+        </ion-item>
+      </ion-list>
+      <!-- <h2 text-uppercase>{{eventProvider.listings[eventIter].event_name}}</h2>
+      <div padding [innerHtml]="eventProvider.listings[eventIter].description">
+      </div>
+
+      <div class="event-content">
+            {{eventProvider.listings[eventIter].start_date_time | date: 'MMM d, y, h:mm: a'}} -
+            {{eventProvider.listings[eventIter].start_date_time.getDate() == eventProvider.listings[eventIter].end_date_time.getDate() ? (eventProvider.listings[eventIter].end_date_time | date: 'MMM d, y, h:mm a') : (eventProvider.listings[eventIter].end_date_time | date: 'h:mm a') }}
+      </div>
+      <h5 text-uppercase>VENUE</h5>
+      <div class="event-content">
+            {{eventProvider.listings[eventIter].venue}}
+      </div>
+      <h5 text-uppercase [hidden]="!eventProvider.listings[eventIter].register">MY EVENT PERFERENCES</h5>
+      <div class="event-content" [hidden]="!eventProvider.listings[eventIter].register">
+            <p>Shirt Size: {{eventProvider.listings[eventIter].shirt_size}}</p>
+            <p>Meal Option: {{eventProvider.listings[eventIter].meal_option}}</p>
+      </div>
+      <div [hidden]="eventProvider.listings[eventIter].open_for_registration!= 1" padding>
+        <button ion-button block [style.background]="ff6961" [hidden]="eventProvider.listings[eventIter].register" (click)="register()">Register</button>
+        <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="update()">Change Preference</button>
+        <button ion-button block [style.background]="ff6961" [hidden]="!eventProvider.listings[eventIter].register" (click)="cancel()">Withdraw Registration</button>
+      </div> -->
+    </div>
+  </div>
+</ion-content>

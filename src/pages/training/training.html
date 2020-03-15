@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Training</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="event-page">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list [virtualScroll] = "trainingProvider.listings" [hidden]="trainingProvider.listings.length === 0">
+    <ion-card *virtualItem="let listing" (click)="trainingTapped(listing.name)" ion-item>
+      <div class="card_background" [ngStyle]="{'background-image': 'url(' + listing.training_image +')'}">
+      </div>
+      <div class="registered" [hidden]="!listing.register">Registered</div>
+      <div class="open_registration" [hidden]="!(!listing.register && listing.training_status== 'Open For Registration') && !(listing.training_status == 'Publish' && listing.show_open_for_registration == 1)">Open for Registration</div>
+      <div class="close_registration" [hidden]="!(!listing.register && listing.training_status== 'Registration Closed')">Registration Closed</div>
+      <div class="card_content">
+        <div class="event_image">
+          <img [src]="listing.training_image"  />
+        </div>
+
+      </div>
+      <div class="description">
+        <h1 class="event_title">
+          {{listing.training_name}}
+        </h1>
+        <p class="event_subtitle">
+          {{listing.start_date_time | date: 'MMM d, y, h:mm a'}} -
+          {{listing.start_date_time.getDate() == listing.end_date_time.getDate() ? (listing.end_date_time | date: 'h:mm a' ) : (listing.end_date_time | date: 'MMM d, y, h:mm a') }}
+          <br />
+          {{listing.venue}}
+        </p>
+      </div>
+    </ion-card>
+
+  </ion-list>
+
+  <ion-list-header [hidden]="trainingProvider.listings.length > 0">
+    No Trainings Found
+  </ion-list-header>
+</ion-content>

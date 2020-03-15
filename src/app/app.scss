@@ -43,3 +43,33 @@ button{
 
 //ios scrolling issue
 ion-app.platform-ios12 ion-content { pointer-events: auto; /*fix scroll lock on ios12.2*/ }
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-moz-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-ms-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-o-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,112 @@
+page-training {
+  .event-page {
+    background-color: color($colors, light);
+    &::after {
+      content: "";
+      background-size: cover;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      // z-index: 0;
+    }
+
+    .scroll-content {
+      background-color: rgba(255, 255, 255, .8);
+    }
+
+    ion-card {
+      position: relative;
+      text-align: center;
+
+    }
+
+    .registered {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #F8D474;
+      color: #000;
+      z-index: 9999;
+      padding: 1rem;
+    }
+
+    .open_registration {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #99CD6F;
+      color: #000;
+      z-index: 9999;
+      padding: 1rem;
+    }
+
+    .close_registration {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #F1646B;
+      color: #000;
+      z-index: 9999;
+      padding: 1rem;
+    }
+
+    .card_background {
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    //.card_content {
+    //  // position:relative;
+    //  // z-index:2;
+    //}
+    //
+    .event_image {
+      height: 20rem;
+      margin: 0px;
+      img {
+        position: relative;
+        background-color: #FFFFFF;
+        vertical-align: baseline;
+        width: 100%;
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .description {
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(157,199,216,.85);
+      width: 100%;
+      left: 0;
+      text-shadow: 0 0 0.125rem #000;
+    }
+    .event_title {
+
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+      left: 0;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .event_subtitle {
+      // position: absolute;
+      // top: 76%;
+      left: 0;
+      width: 100%;
+      color: #fff;
+    }
+  }
+}

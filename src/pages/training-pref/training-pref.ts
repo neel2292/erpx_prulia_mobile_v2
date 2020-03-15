@@ -1,22 +1,22 @@
-import {Component} from '@angular/core';
-import {NavController, NavParams, ViewController, AlertController, ToastController} from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, NavParams, ViewController, AlertController, ToastController } from 'ionic-angular';
 import {PruliaMemberProvider} from "../../providers/prulia-member/prulia-member";
+import { PruliaTrainingProvider } from "../../providers/prulia-training/prulia-training";
+import { Events } from "ionic-angular/util/events";
 import {PruliaEventProvider} from "../../providers/prulia-event/prulia-event";
-import {Events} from 'ionic-angular/util/events';
-
 
 /**
- * Generated class for the EventPrefPage page.
+ * Generated class for the TrainingPrefPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-event-pref',
-  templateUrl: 'event-pref.html',
+  selector: 'page-training-pref',
+  templateUrl: 'training-pref.html',
 })
-export class EventPrefPage {
+export class TrainingPrefPage {
   member: any = {
     shirt_size: "",
     meal_option: "",
@@ -26,7 +26,7 @@ export class EventPrefPage {
   acknowledgement: boolean = false;
   mode: any = "New"
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider, public eventProvider: PruliaEventProvider,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public memberProvider: PruliaMemberProvider, public trainingProvider: PruliaTrainingProvider,
               public alertCtrl: AlertController, public toastCtrl: ToastController, private events: Events, public viewCtrl: ViewController) {
     this.member = Object.assign({}, navParams.get('value'));
     this.mode = navParams.get('mode');
@@ -61,7 +61,7 @@ export class EventPrefPage {
         })
         break;
       case "Update":
-        this.eventProvider.update_event_registration(this.member, function (data) {
+        this.trainingProvider.update_training_registration(this.member, function (data) {
 
           let toast = that._createToast('Registration was update successfully');
           that.events.publish('event:update', function () {
@@ -76,7 +76,7 @@ export class EventPrefPage {
         break;
       case "New":
         if (this.acknowledgement) {
-          this.eventProvider.create_event_registration({
+          this.trainingProvider.create_training_registration({
             "member": that.memberProvider.member.name,
             "member_name": that.memberProvider.member.full_name,
             "event": this.member.name,
@@ -103,7 +103,7 @@ export class EventPrefPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EventPrefPage');
+    console.log('ionViewDidLoad TrainingPrefPage');
   }
 
   dismiss() {
@@ -141,5 +141,4 @@ export class EventPrefPage {
       position: 'bottom'
     });
   }
-
 }
