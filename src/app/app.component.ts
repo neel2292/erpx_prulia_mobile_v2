@@ -7,9 +7,14 @@ import {Events} from 'ionic-angular/util/events';
 
 import {TabsPage} from '../pages/tabs/tabs';
 import {LoginPage} from '../pages/login/login';
+import {EventPage} from "../pages/event/event";
+import { EventDetailPage } from "../pages/event-detail/event-detail";
+import {NewsletterPage} from "../pages/newsletter/newsletter";
+import { NewsletterDetailPage } from "../pages/newsletter-detail/newsletter-detail";
 import {AuthServiceProvider} from '../providers/auth-service/auth-service';
 import {NavigationProvider} from '../providers/navigation/navigation';
 import { CommonProvider } from "../providers/common/common";
+import { PruliaMemberProvider } from "../providers/prulia-member/prulia-member";
 
 declare var cordova: any;
 
@@ -21,11 +26,14 @@ export class MyApp {
   rootPage: any;
   loader: any;
   cordova: any;
+  oneSignal: any = window['plugins'].OneSignal;
+  allowPush: any = false;
 
   @ViewChild(Nav) rootNav: Nav;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage, commonProvider: CommonProvider,
-              auth: AuthServiceProvider, private navigation: NavigationProvider, private events: Events, private loadingCtrl: LoadingController) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage, public commonProvider: CommonProvider,
+              public memberProvider: PruliaMemberProvider, auth: AuthServiceProvider, private navigation: NavigationProvider,
+              private events: Events, private loadingCtrl: LoadingController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -42,9 +50,8 @@ export class MyApp {
         auth.if_session_valid().then(data => {
             // if (data['message'] === "pong") {
             this.rootPage = TabsPage;
-            // } else {
-            //   this.rootPage = LoginPage
-            // }
+            this.registerPushNoti();
+
           }, (err => {
             this.rootPage = LoginPage
           })
@@ -55,6 +62,7 @@ export class MyApp {
 
       this.dismissLoading();
 
+      this.events.subscribe('register:push', () => this.registerPushNoti());
       this.events.subscribe('navigate:logout', page => this.logoutUser(page));
       this.events.subscribe('loading:start', content => this.presentLoading(content));
       this.events.subscribe('loading:end', content => this.dismissLoading());
@@ -66,6 +74,7 @@ export class MyApp {
   }
 
   private logoutUser(page) {
+    this.oneSignal.setSubscription(false); //deregister push notification
     this.rootNav.setRoot(LoginPage, {}, {animate: true, direction: 'back'});
   }
 
@@ -78,5 +87,46 @@ export class MyApp {
 
   dismissLoading() {
     this.loader.dismiss();
+  }
+
+  notiOpened(data) {
+    let noti = data.notification,
+      payload = noti.payload;
+
+    if (this.allowPush) {
+      switch (payload.groupKey) {
+        case 'prulia_event':
+          this.rootNav.push(EventPage);
+          break;
+        case 'prulia_news':
+          if (payload.groupMessage) { this.rootNav.push(NewsletterDetailPage, {newsletter_name: payload.message}); }
+          else { this.rootNav.push(NewsletterPage); }
+          break;
+      }
+    }
+  }
+
+  registerPushNoti() {
+    this.allowPush = true;
+
+    //only register push noti if user is login
+    this.oneSignal.startInit(this.commonProvider.getOneSignalAppId())
+      .inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None)
+      .handleNotificationOpened(this.notiOpened.bind(this))
+      .endInit();
+
+    //register tag
+    this.memberProvider.get_member_profile(true).then(member => {
+      let position = member['position'];
+
+      if (position) {
+        this.oneSignal.getTags(tags => {
+          if (tags.position !== position) {
+            //set tag based on position
+            this.oneSignal.sendTag('position', position);
+          }
+        });
+      }
+    });
   }
 }

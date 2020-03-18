@@ -58,6 +58,10 @@
             <ion-icon name="home" item-start></ion-icon>
             {{eventProvider.listings[eventIter].accomodation}}
           </ion-item>
+          <ion-item text-wrap class="item item-trns" [hidden]="!eventProvider.listings[eventIter].register || eventProvider.listings[eventIter].break_up_session == '0'">
+            <ion-icon name="home" item-start></ion-icon>
+            {{eventProvider.listings[eventIter].pref_lang}}
+          </ion-item>
         </ion-list>
           <!-- <h2 text-uppercase>{{eventProvider.listings[eventIter].event_name}}</h2>
           <div padding [innerHtml]="eventProvider.listings[eventIter].description">

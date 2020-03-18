@@ -46,7 +46,7 @@
 		        </ion-select>
 		     </ion-item>
         <ion-item no-lines [hidden]="member.break_up_session != 1 || languages.length === 0">
-		        <ion-label floating>Preferred language</ion-label>
+		        <ion-label floating>Break Up Session Preferred language</ion-label>
 		        <ion-select [(ngModel)]="member.pref_lang" name="pref_lang" required>
                 <ion-option *ngFor="let lang of languages" [value]="lang">{{ lang }}</ion-option>
 		        </ion-select>

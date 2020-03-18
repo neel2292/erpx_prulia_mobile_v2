@@ -71,6 +71,7 @@ export class LoginPage {
       .then(data => {
           this.navCtrl.push(TabsPage);
           this.events.publish('loading:end');
+          this.events.publish('register:push');
         }, (error => {
           console.log(error)
           let alert = this.alertCtrl.create({

@@ -105,6 +105,7 @@
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-advanced-http" spec="^1.11.1" />
     <plugin name="com-badrit-base64" spec="^0.2.0" />
+    <plugin name="onesignal-cordova-plugin" spec="^2.8.4" />
     <engine name="ios" spec="4.5.5" />
     <engine name="android" spec="8.0.0" />
 </widget>
