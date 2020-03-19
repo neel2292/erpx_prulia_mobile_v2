@@ -52,6 +52,7 @@ export class CommonProvider {
   }
 
   getOneSignalAppId() {
-    return 'dc5341a7-479c-4ccb-b2c4-1f484ecfe40c';
+    return 'd76fe5ec-8782-455a-8261-6a73653d7bb3'; //dev
+    // return 'dc5341a7-479c-4ccb-b2c4-1f484ecfe40c'; //prod
   }
 }

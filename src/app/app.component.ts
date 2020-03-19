@@ -111,9 +111,11 @@ export class MyApp {
 
     //only register push noti if user is login
     this.oneSignal.startInit(this.commonProvider.getOneSignalAppId())
-      .inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None)
+      .inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification)
       .handleNotificationOpened(this.notiOpened.bind(this))
       .endInit();
+
+    this.oneSignal.setSubscription(true);
 
     //register tag
     this.memberProvider.get_member_profile(true).then(member => {
