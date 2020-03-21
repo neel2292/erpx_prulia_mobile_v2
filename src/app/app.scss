@@ -46,6 +46,12 @@ button{
    padding: 30% 5%  !important;
 }
 
+.forgot-password-popup {
+  background: rgba(0, 0, 0, 0.5) !important;
+  padding-right: 5%  !important;
+  padding-left: 5% !important;
+}
+
 //ios scrolling issue
 ion-app.platform-ios12 ion-content { pointer-events: auto; /*fix scroll lock on ios12.2*/ }
 

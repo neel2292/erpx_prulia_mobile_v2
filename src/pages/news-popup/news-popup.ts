@@ -23,7 +23,6 @@ export class NewsPopupPage {
 
   ionViewDidLoad() {
     this.memberProvider.get_member_profile().then(member => {
-      console.log(member);
       this.newsProvider.get_newsletter_popup().then(list => {
         list = list.filter(news => {
                 let filters = ['position', 'region', 'branch'],

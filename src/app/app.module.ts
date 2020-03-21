@@ -30,6 +30,7 @@ import {PartnerPage} from "../pages/partner/partner"
 import {PartnerDetailPage} from "../pages/partner-detail/partner-detail"
 import { FeedbackPage } from "../pages/feedback/feedback";
 import { NewsPopupPage } from "../pages/news-popup/news-popup";
+import {ForgotPasswordPage} from "../pages/forgot-password/forgot-password";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -72,6 +73,7 @@ import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-trai
     TrainingDetailPage,
     TrainingPrefPage,
     FeedbackPage,
+    ForgotPasswordPage,
     NewsPopupPage,
     Mask
   ],
@@ -106,6 +108,7 @@ import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-trai
     TrainingDetailPage,
     TrainingPrefPage,
     FeedbackPage,
+    ForgotPasswordPage,
     NewsPopupPage
   ],
   providers: [

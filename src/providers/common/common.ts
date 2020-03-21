@@ -47,12 +47,12 @@ export class CommonProvider {
   }
 
   get_service_endpoint() {
-    return "http://167.99.77.197:8000";
-    // return "https://www.prulia.org.my";
+    // return "http://167.99.77.197:8000";
+    return "https://www.prulia.org.my";
   }
 
   getOneSignalAppId() {
-    return 'd76fe5ec-8782-455a-8261-6a73653d7bb3'; //dev
-    // return 'dc5341a7-479c-4ccb-b2c4-1f484ecfe40c'; //prod
+    // return 'd76fe5ec-8782-455a-8261-6a73653d7bb3'; //dev
+    return 'dc5341a7-479c-4ccb-b2c4-1f484ecfe40c'; //prod
   }
 }
