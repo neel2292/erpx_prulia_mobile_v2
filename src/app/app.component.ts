@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {Platform, Nav, LoadingController} from 'ionic-angular';
+import {Platform, Nav, LoadingController, ModalController} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -8,13 +8,13 @@ import {Events} from 'ionic-angular/util/events';
 import {TabsPage} from '../pages/tabs/tabs';
 import {LoginPage} from '../pages/login/login';
 import {EventPage} from "../pages/event/event";
-import { EventDetailPage } from "../pages/event-detail/event-detail";
 import {NewsletterPage} from "../pages/newsletter/newsletter";
 import { NewsletterDetailPage } from "../pages/newsletter-detail/newsletter-detail";
 import {AuthServiceProvider} from '../providers/auth-service/auth-service';
 import {NavigationProvider} from '../providers/navigation/navigation';
 import { CommonProvider } from "../providers/common/common";
 import { PruliaMemberProvider } from "../providers/prulia-member/prulia-member";
+import {NewsPopupPage} from "../pages/news-popup/news-popup";
 
 declare var cordova: any;
 
@@ -33,7 +33,7 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, storage: Storage, public commonProvider: CommonProvider,
               public memberProvider: PruliaMemberProvider, auth: AuthServiceProvider, private navigation: NavigationProvider,
-              private events: Events, private loadingCtrl: LoadingController) {
+              private events: Events, private loadingCtrl: LoadingController, public modalCtrl: ModalController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -70,7 +70,11 @@ export class MyApp {
   }
 
   ngOnInit(): void {
+    let greetingModal = this.modalCtrl.create(NewsPopupPage, {}, { cssClass: 'news-modal-popup' });
+
     this.navigation.initRootNav(this.rootNav);
+
+    greetingModal.present();
   }
 
   private logoutUser(page) {

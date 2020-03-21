@@ -1,7 +1,7 @@
 import {NgModule, ErrorHandler} from '@angular/core';
 import {IonicStorageModule} from '@ionic/storage';
 import {BrowserModule} from '@angular/platform-browser';
-import {IonicApp, IonicModule, IonicErrorHandler, Platform} from 'ionic-angular';
+import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {HttpBackend, HttpXhrBackend, HttpClientModule} from '@angular/common/http';
 //ENABLE THIS ONLY FOR iOS
 // import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ionic-native-http-connection-backend';
@@ -29,6 +29,7 @@ import {NewsletterDetailPage} from "../pages/newsletter-detail/newsletter-detail
 import {PartnerPage} from "../pages/partner/partner"
 import {PartnerDetailPage} from "../pages/partner-detail/partner-detail"
 import { FeedbackPage } from "../pages/feedback/feedback";
+import { NewsPopupPage } from "../pages/news-popup/news-popup";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -71,6 +72,7 @@ import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-trai
     TrainingDetailPage,
     TrainingPrefPage,
     FeedbackPage,
+    NewsPopupPage,
     Mask
   ],
   imports: [
@@ -103,7 +105,8 @@ import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-trai
     TrainingPage,
     TrainingDetailPage,
     TrainingPrefPage,
-    FeedbackPage
+    FeedbackPage,
+    NewsPopupPage
   ],
   providers: [
     StatusBar,

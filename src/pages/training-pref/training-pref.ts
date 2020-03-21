@@ -3,7 +3,6 @@ import { NavController, NavParams, ViewController, AlertController, ToastControl
 import {PruliaMemberProvider} from "../../providers/prulia-member/prulia-member";
 import { PruliaTrainingProvider } from "../../providers/prulia-training/prulia-training";
 import { Events } from "ionic-angular/util/events";
-import {PruliaEventProvider} from "../../providers/prulia-event/prulia-event";
 
 /**
  * Generated class for the TrainingPrefPage page.

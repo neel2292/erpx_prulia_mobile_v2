@@ -1,6 +1,5 @@
-import { Component, ViewChild, Pipe, PipeTransform } from '@angular/core';
-import { DatePipe } from '@angular/common';
-import { IonicPage, NavController, NavParams, List } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 import { PruliaMemberProvider } from "../../providers/prulia-member/prulia-member";
 import { PruliaEventProvider } from '../../providers/prulia-event/prulia-event';
 import { EventDetailPage } from "../event-detail/event-detail";
