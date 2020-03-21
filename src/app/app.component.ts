@@ -48,10 +48,12 @@ export class MyApp {
       if (localStorage.session_id) {
         auth.set_sid_cookie();
         auth.if_session_valid().then(data => {
+            let greetingModal = this.modalCtrl.create(NewsPopupPage, {}, { cssClass: 'news-modal-popup' });
             // if (data['message'] === "pong") {
             this.rootPage = TabsPage;
             this.registerPushNoti();
 
+            greetingModal.present();
           }, (err => {
             this.rootPage = LoginPage
           })
@@ -70,11 +72,7 @@ export class MyApp {
   }
 
   ngOnInit(): void {
-    let greetingModal = this.modalCtrl.create(NewsPopupPage, {}, { cssClass: 'news-modal-popup' });
-
     this.navigation.initRootNav(this.rootNav);
-
-    greetingModal.present();
   }
 
   private logoutUser(page) {

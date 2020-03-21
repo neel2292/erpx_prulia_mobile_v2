@@ -30,7 +30,7 @@ export class PruliaMemberProvider {
   }
 
 
-  get_member_profile(bForceRefresh) {
+  get_member_profile(bForceRefresh=false) {
     let that = this;
     return new Promise((resolve, reject) => {
       if (bForceRefresh || that.member === undefined) {
