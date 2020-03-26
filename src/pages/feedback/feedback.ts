@@ -30,8 +30,10 @@ export class FeedbackPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedbackPage');
 
+    this.appEvent.publish('loading:start', 'Loading categories...');
     this.feedbackProvider.get_categories().then(cats => {
       this.categories = cats;
+      this.appEvent.publish('loading:end');
     });
   }
 

@@ -29,7 +29,7 @@ export class NewsPopupPage {
                     ret = true;
 
                     filters.forEach(filter => {
-                      if (ret && news[filter] && news[filter] !== member[filter]) { ret = false; }
+                      if (ret && news[filter].length && news[filter].map(el => { return el.name; }).indexOf(member[filter]) === -1) { ret = false; }
                     });
 
                     return ret;

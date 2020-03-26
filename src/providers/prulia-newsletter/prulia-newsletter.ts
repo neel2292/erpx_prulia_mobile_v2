@@ -36,8 +36,6 @@ export class PruliaNewsletterProvider {
     return new Promise<object[]>((resolve, reject) => {
       this.http.get(this.common.get_api_url('/api/method/erpx_prulia.prulia_news.doctype.prulia_newsletter.prulia_newsletter.get_newsletter_popup'))
       .subscribe(res => {
-        console.log(res);
-
         if (res['message'] instanceof Array && res['message'].length) {
           resolve(res['message'])
         } else { reject(); }
