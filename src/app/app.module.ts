@@ -1,10 +1,10 @@
 import {NgModule, ErrorHandler} from '@angular/core';
 import {IonicStorageModule} from '@ionic/storage';
 import {BrowserModule} from '@angular/platform-browser';
-import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {IonicApp, IonicModule, IonicErrorHandler, Platform} from 'ionic-angular';
 import {HttpBackend, HttpXhrBackend, HttpClientModule} from '@angular/common/http';
 //ENABLE THIS ONLY FOR iOS
-// import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ionic-native-http-connection-backend';
+import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ionic-native-http-connection-backend';
 import {MyApp} from './app.component';
 
 import {ImagePicker} from '@ionic-native/image-picker';
@@ -82,7 +82,7 @@ import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-trai
     HttpClientModule,
     PipesModule,
     //ENABLE THIS ONLY FOR iOS
-    // NativeHttpModule,
+    NativeHttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -116,7 +116,7 @@ import { PruliaTrainingProvider } from '../providers/prulia-training/prulia-trai
     SplashScreen,
     InAppBrowser,
     //ENABLE THIS ONLY FOR iOS
-    // {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
+    {provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend]},
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     CommonProvider,

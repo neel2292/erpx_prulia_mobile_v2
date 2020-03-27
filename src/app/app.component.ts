@@ -113,6 +113,10 @@ export class MyApp {
 
     //only register push noti if user is login
     this.oneSignal.startInit(this.commonProvider.getOneSignalAppId())
+      .iOSSettings({
+        kOSSettingsKeyAutoPrompt: true,
+        kOSSettingsKeyInAppLaunchURL: false
+      })
       .inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification)
       .handleNotificationOpened(this.notiOpened.bind(this))
       .endInit();
