@@ -41,6 +41,9 @@ export class NewsPopupPage {
           })
         }
         else { this.dismiss(); }
+      }).catch(err => {
+        this.dismiss();
+        console.error(err);
       });
     });
   }

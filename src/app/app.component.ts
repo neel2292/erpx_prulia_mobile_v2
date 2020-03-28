@@ -26,7 +26,7 @@ export class MyApp {
   rootPage: any;
   loader: any;
   cordova: any;
-  oneSignal: any = window['plugins'].OneSignal;
+  oneSignal: any;
   allowPush: any = false;
 
   @ViewChild(Nav) rootNav: Nav;
@@ -41,8 +41,11 @@ export class MyApp {
       splashScreen.hide();
       this.presentLoading("Loading...");
 
-      const args = ['GET', commonProvider.get_service_endpoint()];
-      cordova.exec(null, null, 'WKWebViewSyncCookies', 'sync', args);
+      const args = ['GET', commonProvider.get_service_endpoint(), '', ''];
+      cordova.exec(function () {}, function (err) {
+        //fail
+        console.error(err)
+      }, 'WKWebViewSyncCookies', 'sync', args);
       // WKWebViewSync.sync(args);
 
       if (localStorage.session_id) {
@@ -67,7 +70,7 @@ export class MyApp {
       this.events.subscribe('register:push', () => this.registerPushNoti());
       this.events.subscribe('navigate:logout', page => this.logoutUser(page));
       this.events.subscribe('loading:start', content => this.presentLoading(content));
-      this.events.subscribe('loading:end', content => this.dismissLoading());
+      this.events.subscribe('loading:end', () => this.dismissLoading());
     });
   }
 
@@ -111,30 +114,33 @@ export class MyApp {
   registerPushNoti() {
     this.allowPush = true;
 
-    //only register push noti if user is login
-    this.oneSignal.startInit(this.commonProvider.getOneSignalAppId())
-      .iOSSettings({
-        kOSSettingsKeyAutoPrompt: true,
-        kOSSettingsKeyInAppLaunchURL: false
-      })
-      .inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification)
-      .handleNotificationOpened(this.notiOpened.bind(this))
-      .endInit();
+    setTimeout(() => {
+      this.oneSignal = this.oneSignal || window['plugins'].OneSignal;
+      //only register push noti if user is login
+      this.oneSignal.startInit(this.commonProvider.getOneSignalAppId())
+        .iOSSettings({
+          kOSSettingsKeyAutoPrompt: true,
+          kOSSettingsKeyInAppLaunchURL: false
+        })
+        .inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification)
+        .handleNotificationOpened(this.notiOpened.bind(this))
+        .endInit();
 
-    this.oneSignal.setSubscription(true);
+      this.oneSignal.setSubscription(true);
 
-    //register tag
-    this.memberProvider.get_member_profile(true).then(member => {
-      let position = member['position'];
+      //register tag
+      this.memberProvider.get_member_profile(true).then(member => {
+        let position = member['position'];
 
-      if (position) {
-        this.oneSignal.getTags(tags => {
-          if (tags.position !== position) {
-            //set tag based on position
-            this.oneSignal.sendTag('position', position);
-          }
-        });
-      }
-    });
+        if (position) {
+          this.oneSignal.getTags(tags => {
+            if (tags.position !== position) {
+              //set tag based on position
+              this.oneSignal.sendTag('position', position);
+            }
+          });
+        }
+      });
+    }, 1000);
   }
 }

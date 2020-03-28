@@ -38,11 +38,11 @@ export class PruliaNewsletterProvider {
       .subscribe(res => {
         if (res['message'] instanceof Array && res['message'].length) {
           resolve(res['message'])
-        } else { reject(); }
+        } else { reject(res); }
 
       }, (err) => {
         console.log(err);
-        reject();
+        reject(err);
       });
     });
   }
