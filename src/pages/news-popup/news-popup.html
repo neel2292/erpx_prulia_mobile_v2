@@ -1,6 +1,6 @@
 <ion-content>
-  <ion-fab top right>
-    <button ion-fab mini color="dark"><ion-icon name="close" (tap)="dismiss()"></ion-icon></button>
+  <ion-fab top right (click)="dismiss()">
+    <button ion-fab mini color="dark"><ion-icon name="close"></ion-icon></button>
   </ion-fab>
   <ion-slides pager>
     <ion-slide *ngFor="let img of list">
