@@ -51,12 +51,11 @@ export class MyApp {
       if (localStorage.session_id) {
         auth.set_sid_cookie();
         auth.if_session_valid().then(data => {
-            let greetingModal = this.modalCtrl.create(NewsPopupPage, {}, { cssClass: 'news-modal-popup' });
             // if (data['message'] === "pong") {
             this.rootPage = TabsPage;
             this.registerPushNoti();
 
-            greetingModal.present();
+            this.events.publish('greetings:show')
           }, (err => {
             this.rootPage = LoginPage
           })
@@ -71,6 +70,11 @@ export class MyApp {
       this.events.subscribe('navigate:logout', page => this.logoutUser(page));
       this.events.subscribe('loading:start', content => this.presentLoading(content));
       this.events.subscribe('loading:end', () => this.dismissLoading());
+      this.events.subscribe('greetings:show', () => {
+        let greetingModal = this.modalCtrl.create(NewsPopupPage, {}, { cssClass: 'news-modal-popup' });
+
+        greetingModal.present();
+      });
     });
   }
 

@@ -72,8 +72,9 @@ export class LoginPage {
           this.navCtrl.push(TabsPage);
           this.events.publish('loading:end');
           this.events.publish('register:push');
+          this.events.publish('greetings:show');
         }, (error => {
-          console.log(error)
+          console.log(error);
           let alert = this.alertCtrl.create({
             title: 'Login Unsuccessful',
             message: 'The Prudential ID or password you entered is incorrect',
